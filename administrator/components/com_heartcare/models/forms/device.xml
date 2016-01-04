@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form addrulepath="/administrator/components/com_heartcare/models/rules">
+    <fieldset name="device_details">
+        <field
+                name="id"
+                type="text"
+                label="COM_HEARTCARE_HEARTCARE_ID_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_NAME_DESC"
+                size="40"
+                class="inputbox"
+                readonly="true"
+                default=""
+        />
+        <field
+                name="device_id"
+                type="text"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
+                size="40"
+                class="inputbox validate-deviceid"
+                validate="deviceid"
+                required="true"
+                default=""
+        />
+        <field
+                name="device_type"
+                type="text"
+                label="COM_HEARTCARE_HEALTHDATA_DATATYPE"
+                description="COM_HEARTCARE_HEALTHDATA_DATATYPE"
+                size="40"
+                class="inputbox validate-devicetype"
+                validate="devicetype"
+                required="true"
+                default=""
+        />
+        <field
+                name="register_time"
+                type="calendar"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
+                size="40"
+                format="%Y-%m-%d %H:%M:%S"
+        />
+        <field
+                name="produce_date"
+                type="calendar"
+                default=""
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
+                size="40"
+                format="%Y-%m-%d"
+        />
+
+        <field
+                name="description"
+                type="textarea"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_DESCIPTION"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_DESCIPTION"
+                rows="6"
+                cols="5"
+        />
+
+        <field
+                name="service"
+                type="editor"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
+        />
+    </fieldset>
+    <fields name="images">
+        <fieldset name="images" label="JGLOBAL_FIELDSET_IMAGE_OPTIONS">
+            <field
+                    name="image_first"
+                    type="media"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
+                    directory="devices"
+            />
+            <field
+                    name="image_second"
+                    type="media"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
+                    directory="devices"
+            />
+        </fieldset>
+    </fields>
+    <fields name="sensors">
+        <fieldset name="sensors" label="">
+            <field
+                    name="ecg"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG"
+                    value="1"
+                    default="0"
+            />
+            <field name="ecg_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG_DESC"
+                   size="20"
+            />
+            <field name="spacer1"
+                   type="spacer"
+                   hr="true"
+            />
+
+            <field
+                    name="icg"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG"
+                    value="1"
+                    default="0"
+            />
+            <field name="icg_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG_DESC"
+                   size="20"
+            />
+            <field name="spacer2"
+                   type="spacer"
+                   hr="true"
+            />
+
+            <field
+                    name="deltaZ"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ"
+                    value="1"
+                    default="0"
+            />
+            <field name="deltaZ_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ_DESC"
+                   size="20"
+            />
+            <field name="spacer3"
+                   type="spacer"
+                   hr="true"
+            />
+
+            <field
+                    name="Z0"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO"
+                    value="1"
+                    default="0"
+            />
+            <field name="Z0_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO_DESC"
+                   size="20"
+            />
+            <field name="spacer4"
+                   type="spacer"
+                   hr="true"
+            />
+
+            <field
+                    name="acc"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
+                    value="1"
+                    default="0"
+            />
+            <field name="acc_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC_DESC"
+                   size="20"
+            />
+            <field name="spacer5"
+                   type="spacer"
+                   hr="true"
+            />
+
+            <field
+                    name="grro"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
+                    value="1"
+                    default="0"
+            />
+            <field name="grro_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO_DESC"
+                   size="20"
+            />
+            <field name="spacer6"
+                   type="spacer"
+                   hr="true"
+            />
+        </fieldset>
+    </fields>
+</form>

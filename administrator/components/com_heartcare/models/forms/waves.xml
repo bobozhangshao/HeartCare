@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form>
+    <fieldset>
+        <field
+                name="diagnosis"
+                type="editor"
+                default=""
+                label="COM_HEARTCARE_DOCTOR_SAY_LABEL"
+                description="COM_HEARTCARE_DOCTOR_SAY_DESC"
+                width="600"
+                filter="safehtml"
+        />
+    </fieldset>
+</form>

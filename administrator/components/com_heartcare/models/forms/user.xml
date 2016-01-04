@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+    <fieldset>
+        <field
+                name="name"
+                type="text"
+                label="COM_HEARTCARE_HEARTCARE_NAME_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_NAME_DESC"
+                size="40"
+                class="inputbox"
+                readonly="true"
+                default=""
+                />
+        <field
+                name="username"
+                type="text"
+                label="COM_HEARTCARE_HEARTCARE_USERNAME_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_USERNAME_DESC"
+                size="40"
+                class="inputbox"
+                readonly="true"
+                default=""
+                />
+        <field
+                name="id"
+                type="text"
+                label="COM_HEARTCARE_HEARTCARE_ID_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_ID_DESC"
+                size="40"
+                class="inputbox"
+                readonly="true"
+                default=""
+                />
+        <field
+                name="email"
+                type="email"
+                label="COM_HEARTCARE_HEARTCARE_EMAIL_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_EMAIL_DESC"
+                size="40"
+                class="inputbox"
+                readonly="true"
+                validate="email"
+                />
+    </fieldset>
+</form>
