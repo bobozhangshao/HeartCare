@@ -1,8 +1,0 @@
-name: 12
-timestamp: 1451212404
-preset:
-  image: 'gantry-admin://images/layouts/home.png'
-  name: home
-  timestamp: 1451212404
-positions:
-  footer: Footer

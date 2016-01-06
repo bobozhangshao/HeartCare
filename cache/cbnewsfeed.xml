@@ -5,9 +5,24 @@
 		<title>Joomlapolis News</title>
 		<description>Joomla social networking and Subscription Management software. Community Builder is the top rated, best supported, most complete and reliable community system there is for Joomla!</description>
 		<link>http://www.joomlapolis.com:80/news</link>
-		<lastBuildDate>Mon, 04 Jan 2016 01:34:04 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 06 Jan 2016 01:44:12 +0000</lastBuildDate>
 		<generator>Joomla! 1.5 - Open Source Content Management</generator>
 		<language>en-gb</language>
+		<item>
+			<title>Inline editing with new CB Core Ajax 3.0</title>
+			<link>http://www.joomlapolis.com:80/news/18528-inline-editing-with-new-cb-core-ajax-30</link>
+			<guid>http://www.joomlapolis.com:80/news/18528-inline-editing-with-new-cb-core-ajax-30</guid>
+			<description><![CDATA[<p style="text-align: center;"><img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201601/coreajax_580.gif" alt="coreajax 580" width="550" height="284" /></p>
+<p style="text-align: center;">Paid members can <a href="http://www.joomlapolis.com:80/cb-20-addon-status">download</a> <strong>CB Core Ajax Fields 3.0.0</strong></p>
+<p>Making CB Field editing <strong>easier</strong> and <strong>quicker</strong> is simple with the new <strong>CB Core Ajax Fields 3.0</strong> release that supports <strong>inline editing</strong> on <strong>profile pages</strong> and even on <strong>user lists</strong>!</p>
+<p>Just install, publish it and then configure each CB Field you want for inline editing.</p>
+<p>Once configured, a mouse over on a field will reveal the edit icon that will let you quickly update the specific field value.</p>
+<p>This is a <strong>huge</strong> usability improvement for your users and also a life saver for moderators that need to edit many users directly in user list views.</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232363-inline-editing-with-new-cb-core-ajax-30">Discuss this on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Mon, 04 Jan 2016 08:32:49 +0000</pubDate>
+		</item>
 		<item>
 			<title>Joomla 3.4.7 and patches protect against critical PHP bug</title>
 			<link>http://www.joomlapolis.com:80/news/18527-joomla-347-and-patches-protect-against-critical-php-bug</link>
@@ -217,26 +232,6 @@
 			<author>nant@joomlapolis.com (Nick A.)</author>
 			<category>News</category>
 			<pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
-		</item>
-		<item>
-			<title>Untapped potential</title>
-			<link>http://www.joomlapolis.com:80/news/18515-untapped-potential</link>
-			<guid>http://www.joomlapolis.com:80/news/18515-untapped-potential</guid>
-			<description><![CDATA[<p style="text-align: center;"><a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18216&amp;Itemid=135"><img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201510/untapped_500.jpg" alt="untapped 500" width="500" height="294" /></a></p>
-<p style="text-align: center;">Are you aware of how Community Builder solutions can help you?</p>
-<p>Sometimes it just takes a good presentation and some friendly discussions to put things in perspective.</p>
-<p>This is exactly what happened during my "<a href="http://www.meetup.com/Joomla-Users-Group-of-New-Jersey/events/225075118/" target="_blank">Lunch and Learn with Joomlapolis (Community Builder)</a>" presentation last week at the New Jersey user group event.</p>
-<p>The aftermath comments like "great presentation", "I learned a lot", "great improvements", "eye-opener", "hugely customizable" were very much appreciated.</p>
-<p>But, the best reward for me was the excitement I saw in people's eyes when I was able to propose CB powered solutions and add-ons for their specific use case needs.</p>
-<p>Most people (I am also guilty :-( ) usually just dive in and start playing with Community Builder. This is certainly the quickest approach but it is also not the most productive one.</p>
-<p>During the NJ meeting I noticed that most of the attendees were not aware of the new <a href="http://www.joomlapolis.com:80/component/docman/doc_details/753-cb-20-primer-book-101">CB PRIMER Book</a> (you need to be logged in to download) and how it could help you understand and tap into the great solution providing potential of Community Builder. It is a great read and it will inspire you to learn and explore CB much more and easier than the heads-on approach.</p>
-<p>And if reading is not your cup of tea, you can check out our <a href="https://www.youtube.com/Joomlapolis/playlists" target="_blank">short and sweet video tutorials</a>.</p>
-<p>Once people realize how powerful CB is they can continue the free discovery process by monitoring the <a href="http://www.joomlapolis.com:80/index.php?option=com_kunena&amp;view=home&amp;Itemid=17">open-to-all support forums</a> and see even more CB powered solution proposals given to our <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18216&amp;Itemid=135">paid supporters</a>.</p>
-<p>A big <strong>thank you</strong> to the New Jersey Joomla user group for organizing the presentation and giving me the opportunity to meet everyone.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/231410-untapped-potential">Discuss this on our forums</a>.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Wed, 07 Oct 2015 20:44:35 +0000</pubDate>
 		</item>
 	</channel>
 </rss>

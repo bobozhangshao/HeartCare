@@ -119,6 +119,7 @@
         <position>copyright-e</position>
         <position>copyright-f</position>
         <position>debug</position>
+        <position>menu-module</position>
     </positions>
 	<config>
         <fields name="params">
