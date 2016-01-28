@@ -135,6 +135,7 @@ class HeartCareModelUser extends JModelAdmin
         return $result;
     }
 
+    //获取该用户注册的设备
     public function getDevices()
     {
         $db = JFactory::getDbo();
@@ -154,6 +155,42 @@ class HeartCareModelUser extends JModelAdmin
         }
 
         return $result;
+    }
 
+    //获取该用户选择的医生
+    //return 数组(元素是对象)
+    public function getDoctors()
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('cb_doctors')->from($db->quoteName('#__comprofiler'));
+        $query->where('user_id = '.(int) $this->getState('user.id'));
+        $db->setQuery($query);
+        try
+        {
+            $result = $db->loadObjectList();
+            $result1 = json_decode($result[0]->cb_doctors, true);
+            $i = 0;
+            $result2 = array();
+
+            foreach($result1['doctors'] as $id){
+                $db1 = JFactory::getDbo();
+                $query1 = $db1->getQuery(true);
+                $query1->select('a.id as id, name, username, cb_description');
+                $query1->from($db->quoteName('#__users') . ' AS a');
+                $query1->leftJoin('#__comprofiler AS d ON d.user_id = a.id');
+                $query1->where('d.user_id = '.(int) $id);
+                $db1->setQuery($query1);
+                $result2[$i++] = $db1->loadObjectList();
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+
+        return $result2;
     }
 }

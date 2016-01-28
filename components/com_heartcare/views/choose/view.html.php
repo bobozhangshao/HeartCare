@@ -2,30 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: zhangshaobo
- * Date: 15/11/2
- * Time: 15:04
+ * Date: 16/1/25
+ * Time: 10:15
  */
 defined('_JEXEC') or die('Restricted Access');
 
-class HeartCareViewHeartCare extends JViewLegacy
+class HeartCareViewChoose extends JViewLegacy
 {
     protected $state;
     protected $items;
     protected $pagination;
-    protected $txtData;
-    protected $doctorSay;
+    protected $description;
+    protected $doctors;
 
     function display($tpl = null)
     {
-        $app		= JFactory::getApplication();
-        $params		= $app->getParams();
-
         // Get some data from the models
         $this->state		= $this->get('State');
         $this->items		= $this->get('Items');
         $this->pagination	= $this->get('Pagination');
-        $this->txtData      = $this->get('TxtData');
-        $this->doctorSay    = $this->get('DoctorSay');
+        $this->description  = $this->get('Description');
+        $this->doctors      = $this->get('ChoosedDoctors');
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {

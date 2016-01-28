@@ -38,6 +38,7 @@
         <filename>index.html</filename>
         <filename>heartcare.php</filename>
         <filename>controller.php</filename>
+        <folder>controllers</folder>
         <folder>views</folder>
         <folder>models</folder>
         <folder>language</folder>

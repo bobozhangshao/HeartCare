@@ -4,19 +4,4 @@
     <layout title="COM_HEARTCARE_HEARTCARE_VIEWDEFAULT_TITLE">
         <message>COM_HEARTCARE_HEARTCARE_VIEW_DEFAULT_DESC</message>
     </layout>
-
-    <fields name="request">
-        <fieldset
-                name="request"
-                addfieldpath="/administrator/components/com_heartcare/models/fields"
-                >
-            <field
-                    name="id"
-                    type="user"
-                    label="COM_HEARTCARE_HEARTCARE_FIELD_GREETING_LABEL"
-                    description="COM_HEARTCARE_HEARTCARE_FIELD_GREETING_DESC"
-                    >
-            </field>
-        </fieldset>
-    </fields>
 </metadata>

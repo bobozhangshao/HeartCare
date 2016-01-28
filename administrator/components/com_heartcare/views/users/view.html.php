@@ -72,6 +72,25 @@ class HeartCareViewUsers extends JViewLegacy
         }
     }
 
+    /**
+     * Returns an array of fields the table can be sorted by
+     *
+     * @return  array  Array containing the field name to sort by as the key and display text as value
+     *
+     * @since   3.0
+     */
+    protected function getSortFields()
+    {
+        return array(
+            'name' => JText::_('COM_USERS_HEADING_NAME'),
+            'username' => JText::_('JGLOBAL_USERNAME'),
+            'email' => JText::_('JGLOBAL_EMAIL'),
+            'registerDate' => JText::_('COM_USERS_HEADING_REGISTRATION_DATE'),
+            'id' => JText::_('JGRID_HEADING_ID'),
+            'cb_is_doctor' => JText::_('COM_HEARTCARE_USER_IS_DOCTOR')
+        );
+    }
+
     protected function setDocument()
     {
         $document = JFactory::getDocument();

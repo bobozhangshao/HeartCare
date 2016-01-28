@@ -27,9 +27,10 @@ $listDirn  = $this->escape($this->filter_order_Dir);
             <th width="2%"><?php echo JHtml::_('grid.checkall'); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_NAME','name', $listDirn, $listOrder); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USERNAME','username', $listDirn, $listOrder); ?></th>
-            <th width="30%"><?php echo JText::_('COM_HEARTCARE_EMAIL'); ?></th>
+            <th width="25%"><?php echo JText::_('COM_HEARTCARE_EMAIL'); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_REGISTERDATE','registerDate', $listDirn, $listOrder); ?></th>
             <th width="7%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_ID','id', $listDirn, $listOrder); ?></th>
+            <th width="5%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USER_IS_DOCTOR','cb_is_doctor', $listDirn, $listOrder); ?></th>
         </tr>
         </thead>
 
@@ -54,6 +55,13 @@ $listDirn  = $this->escape($this->filter_order_Dir);
             <td><?php echo $row->email; ?></td>
             <td><?php echo $row->registerDate; ?></td>
             <td><?php echo $row->id; ?></td>
+            <td align="center">
+                <?php if($row->cb_is_doctor) :?>
+                    <span class="icon-ok"> </span>
+                <?php elseif(!$row->cb_is_doctor) :?>
+                    <span class="icon-cancel"> </span>
+                <?php endif;?>
+            </td>
         </tr>
         <?php endforeach; ?>
         <?php endif; ?>

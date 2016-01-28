@@ -5,9 +5,35 @@
 		<title>Joomlapolis News</title>
 		<description>Joomla social networking and Subscription Management software. Community Builder is the top rated, best supported, most complete and reliable community system there is for Joomla!</description>
 		<link>http://www.joomlapolis.com:80/news</link>
-		<lastBuildDate>Wed, 06 Jan 2016 01:44:12 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 27 Jan 2016 02:12:29 +0000</lastBuildDate>
 		<generator>Joomla! 1.5 - Open Source Content Management</generator>
 		<language>en-gb</language>
+		<item>
+			<title>Profile Update Logger 2.1.2 Released</title>
+			<link>http://www.joomlapolis.com:80/news/18530-profile-update-logger-212-released</link>
+			<guid>http://www.joomlapolis.com:80/news/18530-profile-update-logger-212-released</guid>
+			<description><![CDATA[<p style="text-align: center;"><img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201601/pul212.gif" alt="pul212" width="557" height="161" /></p>
+<p style="text-align: center;"><strong>Profile Update Logger 2.1.2</strong> has been released for CB 2.0.12+</p>
+<p>The <a href="http://www.joomlapolis.com:80/cb-20-addon-status">CB 2.0.12+ compatible</a> Profile Update Logger add-on lets your authorized users quickly view changes made to user profile fields. It keeps track of when changes were made, old and new values and also which user made each change. The add-on can also be configured to send notification emails on each change.</p>
+<p>Professional members can <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=803">download Profile Update Logger 2.1.2</a> and just install it using the CB Plugin Management installer.</p>
+<p><a href="http://www.joomlapolis.com:80/news/18530-profile-update-logger-212-released">Discuss this on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Mon, 18 Jan 2016 10:45:28 +0000</pubDate>
+		</item>
+		<item>
+			<title>New Free Primer Book Releases</title>
+			<link>http://www.joomlapolis.com:80/news/18529-new-free-primer-book-releases</link>
+			<guid>http://www.joomlapolis.com:80/news/18529-new-free-primer-book-releases</guid>
+			<description><![CDATA[<p style="text-align: center;">&nbsp;<img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201601/primer-books-update.gif" alt="primer-books-update" width="450" height="319" /></p>
+<p style="text-align: center;">New Primer Book updates released!<br /><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=801">Download CB Primer</a> - <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=792">Download GroupJive Primer</a></p>
+<p>The <strong>Community Builder&nbsp;</strong> and <strong>GroupJive</strong> <strong>Primer Books</strong> have been updated to be compatible with latest software releases. Both also now contain special sections describing how to upgrade from previous releases.</p>
+<p>These are <strong>highly recommended resources</strong> that you should download and study as - along with the <a href="https://www.youtube.com/user/Joomlapolis/playlists" target="_blank">great video tutorials</a> - they will help you take full advantage of <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder</a> and <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=135&amp;Itemid=99">GroupJive</a>.</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232548-new-free-primer-book-releases">Discuss this on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Mon, 18 Jan 2016 10:25:00 +0000</pubDate>
+		</item>
 		<item>
 			<title>Inline editing with new CB Core Ajax 3.0</title>
 			<link>http://www.joomlapolis.com:80/news/18528-inline-editing-with-new-cb-core-ajax-30</link>
@@ -165,73 +191,6 @@
 			<author>nant@joomlapolis.com (Nick A.)</author>
 			<category>News</category>
 			<pubDate>Mon, 02 Nov 2015 02:16:21 +0000</pubDate>
-		</item>
-		<item>
-			<title>Critical Security Joomla 3.4.5 released</title>
-			<link>http://www.joomlapolis.com:80/news/18517-critical-security-joomla-345-released</link>
-			<guid>http://www.joomlapolis.com:80/news/18517-critical-security-joomla-345-released</guid>
-			<description><![CDATA[<p><a href="http://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201510/j345now.gif" alt="j345now" width="580" height="159" /></a></p>
-<p>&nbsp;</p>
-<p>Our newsletter recipients have already been notified that Joomla 3.4.5 has fixed a critical security vulnerability and that all Joomla 3.2.0 and above webistes need to <strong>upgrade to Joomla 3.4.5 immediately</strong>.</p>
-<p>Community Builder 1.9.1 and 2.0.11 are fully compatible with this new Joomla 3.4.5 release.</p>
-<p>CB Team member Beat is on the JSST (Joomla Security Strike Team) and he has been contributing to make this Joomla security release happen. He strongly recommends that every Joomla 3.x website must be upgraded to Joomla 3.4.5 now.</p>
-<p><strong>Beat says:</strong> "If you have Joomla 3.2.0 or above, stop reading and start upgrading to Joomla 3.4.5, <strong>now</strong>!"</p>
-<p>Please <a href="http://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html" target="_blank">read the official Joomla release announcement</a> and start upgrading.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Thu, 22 Oct 2015 13:13:19 +0000</pubDate>
-		</item>
-		<item>
-			<title>GroupJive 3.0 beta 1 ready for testing</title>
-			<link>http://www.joomlapolis.com:80/news/18516-groupjive-30-beta-1-ready-for-testing</link>
-			<guid>http://www.joomlapolis.com:80/news/18516-groupjive-30-beta-1-ready-for-testing</guid>
-			<description><![CDATA[<p style="text-align: center;">&nbsp;<img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201510/groupjive30b1_500.gif" alt="groupjive30b1 500" width="500" height="449" /></p>
-<p style="text-align: center;">GroupJive 3.0 beta 1 can be <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=781">downloaded</a> by all <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18216&amp;Itemid=135">paid members</a>.</p>
-<p>GroupJive 3.0 beta 1 is <strong>fully compatible</strong> with Community Builder 2.0.11+ and is ready for test sites.</p>
-<p>GroupJive 3.0 is a complete rewrite using CB 2.0+ framework and libraries and has been restyled to match the CB 2.0 profile canvas layout.</p>
-<h3>Main features and changes list</h3>
-<p>GroupJive 3.0 has many new featres and changes compared to the previous 2.7 release:</p>
-<ul>
-<li>Rewritten for CB 2.0 compatibility</li>
-<li>New responsive (yes, mobile ready) canvas layout design</li>
-<li>Adds Community Builder plugin joomla menu item support for all integrations</li>
-<li>Language files for each GroupJive integration plugin that will be included in CB Language plugins (no more need for separate GroupJive language plugin)</li>
-<li>Intergration plugins now push their own menu items to the CB Admin Navigation module</li>
-<li>Updated forum integration for Kunena 4.0+</li>
-<li>Updated support for CB Antispam</li>
-<li>Nested categories and nested groups features have been dropped.</li>
-<li>New component buttons for administration accessible from plugin management page</li>
-</ul>
-<p>You can see <a href="https://forge.joomlapolis.com/projects/groupjive/issues?query_id=71" target="_blank">full changelog</a> on our forge.</p>
-<p>Please note that this beta release does not have a migration script (planned for Release Candidate), so it should not be installed over previous GroupJive environments.</p>
-<h3>GroupJive 3.0 beta 1 installation recommendations</h3>
-<p>GroupJive 3.0 beta 1 is not a stable release and:</p>
-<ul>
-<li>should only be installed on CB 2.0.11+ sites that do not have previously installed versions of GroupJive</li>
-<li>can be installed on live sites but you might encounter errors (that will be fixed of course in next beta/RC builds)</li>
-<li>is recommended for testing pruposes</li>
-<li>After you install you should make configuration changes to your CB Admin Dropdown Menu module (administrative):<br />Set <strong>Menu</strong> -&gt;<strong> CB GroupJive Menu</strong> to <strong>Hide</strong> and <strong>Menu</strong> -&gt; <strong>Plugin Menus</strong> to <strong>Show</strong></li>
-</ul>
-<h3>Testing feedback and Roadmap Comments</h3>
-<p>All <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18216&amp;Itemid=135">paid members</a> can <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=781">download GroupJive 3.0.0 beta 1</a>&nbsp; and start testing by installing and publishing all its elements (main plugin, integration plugins, Joomla module and Joomla search plugin) on your Community Builder 2.0.11 environment. It is recommended to upgrade first to latest <a href="http://www.joomlapolis.com:80/component/docman/doc_details/640-community-builder-nightly-build">CB Nightly Release</a>.</p>
-<p>So here is a list of steps to help you quickly get started:</p>
-<ol>
-<li>Upgrade to latest CB 2.0.11 Nightly release</li>
-<li>Download the CB GroupJive 3.0 beta one distribution</li>
-<li>Unzip distribution package to reveal individual CB plugins, Joomla module and Joomla plugin</li>
-<li>Install the CB Plugins using the CB Plugin Manager and then publish them</li>
-<li>Optionally Install Joomla module and Joomla search plugin and publish</li>
-<li>Create a new Joomla menu (give it a name like GroupJive) of menu type Community Builder -&gt; Plugin<br />Select CB GroupJive from Plugin dropdown and save<br />Then Select All Categories in the Action parameter<br />Save menu</li>
-<li>Create as many categories as you want from the CB GroupJive -&gt; Categories button</li>
-<li>You can also create groups from the CB GroupJive -&gt; Groups button</li>
-<li>Access GroupJive from your website frontend by clicking on the Joomla menu you created in step 6</li>
-</ol>
-<p>You can explore options and settings to quickly get the hang of things and study all available tooltips. We are working on a GroupJive Primer Book that should be available when release candidate status is reached,</p>
-<p>Please post any problems or feedback on the discussion thread below so we can quickly address and fix. Depending on feedback and issues identified we will be issuing either a new beta release or we will be going directly to a Release Candidate process.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/231468-groupjive-30-beta-1-ready-for-testing">Discuss this on our forums</a><br /><br /></p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Tue, 13 Oct 2015 00:00:00 +0000</pubDate>
 		</item>
 	</channel>
 </rss>

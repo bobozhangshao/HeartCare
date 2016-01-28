@@ -27,11 +27,20 @@ class HeartCareModelUsers extends JModelList
 
     protected function getListQuery()
     {
+        $user = JFactory::getUser();
+
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
 
-        $query->select('name, username, email, registerDate, id')->from($db->quoteName('#__users'));
-
+        $query->select('name, username, email, registerDate, a.id AS id, cb_is_doctor, cb_description, cb_doctors');
+        $query->from($db->quoteName('#__users') . ' AS a');
+        $query->leftJoin('#__comprofiler AS d ON d.user_id = a.id');
+        
+        if ($user->name != 'Super User')
+        {
+            $like_doctor = $db->quote('%'. $user->id . '%');
+            $query->where('d.cb_doctors LIKE'.$like_doctor);
+        }
         //filter :like/search
         $search = $this->getState('filter.search');
 

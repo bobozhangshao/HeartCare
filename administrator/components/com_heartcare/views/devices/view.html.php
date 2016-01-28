@@ -15,7 +15,7 @@ class HeartCareViewDevices extends JViewLegacy
     {
         //获取application
         $app = JFactory::getApplication();
-        $context = "heartcare.list.admin.devices";
+        $context = "heartcare.list.admin.device";
 
         //从model获得数据
         $this->items            = $this->get('Items');
@@ -71,6 +71,18 @@ class HeartCareViewDevices extends JViewLegacy
             JToolbarHelper::divider();
             JToolbarHelper::preferences('com_heartcare');
         }
+    }
+
+    protected function getSortFields()
+    {
+        return array(
+            'device_id' => JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_ID'),
+            'device_type' => JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_TYPE'),
+            'register_time' => JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME'),
+            'name' => JText::_('COM_USERS_HEADING_NAME'),
+            'username' => JText::_('JGLOBAL_USERNAME'),
+            'user_id' => JText::_('COM_HEARTCARE_USER_ID')
+        );
     }
 
     protected function setDocument()

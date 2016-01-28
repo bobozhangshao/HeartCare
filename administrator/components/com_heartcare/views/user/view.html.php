@@ -16,6 +16,7 @@ class HeartCareViewUser extends JViewLegacy
     //protected $canDo;
     protected $measureData;
     protected $devices;
+    protected $doctors;
     //display user视图
     public function display($tpl = null)
     {
@@ -25,6 +26,7 @@ class HeartCareViewUser extends JViewLegacy
         $this->measureData = $this->get('MeasureData');
         $this->state = $this->get('State');
         $this->devices = $this->get('Devices');
+        $this->doctors = $this->get('Doctors');
 
         //check errors
         if(count($errors = $this->get('Errors')))

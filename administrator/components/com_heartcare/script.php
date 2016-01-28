@@ -14,15 +14,18 @@ class Com_HeartcareInstallerScript
 	function install($parent)
 	{
 		$path = JPATH_SITE . '/images/healthcare';
-
 		if (!JFolder::exists($path)) {
 			JFolder::create($path);
 		}
 
 		$path1 = JPATH_SITE . '/images/healthcare/devices';
-
 		if (!JFolder::exists($path1)) {
 			JFolder::create($path1);
+		}
+
+		$path2 = JPATH_SITE . '/images/healthcare/news';
+		if (!JFolder::exists($path2)) {
+			JFolder::create($path2);
 		}
 
 	}

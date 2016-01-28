@@ -19,6 +19,7 @@ jQuery(document).ready(function() {
            jQuery("#devices").hide();
        }
        jQuery("legend").css({"background":"aliceblue"});
+       jQuery(".doctors").css({"border-style":"solid"});
 });
 ');
 ?>
@@ -43,7 +44,6 @@ jQuery(document).ready(function() {
                 </div>
             </div>
 
-            <!--            TODO 用户测量数据管理 -->
             <div id="table">
                 <legend><?php echo JText::_('COM_HEARTCARE_USERDATA_MANAGE'); ?></legend>
                 <div class="row-fluid">
@@ -143,6 +143,28 @@ jQuery(document).ready(function() {
                 </tbody>
             </table>
         </div>
+        <?php echo JHtml::_('bootstrap.endTab'); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'doctors', JText::_('COM_HEARTCARE_USER_DOCTORS', true)); ?>
+        <div id="doctors">
+            <legend><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_USER_DOCTORS_SHOW'); ?></legend>
+            <?php if(!empty($this->doctors)):  ?>
+                <?php foreach($this->doctors as $i => $row ):
+                    $link = JRoute::_('index.php?option=com_comprofile');
+                    ?>
+                    <div class="doctors alert-info">
+                        <input type="button" value="收起简介" class="action-button" onclick="document.getElementById('<?php echo "pro_".$row[0]->id;?>').style.display='none'"/>
+                        <input type="button" value="显示简介" class="action-button" onclick="document.getElementById('<?php echo "pro_".$row[0]->id;?>').style.display=''"/>
+                        <label id="<?php echo "jlabel1_".$row[0]->id;?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;<?php echo $row[0]->name; ?></label>
+                        <label id="<?php echo "jlabel2_".$row[0]->id;?>">username:&nbsp;<?php echo $row[0]->username; ?></label>
+                        <div id="<?php echo "pro_".$row[0]->id;?>">
+                            <?php echo $row[0]->cb_description; ?>
+                        </div>
+                    </div>
+
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
         <?php echo JHtml::_('bootstrap.endTab'); ?>
         <?php echo JHtml::_('bootstrap.endTabSet'); ?>
     </div>

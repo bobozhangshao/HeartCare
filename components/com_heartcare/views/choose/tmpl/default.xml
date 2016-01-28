@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 这是一个添加menu项的文件 -->
+<metadata>
+    <layout title="COM_HEARTCARE_HEARTCARE_FRONTEND_CHOOSE_DOCTOR_TITLE">
+        <message>COM_HEARTCARE_HEARTCARE_FRONTEND_CHOOSE_DOCTOR_DESC</message>
+    </layout>
+</metadata>
