@@ -15,6 +15,9 @@ class JConfig {
 	public $host = '127.0.0.1';
 	public $user = 'root';
 	public $password = '12345';
+	// public $host = '101.200.195.196';
+	// public $user = 'root';
+	// public $password = '4d177ccfc0';
 	public $db = 'HeartCare';
 	public $dbprefix = 'ie_';
 	public $live_site = '';
