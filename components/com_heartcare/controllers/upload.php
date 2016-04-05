@@ -8,7 +8,6 @@
 
 
 require_once JPATH_BASE.'/components/com_users/models/registration.php';
-//require_once JPATH_BASE.'/components/com_users/models/forms/registration.xml';
 
 //上传测量数据的接口
 date_default_timezone_set('prc');//设置时区为Peoples Republic of China
@@ -77,42 +76,6 @@ class HeartCareControllerUpload extends JControllerForm
             $requestData['email1']    = $data['user']['email'];
             $requestData['email2']    = $data['user']['email'];
 
-            /*$form = $model_regist->getForm();
-
-            if (!$form)
-            {
-                return false;
-            }
-
-            $new_user = $model_regist->validate($form, $requestData);
-
-            // Check for validation errors.
-            if ($new_user === false)
-            {
-                // Get the validation messages.
-                $errors = $model_regist->getErrors();
-
-                // Push up to three validation messages out to the user.
-                for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++)
-                {
-                    if ($errors[$i] instanceof Exception)
-                    {
-                        $app->enqueueMessage($errors[$i]->getMessage(), 'warning');
-                    }
-                    else
-                    {
-                        $app->enqueueMessage($errors[$i], 'warning');
-                    }
-                }
-
-                // Save the data in the session.
-                $app->setUserState('com_users.registration.data', $requestData);
-
-                return false;
-            }*/
-
-            // Attempt to save the data.
-            //$return = $model_regist->register($new_user);
             $return = $model_regist->register($requestData);
 
             if($return === false)

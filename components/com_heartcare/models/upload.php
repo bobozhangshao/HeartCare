@@ -177,7 +177,7 @@ class HeartCareModelUpload extends JModelList
     /**
      * 启用,激活用户
      * */
-    public function start_user($data)
+    public function start_user(array $data)
     {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
