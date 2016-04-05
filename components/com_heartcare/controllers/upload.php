@@ -6,6 +6,7 @@
  * Time: 09:53
  */
 
+
 require_once JPATH_BASE.'/components/com_users/models/registration.php';
 //require_once JPATH_BASE.'/components/com_users/models/forms/registration.xml';
 
