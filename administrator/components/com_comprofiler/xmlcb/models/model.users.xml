@@ -19,6 +19,10 @@
 			<option value="0" title="Mark Pending" iconclass="clock-o" textclass="warning" toggleable="false">Pending</option>
 			<option value="1" title="Approve User">Approved</option>
 		</type>
+		<type name="user_image_approved" base="checkmark" valuetype="string">
+			<option value="0" title="Mark Pending" iconclass="clock-o" textclass="warning" toggleable="false">Pending</option>
+			<option value="1" title="Approve Image">Approved</option>
+		</type>
 		<type name="user_operator" base="list" valuetype="string">
 			<option value="=">Equal to</option>
 			<option value="&lt;&gt;||ISNULL">Not equal to</option>

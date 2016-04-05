@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 09.06.13 01:12 $
 * @package CBLib
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -19,7 +19,7 @@ use CBLib\Language\TranslationsLogger;
 use CBLib\Output\Output;
 use CBLib\Date\Date;
 
-define( 'CBLIB', '2.0.12' );	// IMPORTANT: when changing version here also change in the 8 XML installation files and in libraries/CBLib/CB/Legacy/cbInstallerPlugin.php and build.xml
+define( 'CBLIB', '2.0.14' );	// IMPORTANT: when changing version here also change in the 8 XML installation files and in libraries/CBLib/CB/Legacy/cbInstallerPlugin.php and build.xml
 
 include_once __DIR__ . '/AutoLoader.php';
 

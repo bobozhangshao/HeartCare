@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/21/14 12:41 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -248,7 +248,7 @@ class PclZip
 	//   Note that no real action is taken, if the archive does not exist it is not
 	//   created. Use create() for that.
 	// --------------------------------------------------------------------------------
-	function PclZip($p_zipname)
+	function __construct($p_zipname)
 	{
 
 		// ----- Tests the zlib

@@ -3,13 +3,14 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 11/26/13 1:02 AM $
 * @package CBLib\AhaWow\Controller\Elements
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
 namespace CBLib\AhaWow\Controller\Elements;
 
 use CBLib\AhaWow\Access;
+use CBLib\AhaWow\Controller\ActionController;
 use CBLib\AhaWow\Controller\DrawController;
 use CBLib\AhaWow\Model\XmlQuery;
 use CBLib\AhaWow\Model\XmlTypeCleanQuote;
@@ -1394,6 +1395,8 @@ EOT
 						return;
 					}
 
+					// Fix multi-selects and multi-checkboxes arrays to |*|-delimited strings:
+					$postData						=	ActionController::recursiveMultiSelectFix( $postData );
 					$dataModelClass					=	$this->class;
 
 					foreach ( $cid as $id ) {

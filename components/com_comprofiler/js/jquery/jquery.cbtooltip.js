@@ -106,12 +106,17 @@
 						ready: ( cbtooltip.settings.openReady != null ? cbtooltip.settings.openReady : tooltipDialog ),
 						target: ( cbtooltip.settings.openTarget ? ( $( cbtooltip.settings.openTarget ).length ? $( cbtooltip.settings.openTarget ) : false ) : false ),
 						event: ( cbtooltip.settings.openEvent ? cbtooltip.settings.openEvent : ( tooltipModal || tooltipDialog ? 'click' : 'mouseenter click' ) ),
-						solo: ( cbtooltip.settings.openSolo != null ? ( $( cbtooltip.settings.openSolo ).length ? $( cbtooltip.settings.openSolo ) : ( cbtooltip.settings.openSolo ? true : false ) ) : ( tooltipModal || tooltipDialog ? $( document ) : false ) ),
-						delay: ( cbtooltip.settings.openDelay != null ? cbtooltip.settings.openDelay : 0 )
+						solo: ( cbtooltip.settings.openSolo != null ? ( $( cbtooltip.settings.openSolo ).length ? $( cbtooltip.settings.openSolo ) : cbtooltip.settings.openSolo ) : false ),
+						delay: ( cbtooltip.settings.openDelay != null ? cbtooltip.settings.openDelay : 0 ),
+						modal: {
+							on: tooltipModal,
+							escape: false,
+							blur: false
+						}
 					},
 					hide: {
 						target: ( cbtooltip.settings.closeTarget ? ( $( cbtooltip.settings.closeTarget ).length ? $( cbtooltip.settings.closeTarget ) : false ) : false ),
-						event: ( cbtooltip.settings.closeEvent ? cbtooltip.settings.closeEvent : ( tooltipModal ? 'unfocus' : ( tooltipDialog ? 'none' : 'mouseleave unfocus' ) ) ),
+						event: ( cbtooltip.settings.closeEvent ? cbtooltip.settings.closeEvent : ( tooltipModal || tooltipDialog ? 'none' : 'mouseleave unfocus' ) ),
 						fixed: ( cbtooltip.settings.closeFixed != null ? cbtooltip.settings.closeFixed : ( tooltipMenu || tooltipModal || tooltipDialog ) ),
 						delay: ( cbtooltip.settings.closeDelay != null ? cbtooltip.settings.closeDelay : ( tooltipMenu ? 200 : 0 ) ),
 						distance: ( cbtooltip.settings.closeDistance != null ? cbtooltip.settings.closeDistance : false ),
@@ -154,6 +159,16 @@
 								}
 							}
 
+							if ( api.elements.overlay ) {
+								// Fix for qtip2 buggy variable "current" usage by unbinding its events:
+								$( document ).off( 'keydown.qtip-modal' );
+								api.elements.overlay.off( 'click.qtip-modal' );
+
+								api.elements.overlay.on( 'click', function ( e ) {
+									api.toggle( false );
+								});
+							}
+
 							// Bind to custom close handler so we can have custom close buttons in the content:
 							$( api.elements.content ).on( 'click', '.cbTooltipClose', function( e ) {
 								e.preventDefault();
@@ -194,21 +209,11 @@
 							cbtooltip.element.triggerHandler( 'cbtooltip.visible', [cbtooltip, event, api] );
 
 							if ( tooltipModal ) {
-								api.elements.overlay = $( '<div class="qtip-overlay"></div>' );
-
-								$( api.elements.overlay ).insertAfter( api.elements.tooltip );
-								$( api.elements.overlay ).css( 'z-index', ( $.fn.qtip.zindex + 150 ) );
-								$( api.elements.tooltip ).css( 'z-index', ( $.fn.qtip.zindex + 200 ) );
-
 								calculateContentMaxHeight.call( $this, cbtooltip, api );
 							}
 						},
 						hidden: function( event, api ) {
 							cbtooltip.element.triggerHandler( 'cbtooltip.hidden', [cbtooltip, event, api] );
-
-							if ( tooltipModal ) {
-								$( api.elements.overlay ).remove();
-							}
 
 							if ( tooltipDialog ) {
 								cbtooltip.element.cbtooltip( 'destroy' );
@@ -236,6 +241,11 @@
 							cbtooltip.element.triggerHandler( 'cbtooltip.blur', [cbtooltip, event, api] );
 						}
 					}
+				});
+
+				// Destroy the cbtooltip element:
+				cbtooltip.element.on( 'remove destroy.cbtooltip', function() {
+					cbtooltip.element.cbtooltip( 'destroy' );
 				});
 
 				// Rebind the cbtooltip element to pick up any data attribute modifications:
@@ -268,6 +278,7 @@
 
 				// If the cbtooltip is cloned we need to rebind it back:
 				cbtooltip.element.on( 'cloned.cbtooltip', function() {
+					$( this ).off( 'destroy.cbtooltip' );
 					$( this ).off( 'rebind.cbtooltip' );
 					$( this ).off( 'cloned.cbtooltip' );
 					$( this ).off( 'modified.cbtooltip' );
@@ -423,6 +434,7 @@
 			}
 
 			cbtooltip.tooltip.qtip( 'api' ).destroy( true );
+			cbtooltip.element.off( 'destroy.cbtooltip' );
 			cbtooltip.element.off( 'rebind.cbtooltip' );
 			cbtooltip.element.off( 'cloned.cbtooltip' );
 			cbtooltip.element.off( 'modified.cbtooltip' );

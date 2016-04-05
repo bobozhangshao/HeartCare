@@ -2,13 +2,342 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1276bc60-e13d-4407-a47c-162f752fcd29" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/controllers/upload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/models/upload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/views/upload/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/default.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/com_heartcare/views/upload/view.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/FontAwesome.otf" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_heartcare/models/devices.php" afterPath="$PROJECT_DIR$/administrator/components/com_heartcare/models/devices.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/admin.comprofiler.controller.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/admin.comprofiler.controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.class.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.toolbar.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.toolbar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.xml" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/comprofiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.default.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.plugin.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.plugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.user.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.users.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/install.comprofiler.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/install.comprofiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/language/english.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/language/english.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.acl.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.acl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.adminfilesystem.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.adminfilesystem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.authentication.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.authentication.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.database.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.dbchecker.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.dbchecker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.installer.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.installer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.lists.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.lists.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.pagination.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.params.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.params.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.session.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.tables.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.tables.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.validator.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/cb.validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/sql/cb.sql.upgrader.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/sql/cb.sql.upgrader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/xml/cb.xml.simplexml.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/cb/xml/cb.xml.simplexml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pcl/pcl.pclziplib.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pcl/pcl.pclziplib.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pcl/pcl.tar.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pcl/pcl.tar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pear/pear.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pear/pear.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pear/pear5.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/pear/pear5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpinputfilter/phpinputfilter.inputfilter.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpinputfilter/phpinputfilter.inputfilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.phpmailer.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.phpmailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.pop3.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.pop3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.smtp.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/library/phpmailer/phpmailer.smtp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/plugin.class.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/plugin.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/plugin.foundation.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/plugin.foundation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/toolbar.comprofiler.html.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/toolbar.comprofiler.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/toolbar.comprofiler.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/toolbar.comprofiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/view/view.user.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/view/view.user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/view/view.users.php" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/view/view.users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/models/model.users.xml" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/models/model.users.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.editconfig.xml" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.editconfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.showusers.xml" afterPath="$PROJECT_DIR$/administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.showusers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/components/com_heartcare/controllers/users.php" afterPath="$PROJECT_DIR$/administrator/components/com_heartcare/controllers/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_heartcare.sys.ini" afterPath="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_heartcare.sys.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/manifests/libraries/CBLib.xml" afterPath="$PROJECT_DIR$/administrator/manifests/libraries/CBLib.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/manifests/packages/communitybuilder/pkg_install.php" afterPath="$PROJECT_DIR$/administrator/manifests/packages/communitybuilder/pkg_install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/manifests/packages/pkg_communitybuilder.xml" afterPath="$PROJECT_DIR$/administrator/manifests/packages/pkg_communitybuilder.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/helper.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/mod_cbadmin.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/mod_cbadmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/mod_cbadmin.xml" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/mod_cbadmin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/script.mod_cbadmin.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/script.mod_cbadmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/menu.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/news.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/updates.php" afterPath="$PROJECT_DIR$/administrator/modules/mod_cbadmin/tmpl/updates.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-5c23210029a13b4b0c5fd4779d3e9753.php" afterPath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-5c23210029a13b4b0c5fd4779d3e9753.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-6e14066403f259586cb2b23fc5f16bd9.php" afterPath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-6e14066403f259586cb2b23fc5f16bd9.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-70b367c217e80793cbc0c127fbf7b688.php" afterPath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-70b367c217e80793cbc0c127fbf7b688.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-eb0ac63ee8e637ffa684f42b882e7382.php" afterPath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-eb0ac63ee8e637ffa684f42b882e7382.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-f59b99290dfd8096193c5c8381c49ab0.php" afterPath="$PROJECT_DIR$/cache/Gantry/e240637e11adc837606764733864da8a-cache-Gantry-f59b99290dfd8096193c5c8381c49ab0.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/cblatestversion.xml" afterPath="$PROJECT_DIR$/cache/cblatestversion.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/cbnewsfeed.xml" afterPath="$PROJECT_DIR$/cache/cbnewsfeed.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/cbpluginsversions.xml" afterPath="$PROJECT_DIR$/cache/cbpluginsversions.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configuration.php" afterPath="$PROJECT_DIR$/configuration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/comprofiler.html.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/comprofiler.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/comprofiler.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/comprofiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbdatepicker.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbdatepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbdatepicker.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbdatepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbmoreless.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbmoreless.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbmoreless.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbmoreless.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbrepeat.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbrepeat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbrepeat.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbrepeat.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbscroller.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbscroller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbscroller.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbscroller.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbselect.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbselect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbselect.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbselect.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtabs.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtabs.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtabs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtimeago.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtimeago.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtimeago.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtimeago.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtooltip.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtooltip.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbtooltip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbvalidate.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbvalidate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbvalidate.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.cbvalidate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.qtip.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.qtip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.qtip.min.js" afterPath="$PROJECT_DIR$/components/com_comprofiler/js/jquery/jquery.qtip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/admin_language.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/admin_language.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/default_language.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/default_language.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/language.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/language/default_language/language.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/bootstrap.css" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/default.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/default.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/font/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/fontawesome.css" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/fontawesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/jquery/qtip/qtip.css" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/jquery/qtip/qtip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/template.css" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/templates/default/template.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/cbarticles.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/cbarticles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/cbarticles.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/cbarticles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/models/joomla25.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/models/joomla25.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/models/k2.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/models/k2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/templates/default/tab.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbarticles/templates/default/tab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/cbblogs.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/cbblogs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/cbblogs.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/cbblogs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/component.cbblogs.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/component.cbblogs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/internal.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/internal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/joomla25.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/joomla25.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/k2.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/models/k2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/blog_edit.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/blog_edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/blog_show.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/blog_show.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/tab.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/templates/default/tab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/xml/controllers/frontcontroller.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbblogs/xml/controllers/frontcontroller.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbconnections/cb.connections.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/cbforums.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/cbforums.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/cbforums.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/cbforums.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/models/kunena20.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/models/kunena20.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_favs.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_favs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_posts.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_subs.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_subs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_subs_cats.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbforums/templates/default/tab_subs_cats.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbmenu/cb.menu.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbmenu/cb.menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbmenu/cb.menu.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_cbmenu/cb.menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.xml" afterPath="$PROJECT_DIR$/components/com_comprofiler/plugin/user/plug_pms_mypmspro/pms.mypmspro.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/router.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/com_comprofiler/views/pluginclass/fields/cbplugins.php" afterPath="$PROJECT_DIR$/components/com_comprofiler/views/pluginclass/fields/cbplugins.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Application/CBApplication.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Application/CBApplication.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Application/CBConfig.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Application/CBConfig.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/CBDatabaseChecker.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/CBDatabaseChecker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/ComprofilerTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/ComprofilerTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/FieldTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/FieldTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/FieldValueTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/FieldValueTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/ListTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/ListTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/MemberTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/MemberTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/PluginTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/PluginTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/TabTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/TabTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserReportTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserReportTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserViewTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Database/Table/UserViewTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/Archive_Tar.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/Archive_Tar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBACL.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBACL.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBAuthentication.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBAuthentication.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBCookie.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBCookie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBInputFilter.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBInputFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBInstallPlugin.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBInstallPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSQLupgrader.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSQLupgrader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSession.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSession.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSessionStorage.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSessionStorage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSimpleXMLElement.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSimpleXMLElement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSnoopy.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBSnoopy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBTxt.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBTxt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdatabase.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdatabase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdbChecker.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdbChecker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdocumentHtml.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBdocumentHtml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBframework.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBframework.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBtoolmenuBar.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBtoolmenuBar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBuser.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/CBuser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyComprofilerFunctions.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyComprofilerFunctions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyFoundationFunctions.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyFoundationFunctions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyLoader.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/LegacyLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/PEAR.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/PEAR.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/PclZip.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/PclZip.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/Snoopy.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/Snoopy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/TOOLBAR_usersextras.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/TOOLBAR_usersextras.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbAdminFileSystem.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbAdminFileSystem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbCalendars.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbCalendars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbConnection.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbDrawController.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbDrawController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbEditRowView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbEditRowView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbFieldHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbFieldHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbFieldParamsHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbFieldParamsHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbInstaller.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbInstaller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbInstallerPlugin.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbInstallerPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbListView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbListView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbMenuBarBase.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbMenuBarBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbNotification.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbNotification.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbObject.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbObject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPMS.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPMS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPMSHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPMSHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPageNav.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPageNav.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbParamsBase.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbParamsBase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbParamsEditorController.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbParamsEditorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPluginHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbPluginHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbProfileView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbProfileView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbRegistrationView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbRegistrationView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbSqlQueryPart.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbSqlQueryPart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabParamsHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabParamsHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabs.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTabs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTemplateHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbTemplateHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbUsersList.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbUsersList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbValidator.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/cbValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/comprofilerDBTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/comprofilerDBTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/imgToolBox.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/imgToolBox.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofiler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerFieldValues.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerFieldValues.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerFields.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerFields.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerHTML.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerHTML.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerLegacyAdapterTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerLegacyAdapterTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerLists.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerLists.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerMember.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerMember.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerPlugin.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerTabs.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerTabs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerUser.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerUserReport.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CB/Legacy/moscomprofilerUserReport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib.xml" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Access.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Access.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/AutoLoaderXml.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/AutoLoaderXml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/ActionController.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/ActionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Controller.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/DrawController.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/DrawController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Elements/Menu.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Elements/Menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Elements/TableBrowser.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/Elements/TableBrowser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/RegistryEditController.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Controller/RegistryEditController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/Context.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/Context.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/XmlQuery.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/XmlQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/XmlTypeCleanQuote.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/Model/XmlTypeCleanQuote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/ActionView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/ActionView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/ActionViewAdmin.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/ActionViewAdmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/RegistryEditView.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/AhaWow/View/RegistryEditView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Application.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/ApplicationContainerInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/ApplicationContainerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Cli.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Cli.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Config.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Web.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Application/Web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Cms.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Cms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsPermissionsInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsPermissionsInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsUserInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/CmsUserInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/CmsPermissionsUpgrader.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/CmsPermissionsUpgrader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla2.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsEventHandler.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsEventHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsPermissions.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsPermissions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsRouter.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsRouter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsUser.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Cms/Joomla/Joomla3/CmsUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/Controller.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/ControllerInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/ControllerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/Dispatcher.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/Dispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/RouterInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Controller/RouterInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Core/AutoLoader.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Core/AutoLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Core/CBLib.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Core/CBLib.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Database.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/DatabaseDriverInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/DatabaseDriverInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/DatabaseUpgrade.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/DatabaseUpgrade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Driver/CmsDatabaseDriver.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Driver/CmsDatabaseDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Driver/MysqlDatabaseDriver.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Driver/MysqlDatabaseDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/CheckedOrderedTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/CheckedOrderedTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/OrderedTable.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/OrderedTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/Table.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/Table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/TableInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Database/Table/TableInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Date/Date.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Date/Date.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/Container.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/Container.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/ContainerInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/ContainerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/Exception/BindingResolutionException.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/Exception/BindingResolutionException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/ServiceProviderInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/DependencyInjection/ServiceProviderInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/AuthoriseInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/AuthoriseInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/EntityInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/EntityInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/User/User.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Entity/User/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Image/Image.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Image/Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Image/Test.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Image/Test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/Get.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/Get.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/InjectionsFilter.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/InjectionsFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/Input.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/InputInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Input/InputInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/CBTxt.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/CBTxt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/Pluralization.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/Pluralization.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/TranslationsLogger.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/TranslationsLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/TranslationsLoggerInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Language/TranslationsLoggerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Math/Interval.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Math/Interval.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObservableInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObservableInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverMapper.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverMapper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverUpdater.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverUpdater.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverUpdaterInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Observer/ObserverUpdaterInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Output/Output.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Output/Output.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Output/OutputInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Output/OutputInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/GetterInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/GetterInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/HierarchyInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/HierarchyInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/NamespaceInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/NamespaceInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParametersIterator.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParametersIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParametersStore.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParametersStore.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParamsInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/ParamsInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/Registry.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/Registry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/RegistryInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/RegistryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/SetterInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Registry/SetterInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/Session.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/Session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionState.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionState.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionStateInterface.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Session/SessionStateInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/CBLib/CBLib/Xml/SimpleXMLElement.php" afterPath="$PROJECT_DIR$/libraries/CBLib/CBLib/Xml/SimpleXMLElement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/helper.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/mod_cblogin.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/mod_cblogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/mod_cblogin.xml" afterPath="$PROJECT_DIR$/modules/mod_cblogin/mod_cblogin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/script.mod_cblogin.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/script.mod_cblogin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap-horizontal.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap-horizontal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap-horizontal_logout.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap-horizontal_logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap_logout.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/bootstrap_logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default-horizontal.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default-horizontal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default-horizontal_logout.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default-horizontal_logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default_logout.php" afterPath="$PROJECT_DIR$/modules/mod_cblogin/tmpl/default_logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/helper.php" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/mod_comprofilermoderator.php" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/mod_comprofilermoderator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/mod_comprofilermoderator.xml" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/mod_comprofilermoderator.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/script.mod_comprofilermoderator.php" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/script.mod_comprofilermoderator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/tmpl/default-horizontal.php" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/tmpl/default-horizontal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofilermoderator/tmpl/default.php" afterPath="$PROJECT_DIR$/modules/mod_comprofilermoderator/tmpl/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/fields/cbfields.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/fields/cbfields.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/helper.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/mod_comprofileronline.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/mod_comprofileronline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/mod_comprofileronline.xml" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/mod_comprofileronline.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/script.mod_comprofileronline.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/script.mod_comprofileronline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/_census.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/_census.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/_statistics.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/_statistics.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/avatar-horizontal.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/avatar-horizontal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/avatar.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/avatar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/default-horizontal.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/default-horizontal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/default.php" afterPath="$PROJECT_DIR$/modules/mod_comprofileronline/tmpl/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/system/communitybuilder/communitybuilder.php" afterPath="$PROJECT_DIR$/plugins/system/communitybuilder/communitybuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/system/communitybuilder/communitybuilder.xml" afterPath="$PROJECT_DIR$/plugins/system/communitybuilder/communitybuilder.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/system/communitybuilder/script.communitybuilder.php" afterPath="$PROJECT_DIR$/plugins/system/communitybuilder/script.communitybuilder.php" />
     </list>
     <ignored path="HeartCare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,47 +359,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/com_heartcare/controllers/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-              <folding />
+            <state vertical-scroll-proportion="1.7032259">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configuration.php">
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/com_heartcare/models/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.7931035">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="device.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/device.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.5172415">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="devices.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/devices.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38366717">
-              <caret line="27" column="167" selection-start-line="27" selection-start-column="167" selection-end-line="27" selection-end-column="167" />
-              <folding />
+            <state vertical-scroll-proportion="-3.5517242">
+              <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
+              <folding>
+                <element signature="e#192#250#0#PHP" expanded="true" />
+                <element signature="e#1249#1400#0#PHP" expanded="true" />
+                <element signature="e#2242#2344#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,6 +403,21 @@
         <option value="$PROJECT_DIR$/templates/heartcare_gantry4/less/menu.less" />
         <option value="$PROJECT_DIR$/configuration.php" />
         <option value="$PROJECT_DIR$/administrator/components/com_heartcare/models/devices.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/controllers/choose.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/controllers/heartcare.php" />
+        <option value="$PROJECT_DIR$/components/com_users/controllers/profile.php" />
+        <option value="$PROJECT_DIR$/administrator/language/en-GB/en-GB.com_heartcare.sys.ini" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/upload/default.php" />
+        <option value="$PROJECT_DIR$/components/com_users/models/registration.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/upload/index.html" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/index.html" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/upload/view.html.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/choose/tmpl/default_items.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/default.php" />
+        <option value="$PROJECT_DIR$/components/com_users/controllers/registration.php" />
+        <option value="$PROJECT_DIR$/administrator/components/com_heartcare/controllers/users.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/controllers/upload.php" />
+        <option value="$PROJECT_DIR$/components/com_heartcare/models/upload.php" />
       </list>
     </option>
   </component>
@@ -122,8 +459,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -156,110 +491,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="administrator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="administrator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="administrator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com_heartcare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeartCare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="administrator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com_heartcare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Joomla_white" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -276,9 +555,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28109854" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24717286" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -309,163 +588,499 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
+    <entry file="file://$PROJECT_DIR$/components/com_users/models/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/choose/tmpl/default_items.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heartcare_gantry4/less/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heartcare_gantry4/less/menu.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_comprofiler/database/database.cbcore.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.429892">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46841294">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heartcare_gantry4/less/menu.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27118644">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/heartcare_gantry4/less/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/helpers/heartcare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35901386">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/devices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/device.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8135593">
-          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/choose/tmpl/default_items.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7010786">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7931035">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/device.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.5172415">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-7.40678">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/devices.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38366717">
-          <caret line="27" column="167" selection-start-line="27" selection-start-column="167" selection-end-line="27" selection-end-column="167" />
+        <state vertical-scroll-proportion="0.6302003">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/waves.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2773497">
+          <caret line="172" column="19" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37904468">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/upload/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.098613255">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.098613255">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/heartcare/view.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45300463">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/heartcare/tmpl/default_items.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44375962">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/heartcare/tmpl/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07418856">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3477589">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/legacy/request/request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6429675">
+          <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/choose/tmpl/default_items.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46986088">
+          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/controllers/heartcare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29675424">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/models/choose.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5301391">
+          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/controllers/choose.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72797525">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/joomla/input/input.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3477589">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="e#1836#1916#0#PHP" expanded="false" />
+            <element signature="e#1946#2009#0#PHP" expanded="false" />
+            <element signature="e#2040#2105#0#PHP" expanded="false" />
+            <element signature="e#2731#2920#0#PHP" expanded="false" />
+            <element signature="e#3667#3990#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_media/views/images/tmpl/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6537867">
+          <caret line="135" column="42" selection-start-line="135" selection-start-column="42" selection-end-line="135" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_media/views/media/tmpl/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2967542">
+          <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/models/heartcare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24653313">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50693375">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/joomla/database/driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5947612">
+          <caret line="1744" column="39" selection-start-line="1744" selection-start-column="39" selection-end-line="1744" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_users/views/user/tmpl/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="27" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/upload/tmpl/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21174653">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_users/models/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.564142">
+          <caret line="277" column="13" selection-start-line="277" selection-start-column="13" selection-end-line="277" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_users/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_users/controllers/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7418856">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_users/models/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.163833">
+          <caret line="496" column="0" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/models/device.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.024653314">
+          <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_users/controllers/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.642857">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="e#449#570#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/device.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2395673">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17310664">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_heartcare/controllers/devices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.48377126">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_media/controllers/file.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.044822">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/joomla/factory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.230293">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#1540#1993#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/loader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5301391">
+          <caret line="625" column="3" selection-start-line="625" selection-start-column="3" selection-end-line="625" selection-end-column="3" />
+          <folding>
+            <element signature="e#16610#16757#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33225808">
+          <caret line="319" column="36" selection-start-line="319" selection-start-column="32" selection-end-line="319" selection-end-column="36" />
+          <folding>
+            <element signature="e#6#278#0#PHP" expanded="true" />
+            <marker date="1459126550000" expanded="true" signature="5828:6029" placeholder="UPDATE #__co..." />
+            <marker date="1459126550000" expanded="true" signature="19688:19721" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="20258:20297" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="22314:22354" placeholder="UPDATE #__co..." />
+            <marker date="1459126550000" expanded="true" signature="22973:23061" placeholder="SELECT c.id ..#__comprofiler..." />
+            <marker date="1459126550000" expanded="true" signature="24866:24942" placeholder="SELECT field..#__comprofiler_field_values..." />
+            <marker date="1459126550000" expanded="true" signature="26660:26880" placeholder="SELECT v.fie..#__comprofiler_field_values..." />
+            <marker date="1459126550000" expanded="true" signature="28487:28515" placeholder="SELECT * FRO..#__comprofiler..." />
+            <marker date="1459126550000" expanded="true" signature="29171:29258" placeholder="SELECT * FRO..#__comprofiler_fields..." />
+            <marker date="1459126550000" expanded="true" signature="32641:32836" placeholder="SELECT `name..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="34228:34384" placeholder="SELECT `titl..#__comprofiler_tabs..." />
+            <marker date="1459126550000" expanded="true" signature="35768:35886" placeholder="SELECT `titl..#__comprofiler_fields..." />
+            <marker date="1459126550000" expanded="true" signature="37258:37383" placeholder="SELECT `name..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="38754:38891" placeholder="SELECT `titl..#__comprofiler_tabs..." />
+            <marker date="1459126550000" expanded="true" signature="43203:43271" placeholder="SELECT `id`,..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="44524:44612" placeholder="SELECT c.id ..#__comprofiler..." />
+            <marker date="1459126550000" expanded="true" signature="46093:46181" placeholder="SELECT u.id ..#__users..." />
+            <marker date="1459126550000" expanded="true" signature="47475:47517" placeholder="SELECT u.id ..#__users..." />
+            <marker date="1459126550000" expanded="true" signature="48920:48968" placeholder="SELECT c.id ..#__comprofiler..." />
+            <marker date="1459126550000" expanded="true" signature="50137:50205" placeholder="SELECT c.id,..#__comprofiler..." />
+            <marker date="1459126550000" expanded="true" signature="51543:51664" placeholder="SELECT u.id ..#__users..." />
+            <marker date="1459126550000" expanded="true" signature="51689:51794" placeholder="SELECT u.id ..#__users..." />
+            <marker date="1459126550000" expanded="true" signature="53429:53540" placeholder="SELECT a.use..#__user_usergroup_map..." />
+            <marker date="1459126550000" expanded="true" signature="57557:57741" placeholder="INSERT INTO #__user_usergroup_map..." />
+            <marker date="1459126550000" expanded="true" signature="57610:57741" placeholder="SELECT u.id ..#__users..." />
+            <marker date="1459126550000" expanded="true" signature="59878:59946" placeholder="SELECT `id`,..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="62494:62549" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="65305:65482" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="66009:66143" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="66665:66759" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="67283:67381" placeholder="SELECT `id` ..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="67469:67548" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="67832:67904" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="68237:68333" placeholder="SELECT `id` ..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="68421:68498" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="68782:68854" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="69199:69294" placeholder="SELECT `id` ..#__comprofiler_plugin..." />
+            <marker date="1459126550000" expanded="true" signature="69382:69458" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="69742:69814" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="70370:70479" placeholder="SELECT `tabi..#__comprofiler_tabs..." />
+            <marker date="1459126550000" expanded="true" signature="70565:70652" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="70934:71024" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="71355:71462" placeholder="SELECT `tabi..#__comprofiler_tabs..." />
+            <marker date="1459126550000" expanded="true" signature="71548:71633" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="71915:72004" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="72347:72453" placeholder="SELECT `tabi..#__comprofiler_tabs..." />
+            <marker date="1459126550000" expanded="true" signature="72539:72623" placeholder="DELETE FROM ..." />
+            <marker date="1459126550000" expanded="true" signature="72905:72994" placeholder="UPDATE `#__c..." />
+            <marker date="1459126550000" expanded="true" signature="95088:95167" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="95235:95314" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="95628:95647" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="95669:95684" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="95997:96012" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="96292:96326" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33225808">
+          <caret line="79" column="97" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="97" />
+          <folding>
+            <element signature="e#6#278#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_comprofiler/controller/controller.user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33225808">
+          <caret line="30" column="95" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_comprofiler/comprofiler.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33225808">
+          <caret line="151" column="143" selection-start-line="151" selection-start-column="142" selection-end-line="151" selection-end-column="143" />
+          <folding>
+            <element signature="e#6#278#0#PHP" expanded="true" />
+            <marker date="1459126550000" expanded="true" signature="51080:51090" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="51255:51266" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="51438:51449" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="51533:51544" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="51651:51662" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="56895:56930" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="69139:69174" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="79543:79553" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="79730:79741" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="79923:79934" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="80021:80032" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="80141:80152" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="84983:85018" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="85356:85368" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="90500:90511" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="90693:90704" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="90791:90802" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="90911:90922" placeholder="..." />
+            <marker date="1459126550000" expanded="true" signature="91116:91127" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_content/controllers/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33225808">
+          <caret line="122" column="53" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="53" />
+          <folding>
+            <element signature="e#4008#4320#0#PHP" expanded="true" />
+            <element signature="e#6072#6342#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_contact/controllers/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23225807">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="e#895#1063#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrator/components/com_media/controllers/file.json.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14837712">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/cms/component/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29829985">
+          <caret line="343" column="48" selection-start-line="343" selection-start-column="38" selection-end-line="343" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_users/controllers/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12364761">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/views/upload/view.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24729522">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/legacy/controller/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.851613">
+          <caret line="446" column="5" selection-start-line="446" selection-start-column="5" selection-end-line="446" selection-end-column="5" />
+          <folding>
+            <element signature="e#950#1046#0#PHP" expanded="true" />
+            <element signature="e#10644#10957#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_users/models/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22256568">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#6810#7271#0#PHP" expanded="true" />
+            <element signature="e#9008#9183#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/models/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5517242">
+          <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
+          <folding>
+            <element signature="e#192#250#0#PHP" expanded="true" />
+            <element signature="e#1249#1400#0#PHP" expanded="true" />
+            <element signature="e#2242#2344#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/com_heartcare/controllers/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7032259">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/18/14 2:59 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -31,13 +31,21 @@ class cbTabHandler extends cbPluginHandler
 	private $_tabXml	=	null;
 
 	/**
+	 * Constructor (needed for PHP 7 so that we can keep the old PHP4-type constructor until CB 3.0)
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
+	/**
 	 * Constructor named old-fashion for backwards compatibility reason
 	 * until all classes extending cbTabHandler call parent::__construct() instead of $this->cbTabHandler()
 	 * @deprecated 2.0 use parent::__construct() instead.
 	 */
 	public function cbTabHandler( )
 	{
-		parent::__construct();
+		self::__construct();
 	}
 
 	/**

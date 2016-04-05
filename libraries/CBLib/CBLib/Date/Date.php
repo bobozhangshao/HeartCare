@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 08.06.13 17:29 $
 * @package CBLib\Database
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -251,7 +251,7 @@ class Date
 				return ( $abbr ? CBTxt::T( 'UE_MONTHS_SHORT_4', 'Apr' ) : CBTxt::T( 'UE_MONTHS_4', 'April' ) );
 				break;
 			case 5:
-				return ( $abbr ? CBTxt::T( 'UE_MONTHS_SHORT_6', 'Jun' ) : CBTxt::T( 'UE_MONTHS_5', 'May' ) );
+				return ( $abbr ? CBTxt::T( 'UE_MONTHS_SHORT_5', 'May' ) : CBTxt::T( 'UE_MONTHS_5', 'May' ) );
 				break;
 			case 6:
 				return ( $abbr ? CBTxt::T( 'UE_MONTHS_SHORT_6', 'Jun' ) : CBTxt::T( 'UE_MONTHS_6', 'June' ) );

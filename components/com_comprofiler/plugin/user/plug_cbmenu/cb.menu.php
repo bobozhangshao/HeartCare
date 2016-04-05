@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 if ( ! ( defined( '_VALID_CB' ) || defined( '_JEXEC' ) || defined( '_VALID_MOS' ) ) ) { die( 'Direct Access to this location is not allowed.' ); }
@@ -425,7 +425,7 @@ class cbMenuBest extends cbMenu
 				$return			.=	'<div class="cbMenuSingleText">' . $this->name . '</div>';
 				break;
 			case 1:
-				$return			.=	'<li id="menu' . $idCounter . '" class="cbMenu cbTooltip dropdown" data-cbtooltip-tooltip-target="#ssmenu%3$d" data-cbtooltip-menu="true" data-cbtooltip-classes="qtip-nostyle" data-cbtooltip-adjust-y="0" data-cbtooltip-open-classes="open">';
+				$return			.=	'<li id="menu' . $idCounter . '" class="cbMenu cbMenu' . $key . '">';
 
 				if ( substr( ltrim( $this->link ), 0, 1 ) == '<' ) {
 					$return		.=	$this->link;

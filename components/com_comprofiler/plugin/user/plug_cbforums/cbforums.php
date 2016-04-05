@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -20,6 +20,11 @@ global $_PLUGINS;
 $_PLUGINS->loadPluginGroup( 'user' );
 $_PLUGINS->registerUserFieldTypes( array( 'forumstats' => 'cbforumsField' ) );
 $_PLUGINS->registerUserFieldParams();
+$_PLUGINS->registerFunction( 'onAfterUserUpdate', 'syncUser', 'cbforumsPlugin' );
+$_PLUGINS->registerFunction( 'onAfterUpdateUser', 'syncUser', 'cbforumsPlugin' );
+$_PLUGINS->registerFunction( 'onAfterUserRegistration', 'syncUser', 'cbforumsPlugin' );
+$_PLUGINS->registerFunction( 'onAfterNewUser', 'syncUser', 'cbforumsPlugin' );
+$_PLUGINS->registerFunction( 'forumSideProfile', 'getSidebar', 'cbforumsPlugin' );
 
 /**
  * Class cbforumsClass
@@ -30,39 +35,33 @@ abstract class cbforumsClass
 	/**
 	 * Gets the model description for CB Forums
 	 *
-	 * @param  int|null  $forum
-	 * @param  boolean   $include
 	 * @return stdClass
 	 */
-	static public function getModel( $forum = null, $include = true )
+	static public function getModel()
 	{
 		global $_CB_framework;
 
 		static $cache					=	array();
 
-		if ( $forum ) {
-			$forum						=	(int) $forum;
-		}
+		$plugin							=	cbforumsClass::getPlugin();
+		$forum							=	$plugin->params->get( 'forum_model', 1 );
 
 		if ( ! isset( $cache[$forum] ) ) {
-			$plugin						=	cbforumsClass::getPlugin();
 			$path						=	$_CB_framework->getCfg( 'absolute_path' );
-
-			if ( ! $forum ) {
-				$forum					=	$plugin->params->get( 'forum_model', 1 );
-			}
-
 			$model						=	new stdClass();
 
 			if ( in_array( $forum, array( 1, 3, 4, 5, 6 ) ) && file_exists( $path . '/administrator/components/com_kunena/api.php' ) ) {
 				/** @noinspection PhpIncludeInspection */
 				require_once( $path . '/administrator/components/com_kunena/api.php' );
 
-				if ( class_exists( 'KunenaForum' ) ) {
+				if ( ( ! class_exists( 'KunenaForum' ) ) || ( ! KunenaForum::installed() ) ) {
+					$model->file		=	null;
+				} else {
 					KunenaForum::setup();
+
+					$model->file		=	$plugin->absPath . '/models/kunena20.php';
 				}
 
-				$model->file			=	$plugin->absPath . '/models/kunena20.php';
 				$model->detected		=	( $forum == 6 ? CBTxt::T( 'Kunena 3.x' ) : CBTxt::T( 'Kunena 2.x' ) );
 				$model->type			=	( $forum == 6 ? 6 : 5 );
 			} else {
@@ -71,7 +70,7 @@ abstract class cbforumsClass
 				$model->type			=	0;
 			}
 
-			if ( $include && $model->file ) {
+			if ( $model->file ) {
 				/** @noinspection PhpIncludeInspection */
 				require_once( $model->file );
 
@@ -261,9 +260,41 @@ abstract class cbforumsClass
 	}
 }
 
+/**
+ * Class cbforumsPlugin
+ * Interacts with the modal
+ */
+class cbforumsPlugin extends cbPluginHandler
+{
 
-// TODO: Check why this is outside of a class: Such code should never be running at file-level but always inside a class function:
-cbforumsClass::getModel();
+	/**
+	 * @param UserTable $user
+	 */
+	public function syncUser( $user )
+	{
+		$model		=	cbforumsClass::getModel();
+
+		if ( ! $model->file ) {
+			return;
+		}
+
+		$model->class->syncUser( $user );
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getSidebar()
+	{
+		$model		=	cbforumsClass::getModel();
+
+		if ( ! $model->file ) {
+			return null;
+		}
+
+		return call_user_func_array( array( $model->class, 'getSidebar' ), func_get_args() );
+	}
+}
 
 /**
  * Class cbforumsTab
@@ -283,7 +314,7 @@ class cbforumsTab extends cbTabHandler
 	{
 		global $_CB_framework;
 
-		$model						=	cbforumsClass::getModel( null, false );
+		$model						=	cbforumsClass::getModel();
 
 		if ( ! $model->file ) {
 			return CBTxt::T( 'No supported forum model found!' );
@@ -366,7 +397,7 @@ class cbforumsField extends cbFieldHandler {
 	 */
 	public function getFieldRow( &$field, &$user, $output, $formatting, $reason, $list_compare_types )
 	{
-		if ( ! cbforumsClass::getModel( null, false )->file ) {
+		if ( ! cbforumsClass::getModel()->file ) {
 			return null;
 		} else {
 			return parent::getFieldRow( $field, $user, $output, $formatting, $reason, $list_compare_types );
@@ -390,7 +421,7 @@ class cbforumsField extends cbFieldHandler {
 	 * @return mixed
 	 */
 	public function getField( &$field, &$user, $output, $reason, $list_compare_types ) {
-		if ( ! cbforumsClass::getModel( null, false )->file ) {
+		if ( ! cbforumsClass::getModel()->file ) {
 			return null;
 		}
 

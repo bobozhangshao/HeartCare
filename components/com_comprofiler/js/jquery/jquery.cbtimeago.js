@@ -86,6 +86,11 @@
 					moment.locale( momentCache );
 				}
 
+				// Destroy the cbtimeago element:
+				cbtimeago.element.on( 'remove destroy.cbtimeago', function() {
+					cbtimeago.element.cbtimeago( 'destroy' );
+				});
+
 				// Rebind the cbtooltip element to pick up any data attribute modifications:
 				cbtimeago.element.on( 'rebind.cbtimeago', function() {
 					cbtimeago.element.cbtimeago( 'rebind' );
@@ -100,6 +105,7 @@
 
 				// If the cbtimeago is cloned we need to rebind it back:
 				cbtimeago.element.on( 'cloned.cbtimeago', function() {
+					$( this ).off( 'destroy.cbtimeago' );
 					$( this ).off( 'rebind.cbtimeago' );
 					$( this ).off( 'cloned.cbtimeago' );
 					$( this ).off( 'modified.cbtimeago' );
@@ -143,6 +149,7 @@
 			}
 
 			cbtimeago.element.livestamp( 'destroy' );
+			cbtimeago.element.off( 'destroy.cbtimeago' );
 			cbtimeago.element.off( 'rebind.cbtimeago' );
 			cbtimeago.element.off( 'cloned.cbtimeago' );
 			cbtimeago.element.off( 'modified.cbtimeago' );

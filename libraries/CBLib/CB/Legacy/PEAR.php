@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/21/14 12:47 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -161,7 +161,7 @@ class PEAR
 	 * @access public
 	 * @return void
 	 */
-	function PEAR($error_class = null)
+	function __construct($error_class = null)
 	{
 		$classname = strtolower(get_class($this));
 		if ($this->_debug) {
@@ -849,7 +849,7 @@ class PEAR_Error
 	 * @access public
 	 *
 	 */
-	function PEAR_Error($message = 'unknown error', $code = null,
+	function __construct($message = 'unknown error', $code = null,
 						$mode = null, $options = null, $userinfo = null)
 	{
 		if ($mode === null) {

@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/16/14 4:46 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -188,8 +188,16 @@ class CBuser
 			return $null;
 		} else {
 			cbimport( 'cb.tabs' );
+
 			$cbUser									=	new CBuser();
-			$cbUser->_cbuser						=	new UserTable( $cbUser->_db );
+
+			if ( ( $userOrValidId instanceof UserTable ) && ( ! $userOrValidId->get( 'id' ) ) ) {
+				// Already prepared guest user object; no need to build a new one:
+				$cbUser->loadCbRow( $userOrValidId );
+			} else {
+				$cbUser->_cbuser					=	new UserTable( $cbUser->_db );
+			}
+
 			return $cbUser;
 		}
 	}
@@ -1010,7 +1018,7 @@ class CBuser
 				if ( is_array( $val ) ) {
 					$val			=	implode( '|*|', $val );
 				}
-			} elseif ( isset( $this->_cbuser->$input[1] ) ) {
+			} elseif ( isset( $this->_cbuser->{$input[1]} ) ) {
 				$val				=	$this->_cbuser->get( $input[1] );
 
 				if ( is_array( $val ) ) {

@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/17/14 11:22 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -298,7 +298,7 @@ class cbCalendars
 
 			// If server time offset is enabled then tell jquery the offset in minutes:
 			if ( $showTime && $serverTimeOffset ) {
-				$offset						=	( $offsetOverride !== null ? $offsetOverride : $_CB_framework->getCfg( 'offset' ) );
+				$offset						=	( $offsetOverride !== null ? $offsetOverride : $_CB_framework->getCfg( 'user_timezone' ) );
 
 				// Ignore offset entirely if there is no offset value:
 				if ( $offset ) {

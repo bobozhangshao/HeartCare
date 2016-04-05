@@ -3,24 +3,16 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
 use CBLib\Language\CBTxt;
-use CB\Database\Table\FieldTable;
 use CB\Database\Table\TabTable;
 use CB\Database\Table\PluginTable;
 use CB\Database\Table\UserTable;
 
 if ( ! ( defined( '_VALID_CB' ) || defined( '_JEXEC' ) || defined( '_VALID_MOS' ) ) ) { die( 'Direct Access to this location is not allowed.' ); }
-
-global $_PLUGINS;
-$_PLUGINS->registerFunction( 'onAfterUserUpdate', 'syncUser', 'cbforumsModel' );
-$_PLUGINS->registerFunction( 'onAfterUpdateUser', 'syncUser', 'cbforumsModel' );
-$_PLUGINS->registerFunction( 'onAfterUserRegistration', 'syncUser', 'cbforumsModel' );
-$_PLUGINS->registerFunction( 'onAfterNewUser', 'syncUser', 'cbforumsModel' );
-$_PLUGINS->registerFunction( 'forumSideProfile', 'getSidebar', 'cbforumsModel' );
 
 /**
  * Class cbforumsModel
@@ -688,7 +680,7 @@ class cbforumsModel extends cbPluginHandler
 													'twitter', 'facebook', 'gtalk', 'myspace',
 													'linkedin', 'delicious', 'friendfeed', 'digg',
 													'blogspot', 'flickr', 'bebo', 'website',
-													'email', 'online'
+													'email', 'online', 'subscribe', 'listlimit'
 												);
 
 			foreach ( $fields as $field ) {
@@ -700,37 +692,55 @@ class cbforumsModel extends cbPluginHandler
 					// Convert legacy values for B/C:
 					switch ( $value ) {
 						case '_UE_ORDERING_OLDEST':
+						case 'UE_ORDERING_OLDEST':
 						case 'Oldest':
 							$value		=	0;
 							break;
 						case '_UE_ORDERING_LATEST':
+						case 'UE_ORDERING_LATEST':
 						case 'Latest':
 							$value		=	1;
 							break;
 						case '_UE_VIEWTYPE_FLAT':
+						case 'UE_VIEWTYPE_FLAT':
 						case 'Flat':
 							$value		=	'flat';
 							break;
 						case '_UE_VIEWTYPE_THREADED':
+						case 'UE_VIEWTYPE_THREADED':
 						case 'Threaded':
 							$value		=	'threaded';
 							break;
+						case '_UE_VIEWTYPE_INDENTED':
+						case 'UE_VIEWTYPE_INDENTED':
+						case 'Indented':
+							$value		=	'indented';
+							break;
 						case '_UE_MALE':
+						case 'UE_MALE':
 						case 'Male':
 							$value		=	1;
 							break;
 						case '_UE_FEMALE':
+						case 'UE_FEMALE':
 						case 'Female':
 							$value		=	2;
 							break;
 						case '_UE_HIDE':
+						case 'UE_HIDE':
 						case '_UE_NO':
+						case 'UE_NO':
+						case '_UE_UNKNOWN':
+						case 'UE_UNKNOWN':
 						case 'Hide':
 						case 'No':
+						case 'Unknown':
 							$value		=	0;
 							break;
 						case '_UE_SHOW':
+						case 'UE_SHOW':
 						case '_UE_YES':
+						case 'UE_YES':
 						case 'Show':
 						case 'Yes':
 							$value		=	1;
@@ -757,6 +767,12 @@ class cbforumsModel extends cbPluginHandler
 							break;
 						case 'personaltext':
 							$field		=	'personalText';
+							break;
+						case 'subscribe':
+							$field		=	'canSubscribe';
+							break;
+						case 'listlimit':
+							$field		=	'userListtime';
 							break;
 					}
 
@@ -827,8 +843,17 @@ class cbforumsModel extends cbPluginHandler
 			}
 
 			if ( $display ) {
-				$extras		=	array(	'karmaplus' => $view->userkarma_plus,
-										'karmaminus' => $view->userkarma_minus
+				$extras		=	array(	'karmaplus' => ( isset( $view->userkarma_plus ) ? $view->userkarma_plus : null ),
+										'karmaminus' => ( isset( $view->userkarma_minus ) ? $view->userkarma_minus : null ),
+										'karmatitle' => ( isset( $view->userkarma_title ) ? $view->userkarma_title : null ),
+										'karma' => ( isset( $view->userkarma ) ? $view->userkarma : null ),
+										'rankimage' => ( isset( $view->userrankimage ) ? $view->userrankimage : null ),
+										'ranktitle' => ( isset( $view->userranktitle ) ? $view->userranktitle : null ),
+										'posts' => ( isset( $view->userposts ) ? $view->userposts : null ),
+										'thankyou' => ( isset( $view->userthankyou ) ? $view->userthankyou : null ),
+										'points' => ( isset( $view->userpoints ) ? $view->userpoints : null ),
+										'medals' => ( isset( $view->usermedals ) ? $view->usermedals : null ),
+										'personaltext' => ( isset( $view->personalText ) ? $view->personalText : null )
 									);
 
 				return $cbUser->replaceUserVars( $display, false, true, $extras );

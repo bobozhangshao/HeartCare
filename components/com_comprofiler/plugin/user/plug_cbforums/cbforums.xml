@@ -2,13 +2,13 @@
 <cbinstall version="1.0" type="plugin" group="user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:../../../../../validation/ahawow.xsd">
 	<name>CB Forums</name>
 	<author>Krileon</author>
-	<creationDate>2015-11-02</creationDate>
-	<copyright>(C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved</copyright>
+	<creationDate>2016-03-22</creationDate>
+	<copyright>(C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved</copyright>
 	<license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2</license>
 	<authorEmail>krileon@joomlapolis.com</authorEmail>
 	<authorUrl>www.joomlapolis.com</authorUrl>
 	<description>Allows display of users forum posts from various forum extensions directly on users profile.</description>
-	<version>2.0.12</version>
+	<version>2.0.14</version>
 	<files>
 		<filename plugin="cbforums">cbforums.php</filename>
 		<foldername>models</foldername>
@@ -108,11 +108,11 @@
 					<param name="modelparams" type="group" label="" formatting="div" display="2lines">
 						<tabpane name="kunena20modeltabs">
 							<tabpanetab name="kunena20modeltabsprofile" label="Profile">
-								<param name="k20_ordering" type="field" key="name" default="" blanktext="- Select CB Field -" label="Ordering" description="Select CB field to synchronize model ordering from (values: 0 = Oldest Post First, 1 = Newest Post First)." />
-								<param name="k20_viewtype" type="field" key="name" default="" blanktext="- Select CB Field -" label="Viewtype" description="Select CB field to synchronize model viewtype from (values: flat = Flat View, threaded = Threaded View)." />
+								<param name="k20_ordering" type="field" key="name" default="" blanktext="- Select CB Field -" label="Ordering" description="Select CB field to synchronize model ordering from (values: 0 = Default, 1 = Oldest Post First, 2 = Newest Post First)." />
+								<param name="k20_viewtype" type="field" key="name" default="" blanktext="- Select CB Field -" label="Viewtype" description="Select CB field to synchronize model viewtype from (values: flat = Flat View, threaded = Threaded View, indented = Indented View)." />
 								<param name="k20_signature" type="field" key="name" default="" blanktext="- Select CB Field -" label="Signature" description="Select CB field to synchronize model signature from." />
 								<param name="k20_personaltext" type="field" key="name" default="" blanktext="- Select CB Field -" label="Personal Text" description="Select CB field to synchronize model personal text from." />
-								<param name="k20_gender" type="field" key="name" default="" blanktext="- Select CB Field -" label="Gender" description="Select CB field to synchronize model gender from (values: 1 = Male, 2 = Female)." />
+								<param name="k20_gender" type="field" key="name" default="" blanktext="- Select CB Field -" label="Gender" description="Select CB field to synchronize model gender from (values: 0 = Unknown, 1 = Male, 2 = Female)." />
 								<param name="k20_birthdate" type="field" key="name" default="" blanktext="- Select CB Field -" label="Birthdate" description="Select CB field to synchronize model birthday from." />
 								<param name="k20_location" type="field" key="name" default="" blanktext="- Select CB Field -" label="Location" description="Select CB field to synchronize model location from." />
 								<param name="k20_icq" type="field" key="name" default="" blanktext="- Select CB Field -" label="ICQ" description="Select CB field to synchronize model icq from." />
@@ -134,11 +134,13 @@
 								<param name="k20_website" type="field" key="name" default="" blanktext="- Select CB Field -" label="Website" description="Select CB field to synchronize model website from." />
 								<param name="k20_email" type="field" key="name" default="" blanktext="- Select CB Field -" label="Hide Email" description="Select CB field to synchronize model hide email from (values: 0 = Hide, 1 = Show)." />
 								<param name="k20_online" type="field" key="name" default="" blanktext="- Select CB Field -" label="Show Online" description="Select CB field to synchronize model show online from (values: 0 = Hide, 1 = Show)." />
+								<param name="k20_subscribe" type="field" key="name" default="" blanktext="- Select CB Field -" label="Subscribe" description="Select CB field to synchronize model can subscribe from (values: -1 = Default, 0 = No, 1 = Yes)." />
+								<param name="k20_listlimit" type="field" key="name" default="" blanktext="- Select CB Field -" label="List Limit" description="Select CB field to synchronize model user list limit from (values: -2 = Default, -1 = All, 0 = Since Last Visit, 4 = 4 Hours, 8 = 8 Hours, 12 = 12 Hours, 24 = 24 Hours, 48 = 48 Hours, 168 = Week, 720 = Month, 8760 = Year)." />
 							</tabpanetab>
 							<tabpanetab name="kunena20modeltabssidebar" label="Sidebar">
-								<param name="k20_sidebar_reg" type="textarea" default="" rows="6" cols="40" label="Registered" description="Input substitution supported sidebar display for registered users." />
-								<param name="k20_sidebar_anon" type="textarea" default="" rows="6" cols="40" label="Anonymous" description="Input substitution supported sidebar display for anonymous users." />
-								<param name="k20_sidebar_del" type="textarea" default="" rows="6" cols="40" label="Deleted" description="Input substitution supported sidebar display for deleted users." />
+								<param name="k20_sidebar_reg" type="textarea" default="" rows="6" cols="40" label="Registered" description="Input substitution supported sidebar display for registered users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext]." />
+								<param name="k20_sidebar_anon" type="textarea" default="" rows="6" cols="40" label="Anonymous" description="Input substitution supported sidebar display for anonymous users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext]." />
+								<param name="k20_sidebar_del" type="textarea" default="" rows="6" cols="40" label="Deleted" description="Input substitution supported sidebar display for deleted users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext]." />
 							</tabpanetab>
 						</tabpane>
 					</param>

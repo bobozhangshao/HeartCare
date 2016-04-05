@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -133,7 +133,7 @@ class Com_ComprofilerInstallerScript {
 		$liveSite								=	$_CB_framework->getCfg( 'live_site' );
 
 		$return									=	'<div style="margin-bottom:10px;width:100%;text-align:center;"><img alt="' . htmlspecialchars( CBTxt::T( 'CB Logo' ) ) . '" src="' . $liveSite . '/components/com_comprofiler/images/smcblogo.gif" /></div>'
-												.	'<div style="font-size:14px;margin-bottom:10px;">Copyright 2004-2015 Joomlapolis.com. ' . CBTxt::T( 'This component is released under the GNU/GPL version 2 License. All copyright statements must be kept. Derivate work must prominently duly acknowledge original work and include visible online links.' ) . '</div>';
+												.	'<div style="font-size:14px;margin-bottom:10px;">Copyright 2004-2016 Joomlapolis.com. ' . CBTxt::T( 'This component is released under the GNU/GPL version 2 License. All copyright statements must be kept. Derivate work must prominently duly acknowledge original work and include visible online links.' ) . '</div>';
 
 		$cbDatabase								=	\CBLib\Application\Application::Database();
 
@@ -1314,6 +1314,10 @@ function cbInstaller_install_plugins( &$return ) {
 				$cbForumsParams->set( 'forum_model', '1' );
 			}
 
+			$cbForumsParams->set( 'k20_ordering', 'cb_forumorder' );
+			$cbForumsParams->set( 'k20_viewtype', 'cb_forumview' );
+			$cbForumsParams->set( 'k20_signature', 'cb_forumsignature' );
+
 			switch ( (int) $pluginParams->get( 'sidebarMode', 0 ) ) {
 				case 1:
 					$cbForumsParams->set( 'k20_personaltext', $pluginParams->get( 'sidebarBeginner1' ) );
@@ -1354,22 +1358,68 @@ function cbInstaller_install_plugins( &$return ) {
 		// Migrate the forum fields to ensure their display mode is set:
 		$query								=	"SELECT *"
 											.	"\n FROM " . $cbDatabase->NameQuote( '#__comprofiler_fields' )
-											.	"\n WHERE " . $cbDatabase->NameQuote( 'name' ) . " IN " . $cbDatabase->safeArrayOfStrings( array( 'forumrank', 'forumposts', 'forumkarma' ) );
+											.	"\n WHERE " . $cbDatabase->NameQuote( 'name' ) . " IN " . $cbDatabase->safeArrayOfStrings( array( 'forumsignature', 'forumorder', 'forumview', 'forumrank', 'forumposts', 'forumkarma' ) );
 		$cbDatabase->setQuery( $query );
 		$fields								=	$cbDatabase->loadObjectList( null, '\CB\Database\Table\FieldTable', array( $cbDatabase ) );
 
+		$forumSignature						=	false;
+		$forumOrder							=	false;
+		$forumView							=	false;
+
 		/** @var $fields FieldTable[] */
 		foreach ( $fields as $field ) {
+			$field->set( 'sys', 0 );
+			$field->set( 'calculated', 0 );
+
 			$fieldParams					=	new Registry( $field->params );
 
 			switch ( $field->name ) {
+				case 'forumsignature':
+					$forumSignature			=	true;
+
+					$field->set( 'pluginid', 1 );
+					$field->set( 'type', 'textarea' );
+					$field->set( 'name', 'cb_forumsignature' );
+					$field->set( 'cols', (int) $fieldParams->get( 'fs_signature_cols' ) );
+					$field->set( 'rows', (int) $fieldParams->get( 'fs_signature_rows' ) );
+					break;
+				case 'forumorder':
+					$forumOrder				=	true;
+
+					$field->set( 'pluginid', 1 );
+					$field->set( 'type', 'select' );
+					$field->set( 'name', 'cb_forumorder' );
+
+					$fieldParams->set( '_fieldvalues', array( array( 'fieldtitle' => '0', 'fieldlabel' => 'Oldest' ), array( 'fieldtitle' => '1', 'fieldlabel' => 'Latest' ) ) );
+					break;
+				case 'forumview':
+					$forumView				=	true;
+
+					$field->set( 'pluginid', 1 );
+					$field->set( 'type', 'select' );
+					$field->set( 'name', 'cb_forumview' );
+
+					$fieldParams->set( '_fieldvalues', array( array( 'fieldtitle' => 'flat', 'fieldlabel' => 'Flat' ), array( 'fieldtitle' => 'threaded', 'fieldlabel' => 'Threaded' ) ) );
+					break;
 				case 'forumposts':
+					$field->set( 'pluginid', (int) $cbForums->get( 'id' ) );
+					$field->set( 'type', 'forumstats' );
+					$field->set( 'name', 'cb_forumposts' );
+
 					$fieldParams->set( 'forumStatus', 'posts' );
 					break;
 				case 'forumkarma':
+					$field->set( 'pluginid', (int) $cbForums->get( 'id' ) );
+					$field->set( 'type', 'forumstats' );
+					$field->set( 'name', 'cb_forumkarma' );
+
 					$fieldParams->set( 'forumStatus', 'karma' );
 					break;
 				case 'forumrank':
+					$field->set( 'pluginid', (int) $cbForums->get( 'id' ) );
+					$field->set( 'type', 'forumstats' );
+					$field->set( 'name', 'cb_forumrank' );
+
 					$fieldParams->set( 'forumStatus', 'rank' );
 					break;
 			}
@@ -1379,6 +1429,30 @@ function cbInstaller_install_plugins( &$return ) {
 			if ( ! $field->store() ) {
 				$return						.=	'<div style="font-size:14px;color:red;margin-bottom:10px;">' . CBTxt::P( 'Field [name] failed to migrate. Error: [error]', array( '[name]' => $field->name, '[error]' => $field->getError() ) ) . '</div>';
 			}
+		}
+
+		if ( $cbDatabase->getTableStatus( '#__kunena_users' ) && ( $forumSignature || $forumOrder || $forumView ) ) {
+			// If forum profile fields are available to migrate then push their data to CB from Kunena as previous usage did not store in CB directly:
+			$forumFieldSet					=	array();
+
+			if ( $forumSignature ) {
+				$forumFieldSet[]			=	'c.' . $cbDatabase->NameQuote( 'cb_forumsignature' ) . ' = k.' . $cbDatabase->NameQuote( 'signature' );
+			}
+
+			if ( $forumOrder ) {
+				$forumFieldSet[]			=	'c.' . $cbDatabase->NameQuote( 'cb_forumorder' ) . ' = k.' . $cbDatabase->NameQuote( 'ordering' );
+			}
+
+			if ( $forumView ) {
+				$forumFieldSet[]			=	'c.' . $cbDatabase->NameQuote( 'cb_forumview' ) . ' = k.' . $cbDatabase->NameQuote( 'view' );
+			}
+
+			$query							=	'UPDATE ' . $cbDatabase->NameQuote( '#__comprofiler' ) . ' AS c'
+											.	"\n INNER JOIN " . $cbDatabase->NameQuote( '#__kunena_users' ) . " AS k"
+											.	' ON k.' . $cbDatabase->NameQuote( 'userid' ) . ' = c.' . $cbDatabase->NameQuote( 'id' )
+											.	"\n SET " . implode( ', ', $forumFieldSet );
+			$cbDatabase->setQuery( $query );
+			$cbDatabase->query();
 		}
 
 		if ( ! cbInstaller_uninstall_plugin( $plugin, $return ) ) {

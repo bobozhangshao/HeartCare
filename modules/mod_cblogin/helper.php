@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -97,8 +97,6 @@ class modCBLoginHelper {
 			$tag										=	'div';
 		}
 
-		static $cache									=	array();
-
 		if ( $type == 'logout' ) {
 			$pluginClassPrefix							=	'cbLogoutForm';
 			$pluginsTrigger								=	'onAfterLogoutForm';
@@ -107,10 +105,9 @@ class modCBLoginHelper {
 			$pluginsTrigger								=	'onAfterLoginForm';
 		}
 
-		$cacheId										=	( $pluginsTrigger . $horizontal );
+		$pluginDisplays									=	array();
 
-		if ( (int) $params->get( 'cb_plugins', 1 ) && ( ! isset( $cache[$cacheId] ) ) ) {
-			$pluginDisplays								=	array();
+		if ( $params->get( 'cb_plugins', 1 ) ) {
 			$classSuffix								=	$params->get( 'moduleclass_sfx' );
 			$usernameInputLength						=	(int) $params->get( 'name_length', 14 );
 			$passwordInputLength						=	(int) $params->get( 'pass_length', 14 );
@@ -126,16 +123,14 @@ class modCBLoginHelper {
 					$pluginDisplays['beforeButton'][]	=	$pR;
 				}
 			}
-
-			$cache[$cacheId]							=	$pluginDisplays;
 		}
 
 		$return											=	null;
 
-		if ( isset( $cache[$cacheId][$location] ) ) {
+		if ( isset( $pluginDisplays[$location] ) ) {
 			$return										.=	$prefixHtml;
 
-			foreach ( $cache[$cacheId][$location] as $pV ) {
+			foreach ( $pluginDisplays[$location] as $pV ) {
 				$return									.=	( $tag ? '<' . htmlspecialchars( $tag ) . ' class="' . $pluginClassPrefix . ucfirst( htmlspecialchars( $location ) ) . '">' : null )
 														.		$pV
 														.	( $tag ? '</' . htmlspecialchars( $tag ) . '>' : null );

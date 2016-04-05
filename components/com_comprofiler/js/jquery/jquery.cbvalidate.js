@@ -239,7 +239,7 @@
 					},
 					errorElement: 'div',
 					errorPlacement: function( error, element ) {
-						var field = element.closest( '.fieldCell,.cbFieldSpan,.cb_field' ); // .fieldCell : tables, .cbFieldSpan : span, .cb_field : div
+						var field = element.closest( 'td.fieldCell,.cbFieldSpan,.cb_field' ); // td.fieldCell : tables, .cbFieldSpan : span, .cb_field : div
 
 						if ( field.length ) {
 							error.appendTo( field );
@@ -300,6 +300,11 @@
 
 				// Pass the cbvalidator options to validator plugin object so new validate methods can access the options:
 				cbvalidate.validate.options = cbvalidate.settings;
+
+				// Destroy the cbvalidate element:
+				cbvalidate.element.on( 'remove destroy.cbvalidate', function() {
+					cbvalidate.element.cbvalidate( 'destroy' );
+				});
 
 				cbvalidate.element.triggerHandler( 'cbvalidate.init.after', [cbvalidate] );
 
@@ -468,6 +473,7 @@
 				return this;
 			}
 
+			cbvalidate.element.off( 'destroy.cbvalidate' );
 			cbvalidate.validate.destroy();
 
 			return this;

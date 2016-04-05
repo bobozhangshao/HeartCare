@@ -192,6 +192,11 @@
 					}
 				}
 
+				// Destroy the cbtabs element:
+				cbtabs.element.on( 'remove destroy.cbtabs', function() {
+					cbtabs.element.cbtabs( 'destroy' );
+				});
+
 				// Rebind the cbtabs element to pick up any data attribute modifications:
 				cbtabs.element.on( 'rebind.cbtabs', function() {
 					cbtabs.element.cbtabs( 'rebind' );
@@ -206,6 +211,7 @@
 
 				// If the cbtabs is cloned we need to rebind it back:
 				cbtabs.element.bind( 'cloned.cbtabs', function() {
+					$( this ).off( 'destroy.cbtabs' );
 					$( this ).off( 'rebind.cbtabs' );
 					$( this ).off( 'cloned.cbtabs' );
 					$( this ).off( 'modified.cbtabs' );
@@ -340,6 +346,7 @@
 
 			cbtabs.tabNavsPrevious.off( 'click', cbtabs.prevHandler );
 			cbtabs.tabNavsNext.off( 'click', cbtabs.nextHandler );
+			cbtabs.element.off( 'destroy.cbtabs' );
 			cbtabs.element.off( 'rebind.cbtabs' );
 			cbtabs.element.off( 'cloned.cbtabs' );
 			cbtabs.element.off( 'modified.cbtabs' );

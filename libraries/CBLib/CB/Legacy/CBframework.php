@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/16/14 9:50 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -95,7 +95,7 @@ class CBframework
 	 * @param $getDocFunction
 	 * @param $editorDisplay
 	 */
-	function CBframework( &$baseFramework, &$aclParams, $cmsSefFunction, $cbUrlRouting,
+	function __construct( &$baseFramework, &$aclParams, $cmsSefFunction, $cbUrlRouting,
 						  $getVarFunction, &$getDocFunction, $editorDisplay )
 	{
 		$this->_baseFramework		=&	$baseFramework;
@@ -198,7 +198,9 @@ class CBframework
 		$this->_baseFramework->logout();
 
 		// Restart the session since it has been destroyed:
-		JFactory::getSession()->restart();
+		if ( checkJversion( '<3.5' ) ) {
+			JFactory::getSession()->restart();
+		}
 
 		// Save the new session to storage:
 		$this->_baseFramework->checkSession();
@@ -359,7 +361,7 @@ class CBframework
 
 	/**
 	 * Returns user id (0: guest)
-	 * @deprecated 2.0  Use Application::MyUser()->getUserId() or Application::MyUser()->getUserId()
+	 * @deprecated 2.0  Use Application::MyUser()->getUserId()
 	 *
 	 * @return int
 	 */

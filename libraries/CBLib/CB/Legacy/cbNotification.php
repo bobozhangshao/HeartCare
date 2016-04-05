@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/17/14 11:39 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -525,7 +525,7 @@ class cbNotification
 		global $_CB_framework, $ueConfig;
 
 		// Always build the confirm link for substitution:
-		$confirmLink		=	$_CB_framework->rawViewUrl( 'confirm', false, array( 'confirmcode' => $row->cbactivation ) );
+		$confirmLink		=	$_CB_framework->viewUrl( 'confirm', false, array( 'confirmcode' => $row->cbactivation ) );
 
 		// Lets build the confirm output only if confirmation is enabled:
 		if ( $ueConfig['reg_confirmation'] == 1 ) {

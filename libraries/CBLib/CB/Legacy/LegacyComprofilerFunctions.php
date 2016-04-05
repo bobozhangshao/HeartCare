@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 7/8/14 6:22 PM $
 * @package CB\Legacy
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -335,7 +335,7 @@ namespace
 			$mailOnline				=	true;
 		}
 
-		if ( $mailOnline ) {
+		if ( $mailOnline && Application::Config()->get( 'sendemails', 1, GetterInterface::INT ) ) {
 			$mailsSent				=	$mail->Send();
 		} else {
 			$mailsSent				=	false;
@@ -2142,7 +2142,7 @@ namespace
 
 						echo str_replace( '</strong>', '</a>', preg_replace_callback( '/<strong>/', 'teamCreditsReplacer', $w ) );
 					?>
-					<p><strong>Software: Copyright 2004-2015 joomlapolis.com. This component is released under the GNU/GPL version 2 License. All copyright statements must be kept. Derivate work must prominently duly acknowledge original work and include visible online links. Official site:</strong></p>
+					<p><strong>Software: Copyright 2004-2016 joomlapolis.com. This component is released under the GNU/GPL version 2 License. All copyright statements must be kept. Derivate work must prominently duly acknowledge original work and include visible online links. Official site:</strong></p>
 					<p class="text-center"><strong><a href="http://www.joomlapolis.com/?pk_campaign=in-cb&amp;pk_kwd=credits">www.joomlapolis.com</a></strong></p>
 					<?php
 					if ( $ui == 1 ) {

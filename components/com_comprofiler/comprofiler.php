@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -2266,10 +2266,19 @@ function checkCBPostIsHTTPS( $return = false ) {
 	$isHttps			=	( isset( $_SERVER['HTTPS'] ) && ( ! empty( $_SERVER['HTTPS'] ) ) && ( $_SERVER['HTTPS'] != 'off' ) );
 
 	if ( ( ! $isHttps ) && file_exists( $_CB_framework->getCfg( 'absolute_path' ) . '/modules/' . ( checkJversion() > 0 ? 'mod_cblogin/' : null ) . 'mod_cblogin.php' ) ) {
+		$language		=	CBuser::getMyUserDataInstance()->getUserLanguage();
+
+		if ( ! $language ) {
+			$language	=	Application::Cms()->getLanguageTag();
+		}
+
 		$query			=	'SELECT ' . $_CB_database->NameQuote( 'params' )
 						.	"\n FROM " . $_CB_database->NameQuote( '#__modules' )
 						.	"\n WHERE " . $_CB_database->NameQuote( 'module' ) . " = " . $_CB_database->Quote( 'mod_cblogin' )
-						.	"\n ORDER BY " . $_CB_database->NameQuote( 'ordering' );
+						.	"\n AND " . $_CB_database->NameQuote( 'published' ) . " = 1"
+						.	"\n AND " . $_CB_database->NameQuote( 'access' ) . " IN " . $_CB_database->safeArrayOfIntegers( Application::MyUser()->getAuthorisedViewLevels() )
+						.	"\n AND " . $_CB_database->NameQuote( 'language' ) . " IN ( " . $_CB_database->Quote( $language ) . ", " . $_CB_database->Quote( '*' ) . ", " . $_CB_database->Quote( '' ) . " )"
+						.	"\n ORDER BY " . $_CB_database->NameQuote( 'position' ) . ", " . $_CB_database->NameQuote( 'ordering' );
 		$_CB_database->setQuery( $query, 0, 1 );
 		$module			=	$_CB_database->loadResult();
 

@@ -1,35 +1,12 @@
-.cb_template {
-  /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-  /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=0153bf5bdc30a4e7a082)
- * Config saved to config.json and https://gist.github.com/0153bf5bdc30a4e7a082
- */
-  /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-  /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-  /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=0153bf5bdc30a4e7a082)
- * Config saved to config.json and https://gist.github.com/0153bf5bdc30a4e7a082
- */
-  /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-}
+/*!
+* Bootstrap v3.3.6 (http://getbootstrap.com)
+* Copyright 2011-2015 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*/
+/*!
+* Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=b8cb7db749abf45d1776)
+* Config saved to config.json and https://gist.github.com/b8cb7db749abf45d1776
+*/
 .cb_template html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -1874,6 +1851,10 @@
 .cb_template .form-control::-webkit-input-placeholder {
   color: #999999;
 }
+.cb_template .form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
 .cb_template .form-control[disabled],
 .cb_template .form-control[readonly],
 .cb_template fieldset[disabled] .form-control {
@@ -2274,7 +2255,7 @@
 }
 @media (min-width: 768px) {
   .cb_template .form-horizontal .form-group-lg .control-label {
-    padding-top: 14.333333px;
+    padding-top: 11px;
     font-size: 18px;
   }
 }
@@ -2393,9 +2374,6 @@
 .cb_template input[type="radio"]:checked + .btn-default {
   background-image: none;
 }
-.cb_template .btn-default.disabled,
-.cb_template .btn-default[disabled],
-.cb_template fieldset[disabled] .btn-default,
 .cb_template .btn-default.disabled:hover,
 .cb_template .btn-default[disabled]:hover,
 .cb_template fieldset[disabled] .btn-default:hover,
@@ -2404,13 +2382,7 @@
 .cb_template fieldset[disabled] .btn-default:focus,
 .cb_template .btn-default.disabled.focus,
 .cb_template .btn-default[disabled].focus,
-.cb_template fieldset[disabled] .btn-default.focus,
-.cb_template .btn-default.disabled:active,
-.cb_template .btn-default[disabled]:active,
-.cb_template fieldset[disabled] .btn-default:active,
-.cb_template .btn-default.disabled.active,
-.cb_template .btn-default[disabled].active,
-.cb_template fieldset[disabled] .btn-default.active {
+.cb_template fieldset[disabled] .btn-default.focus {
   background-color: #ffffff;
   border-color: #cccccc;
 }
@@ -2461,9 +2433,6 @@
 .cb_template input[type="radio"]:checked + .btn-primary {
   background-image: none;
 }
-.cb_template .btn-primary.disabled,
-.cb_template .btn-primary[disabled],
-.cb_template fieldset[disabled] .btn-primary,
 .cb_template .btn-primary.disabled:hover,
 .cb_template .btn-primary[disabled]:hover,
 .cb_template fieldset[disabled] .btn-primary:hover,
@@ -2472,13 +2441,7 @@
 .cb_template fieldset[disabled] .btn-primary:focus,
 .cb_template .btn-primary.disabled.focus,
 .cb_template .btn-primary[disabled].focus,
-.cb_template fieldset[disabled] .btn-primary.focus,
-.cb_template .btn-primary.disabled:active,
-.cb_template .btn-primary[disabled]:active,
-.cb_template fieldset[disabled] .btn-primary:active,
-.cb_template .btn-primary.disabled.active,
-.cb_template .btn-primary[disabled].active,
-.cb_template fieldset[disabled] .btn-primary.active {
+.cb_template fieldset[disabled] .btn-primary.focus {
   background-color: #337ab7;
   border-color: #2e6da4;
 }
@@ -2529,9 +2492,6 @@
 .cb_template input[type="radio"]:checked + .btn-success {
   background-image: none;
 }
-.cb_template .btn-success.disabled,
-.cb_template .btn-success[disabled],
-.cb_template fieldset[disabled] .btn-success,
 .cb_template .btn-success.disabled:hover,
 .cb_template .btn-success[disabled]:hover,
 .cb_template fieldset[disabled] .btn-success:hover,
@@ -2540,13 +2500,7 @@
 .cb_template fieldset[disabled] .btn-success:focus,
 .cb_template .btn-success.disabled.focus,
 .cb_template .btn-success[disabled].focus,
-.cb_template fieldset[disabled] .btn-success.focus,
-.cb_template .btn-success.disabled:active,
-.cb_template .btn-success[disabled]:active,
-.cb_template fieldset[disabled] .btn-success:active,
-.cb_template .btn-success.disabled.active,
-.cb_template .btn-success[disabled].active,
-.cb_template fieldset[disabled] .btn-success.active {
+.cb_template fieldset[disabled] .btn-success.focus {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
@@ -2597,9 +2551,6 @@
 .cb_template input[type="radio"]:checked + .btn-info {
   background-image: none;
 }
-.cb_template .btn-info.disabled,
-.cb_template .btn-info[disabled],
-.cb_template fieldset[disabled] .btn-info,
 .cb_template .btn-info.disabled:hover,
 .cb_template .btn-info[disabled]:hover,
 .cb_template fieldset[disabled] .btn-info:hover,
@@ -2608,13 +2559,7 @@
 .cb_template fieldset[disabled] .btn-info:focus,
 .cb_template .btn-info.disabled.focus,
 .cb_template .btn-info[disabled].focus,
-.cb_template fieldset[disabled] .btn-info.focus,
-.cb_template .btn-info.disabled:active,
-.cb_template .btn-info[disabled]:active,
-.cb_template fieldset[disabled] .btn-info:active,
-.cb_template .btn-info.disabled.active,
-.cb_template .btn-info[disabled].active,
-.cb_template fieldset[disabled] .btn-info.active {
+.cb_template fieldset[disabled] .btn-info.focus {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
@@ -2665,9 +2610,6 @@
 .cb_template input[type="radio"]:checked + .btn-warning {
   background-image: none;
 }
-.cb_template .btn-warning.disabled,
-.cb_template .btn-warning[disabled],
-.cb_template fieldset[disabled] .btn-warning,
 .cb_template .btn-warning.disabled:hover,
 .cb_template .btn-warning[disabled]:hover,
 .cb_template fieldset[disabled] .btn-warning:hover,
@@ -2676,13 +2618,7 @@
 .cb_template fieldset[disabled] .btn-warning:focus,
 .cb_template .btn-warning.disabled.focus,
 .cb_template .btn-warning[disabled].focus,
-.cb_template fieldset[disabled] .btn-warning.focus,
-.cb_template .btn-warning.disabled:active,
-.cb_template .btn-warning[disabled]:active,
-.cb_template fieldset[disabled] .btn-warning:active,
-.cb_template .btn-warning.disabled.active,
-.cb_template .btn-warning[disabled].active,
-.cb_template fieldset[disabled] .btn-warning.active {
+.cb_template fieldset[disabled] .btn-warning.focus {
   background-color: #f0ad4e;
   border-color: #eea236;
 }
@@ -2733,9 +2669,6 @@
 .cb_template input[type="radio"]:checked + .btn-danger {
   background-image: none;
 }
-.cb_template .btn-danger.disabled,
-.cb_template .btn-danger[disabled],
-.cb_template fieldset[disabled] .btn-danger,
 .cb_template .btn-danger.disabled:hover,
 .cb_template .btn-danger[disabled]:hover,
 .cb_template fieldset[disabled] .btn-danger:hover,
@@ -2744,13 +2677,7 @@
 .cb_template fieldset[disabled] .btn-danger:focus,
 .cb_template .btn-danger.disabled.focus,
 .cb_template .btn-danger[disabled].focus,
-.cb_template fieldset[disabled] .btn-danger.focus,
-.cb_template .btn-danger.disabled:active,
-.cb_template .btn-danger[disabled]:active,
-.cb_template fieldset[disabled] .btn-danger:active,
-.cb_template .btn-danger.disabled.active,
-.cb_template .btn-danger[disabled].active,
-.cb_template fieldset[disabled] .btn-danger.active {
+.cb_template fieldset[disabled] .btn-danger.focus {
   background-color: #d9534f;
   border-color: #d43f3a;
 }
@@ -3150,13 +3077,15 @@
 }
 .cb_template .btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .cb_template .btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .cb_template .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
 .cb_template .btn-group-vertical > .btn-group-yesno:not(:first-child):not(:last-child) > .btn {
@@ -3221,6 +3150,9 @@
   float: left;
   width: 100%;
   margin-bottom: 0;
+}
+.cb_template .input-group .form-control:focus {
+  z-index: 3;
 }
 .cb_template .input-group-lg > .form-control,
 .cb_template .input-group-lg > .input-group-addon,
@@ -4134,7 +4066,7 @@
 .cb_template .pagination > li > span:hover,
 .cb_template .pagination > li > a:focus,
 .cb_template .pagination > li > span:focus {
-  z-index: 3;
+  z-index: 2;
   color: #23527c;
   background-color: #eeeeee;
   border-color: #dddddd;
@@ -4145,7 +4077,7 @@
 .cb_template .pagination > .active > span:hover,
 .cb_template .pagination > .active > a:focus,
 .cb_template .pagination > .active > span:focus {
-  z-index: 2;
+  z-index: 3;
   color: #ffffff;
   background-color: #337ab7;
   border-color: #337ab7;
@@ -4367,6 +4299,8 @@
 .cb_template .container .jumbotron,
 .cb_template .container-fluid .jumbotron {
   border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .cb_template .jumbotron .container {
   max-width: 100%;
@@ -5296,7 +5230,6 @@
 .cb_template .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
-  min-height: 16.42857143px;
 }
 .cb_template .modal-header .close {
   margin-top: -2px;
@@ -5682,6 +5615,7 @@
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
 }
 .cb_template .carousel-control.left {
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
@@ -5791,16 +5725,16 @@
   .cb_template .carousel-control .icon-next {
     width: 30px;
     height: 30px;
-    margin-top: -15px;
+    margin-top: -10px;
     font-size: 30px;
   }
   .cb_template .carousel-control .glyphicon-chevron-left,
   .cb_template .carousel-control .icon-prev {
-    margin-left: -15px;
+    margin-left: -10px;
   }
   .cb_template .carousel-control .glyphicon-chevron-right,
   .cb_template .carousel-control .icon-next {
-    margin-right: -15px;
+    margin-right: -10px;
   }
   .cb_template .carousel-caption {
     left: 20%;
@@ -5839,6 +5773,8 @@
 .cb_template .pager:after,
 .cb_template .panel-body:before,
 .cb_template .panel-body:after,
+.cb_template .modal-header:before,
+.cb_template .modal-header:after,
 .cb_template .modal-footer:before,
 .cb_template .modal-footer:after,
 .cb_template .dl-horizontal dd:before,
@@ -5867,6 +5803,8 @@
 .cb_template .pager:after,
 .cb_template .panel-body:before,
 .cb_template .panel-body:after,
+.cb_template .modal-header:before,
+.cb_template .modal-header:after,
 .cb_template .modal-footer:before,
 .cb_template .modal-footer:after,
 .cb_template .btn-group-vertical > .btn-group-yesno:before,
@@ -5890,6 +5828,7 @@
 .cb_template .navbar-collapse:after,
 .cb_template .pager:after,
 .cb_template .panel-body:after,
+.cb_template .modal-header:after,
 .cb_template .modal-footer:after,
 .cb_template .dl-horizontal dd:after,
 .cb_template .container:after,
@@ -5904,6 +5843,7 @@
 .cb_template .navbar-collapse:after,
 .cb_template .pager:after,
 .cb_template .panel-body:after,
+.cb_template .modal-header:after,
 .cb_template .modal-footer:after,
 .cb_template .btn-group-vertical > .btn-group-yesno:after,
 .cb_template .btn-group-vertical > .btn-group-yesno:after {
@@ -6765,9 +6705,6 @@
 .open > .dropdown-toggle.cb_template .btn-muted {
   background-image: none;
 }
-.cb_template .btn-muted.disabled,
-.cb_template .btn-muted[disabled],
-fieldset[disabled] .cb_template .btn-muted,
 .cb_template .btn-muted.disabled:hover,
 .cb_template .btn-muted[disabled]:hover,
 fieldset[disabled] .cb_template .btn-muted:hover,
@@ -6776,13 +6713,7 @@ fieldset[disabled] .cb_template .btn-muted:hover,
 fieldset[disabled] .cb_template .btn-muted:focus,
 .cb_template .btn-muted.disabled.focus,
 .cb_template .btn-muted[disabled].focus,
-fieldset[disabled] .cb_template .btn-muted.focus,
-.cb_template .btn-muted.disabled:active,
-.cb_template .btn-muted[disabled]:active,
-fieldset[disabled] .cb_template .btn-muted:active,
-.cb_template .btn-muted.disabled.active,
-.cb_template .btn-muted[disabled].active,
-fieldset[disabled] .cb_template .btn-muted.active {
+fieldset[disabled] .cb_template .btn-muted.focus {
   background-color: #eeeeee;
   border-color: #777777;
 }
@@ -6868,9 +6799,6 @@ fieldset[disabled] .cb_template .btn-muted.active {
 .open > .dropdown-toggle.cb_template .btn-inverse {
   background-image: none;
 }
-.cb_template .btn-inverse.disabled,
-.cb_template .btn-inverse[disabled],
-fieldset[disabled] .cb_template .btn-inverse,
 .cb_template .btn-inverse.disabled:hover,
 .cb_template .btn-inverse[disabled]:hover,
 fieldset[disabled] .cb_template .btn-inverse:hover,
@@ -6879,13 +6807,7 @@ fieldset[disabled] .cb_template .btn-inverse:hover,
 fieldset[disabled] .cb_template .btn-inverse:focus,
 .cb_template .btn-inverse.disabled.focus,
 .cb_template .btn-inverse[disabled].focus,
-fieldset[disabled] .cb_template .btn-inverse.focus,
-.cb_template .btn-inverse.disabled:active,
-.cb_template .btn-inverse[disabled]:active,
-fieldset[disabled] .cb_template .btn-inverse:active,
-.cb_template .btn-inverse.disabled.active,
-.cb_template .btn-inverse[disabled].active,
-fieldset[disabled] .cb_template .btn-inverse.active {
+fieldset[disabled] .cb_template .btn-inverse.focus {
   background-color: #000000;
   border-color: #333333;
 }
@@ -6989,7 +6911,7 @@ a.cb_template .bg-inverse:focus {
   background-color: #000000;
 }
 .cb_template .bg-muted {
-  background-color: #777777;
+  background-color: #eeeeee;
 }
 .cb_template .border-default {
   border-color: #dddddd;
@@ -7444,6 +7366,6 @@ a.cb_template .bg-inverse:focus {
   margin-bottom: 20px;
 }
 .cb_template {
-  background-color: inherit;
+  background-color: transparent;
   color: inherit;
 }

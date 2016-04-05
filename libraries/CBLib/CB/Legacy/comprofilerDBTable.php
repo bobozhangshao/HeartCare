@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/20/14 1:13 AM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -22,7 +22,7 @@ defined('CBLIB') or die();
  * @see \CBLib\Database\Table\Table
  * @see \CBLib\Database\Table\CheckedOrderedTable
  */
-class comprofilerDBTable  /* proxy-extends CheckedOrderedTable because function get() incompatibility of CBSubs 3.0.0 GPL only */
+class comprofilerDBTable  /* proxy-extends CheckedOrderedTable because function get() incompatibility of CBSubs 3.0.0 GPL to CBSubs 4.0.1 only. In CBSubs 4.0.2, this is not used anymore. */
 {
 	private $_table;
 

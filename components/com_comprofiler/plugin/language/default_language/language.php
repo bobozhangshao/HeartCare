@@ -2,7 +2,7 @@
 /**
 * Community Builder (TM) Default (English) language file Frontend
 * @version $Id:$
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -292,6 +292,9 @@ return	array(
 'INSTALL_FAILED_TO_COPY_FILE_SOURCE_DESTINATION'	=>	'Failed to copy file "[SOURCE_FILE]" to "[DESTINATION_FILE]"',
 'INSTALL_FAILED_TO_SET_PERMISSIONS_ON_FILE_FILENAME'	=>	'Failed to set permissions on (chmod) file: [FILENAME]',
 'CONTINUE_8d7163'	=>	'Continue ...',
+// 2 language strings from file libraries/CBLib/CB/Legacy/cbInstallerPlugin.php
+'PLUGIN_DEPENDENCY_MISSING'	=>	'Plugin dependency [dependency] is not installed.',
+'PLUGIN_DEPENDENCY_MISSING_VERSION'	=>	'Plugin dependency [dependency] [version] different from [dependency] [release].',
 // 12 language strings from file libraries/CBLib/CB/Legacy/cbMenuBarBase.php
 'PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO_S_d284f2'	=>	'Please make a selection from the list to %s',
 'PLEASE_MAKE_A_SELECTION_FROM_THE_LIST_TO_PUBLISH_246a93'	=>	'Please make a selection from the list to publish',
@@ -438,13 +441,16 @@ return	array(
 'SYSTEM_TABS_CANNOT_BE_DELETED_a97af8'	=>	'System tabs cannot be deleted!',
 'PLUGIN_TABS_CANNOT_BE_DELETED_d7d0b1'	=>	'Plugin tabs cannot be deleted!',
 'TABS_WITH_FIELDS_CANNOT_BE_DELETED_f19ffe'	=>	'Tabs with fields cannot be deleted!',
-// 6 language strings from file libraries/CBLib/CB/Database/Table/UserTable.php
+// 9 language strings from file libraries/CBLib/CB/Database/Table/UserTable.php
+'YOU_CANNOT_DELETE_YOURSELF_96b685'	=>	'You cannot delete yourself.',
+'NOT_AUTHORIZED_11a4ac'	=>	'Not Authorized',
 'UE_REG_REJECT_SUB'	=>	'Your sign up request has been rejected!',
 'UE_USERREJECT_MSG'	=>	'Your sign up at [sitename] has been rejected for the following reason: [reason]',
 'UE_UNBANUSER_SUB'	=>	'User Profile Unbanned',
 'UE_UNBANUSER_MSG'	=>	'Your user profile was unbanned by an administrator. Your profile is now visible to all users again.',
 'UE_UNBANUSERREQUEST_SUB'	=>	'Unban Request Pending Review',
 'UE_UNBANUSERREQUEST_MSG'	=>	'A user has submitted a request to unban their profile. Please log in and take the appropriate action.',
+'YOU_CANNOT_BLOCK_YOURSELF_1df8d4'	=>	'You cannot block yourself.',
 // 2 language strings from file libraries/CBLib/CBLib/AhaWow/Access.php
 'TAG_NAME_MISSING_ASSET_NAME'	=>	'[tag] [name] missing asset name',
 'ACTION_MISSING_ASSET_NAME'	=>	'[action] missing asset name',
@@ -805,7 +811,7 @@ return	array(
 'CONNECTION_TIP_CONNECTED_SINCE_CONNECTION_DATE'	=>	'Connected Since [CONNECTION_DATE]',
 'CONNECTION_TIP_TYPES_LIST'	=>	'{1} Type: [CONNECTIONS_TYPES]|]1,Inf] Types: [CONNECTIONS_TYPES]|%%COUNT%%',
 'CONNECTION_TIP_CONNECTION_COMMENT'	=>	'Comment: [CONNECTION_DESCRIPTION]',
-// 157 language strings from file components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php
+// 158 language strings from file components/com_comprofiler/plugin/user/plug_cbcore/cb.core.php
 '_UE_ADDITIONAL_INFO_HEADER'	=>	'Additional Information',
 '_UE_Website'	=>	'Web site',
 '_UE_Location'	=>	'Location',
@@ -828,10 +834,11 @@ return	array(
 'UE_VALID_PASS_CHARS'	=>	'Please enter a valid %s.  No spaces, at least %s characters and contain lower and upper-case letters, numbers and special signs',
 'UE_REGWARN_VPASS2'	=>	'Password and verification do not match, please try again.',
 'MIN_SETTING_MAX_SETTING_14ba35'	=>	'Min setting > Max setting !',
-'UE_YEAR_NOT_IN_RANGE'	=>	'Year %s is not between %s and %s',
+'UE_INTEGER_NOT_IN_RANGE'	=>	'Integer [value] is not between [min] and [max]',
 'NOT_AN_INTEGER_c1248c'	=>	'Not an integer',
 'UE_SEARCH_FROM'	=>	'Between',
 'UE_SEARCH_TO'	=>	'and',
+'UE_YEAR_NOT_IN_RANGE'	=>	'Year %s is not between %s and %s',
 'UE_EMAIL_AVAILABLE'	=>	'The email \'[email]\' is available.',
 'EMAIL_AND_VERIFICATION_DO_NOT_MATCH_PLEASE_TRY_AGA_d308c8'	=>	'Email and verification do not match, please try again.',
 'UE_WEBURL'	=>	'Address of Site',
@@ -1112,7 +1119,7 @@ return	array(
 'IF_PAGING_IS_ENABLED_THIS_IS_THE_NUMBER_OF_CONNECT_84c41e'	=>	'If paging is enabled, this is the number of connections per page. Otherwise, this is the number of connections to show. Default is 10.',
 'MAX_ENTRIES_SHOWN_OR_PER_PAGE_3a53db'	=>	'Max entries shown or per page',
 '_UE_CONNECTIONPATHS'	=>	'Connection Paths',
-// 224 language strings from file components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml
+// 225 language strings from file components/com_comprofiler/plugin/user/plug_cbcore/cb.core.xml
 '_UE_CONTACT_INFO_HEADER'	=>	'Contact Info',
 '_UE_REGWARN_NAME'	=>	'Please enter your real full name.',
 '_UE_NAME'	=>	'Name',
@@ -1161,7 +1168,7 @@ return	array(
 'TIMEAGO_WITHOUT_AGO_038d91'	=>	'Timeago, without Ago',
 'BIRTHDAY_aac772'	=>	'Birthday',
 'CUSTOM_90589c'	=>	'Custom',
-'ENABLE_OR_DISABLE_SERVER_TIMEZONE_OFFSET_OF_THE_DA_bd22ad'	=>	'Enable or disable server timezone offset of the date.',
+'ENABLE_OR_DISABLE_SERVER_TIMEZONE_OFFSET_OF_THE_DA_7df4df'	=>	'Enable or disable server timezone offset of the date. Note as date fields do not have a time they will offset from 00:00:00 time in the users timezone if available otherwise server timezone.',
 'TIMEZONE_OFFSET_44d32f'	=>	'Timezone Offset',
 'INPUT_CUSTOM_PHP_DATE_FUNCTION_FORMAT_TO_FORMAT_DA_5bee44'	=>	'Input custom PHP date function format to format date values.',
 'CUSTOM_DATE_FORMAT_71aa60'	=>	'Custom Date Format',
@@ -1175,6 +1182,7 @@ return	array(
 'TYPE_0_FOR_THIS_YEAR_TYPEIN_4DIGITS_YEAR_FOR_EXAMP_3d3c1e'	=>	'Type +0 for this year, type-in 4-digits year, for example 1923, or just a number prefixed with + or - sign, for example +25 or -110, to set a value relative to current year, e.g. -12 for minimum age of 12 years',
 'MAXIMUM_YEAR_9335ad'	=>	'Maximum Year',
 'DATETIME_a1af5f'	=>	'Datetime',
+'ENABLE_OR_DISABLE_SERVER_TIMEZONE_OFFSET_OF_THE_DA_bd22ad'	=>	'Enable or disable server timezone offset of the date.',
 'INPUT_CUSTOM_PHP_DATE_FUNCTION_FORMAT_TO_FORMAT_TI_bb71f7'	=>	'Input custom PHP date function format to format time values.',
 'CUSTOM_TIME_FORMAT_b71b04'	=>	'Custom Time Format',
 'FULL_DATETIME_cf9ce3'	=>	'Full Datetime',
@@ -1337,7 +1345,7 @@ return	array(
 'SELECT_THE_VIEW_ACCESS_LEVEL_THAT_CAN_INCREMENT_US_201484'	=>	'Select the view access level that can increment using this points field.',
 'ENABLE_OR_DISABLE_INCREMENTING_ACCESS_ON_USERLISTS_9b7941'	=>	'Enable or disable incrementing access on userlists.',
 'USERLIST_INCREMENT_c02061'	=>	'Userlist Increment',
-// 87 language strings from file components/com_comprofiler/plugin/user/plug_cbforums/cbforums.xml
+// 91 language strings from file components/com_comprofiler/plugin/user/plug_cbforums/cbforums.xml
 'FORUMS_TITLE'	=>	'Forums',
 'ENABLE_OR_DISABLE_USAGE_OF_PAGING_FOR_POSTS_a8ea55'	=>	'Enable or disable usage of paging for posts.',
 'INPUT_PAGE_LIMIT_FOR_POSTS_PAGE_LIMIT_DETERMINES_H_e58303'	=>	'Input page limit for posts. Page limit determines how many posts are displayed per page.',
@@ -1365,16 +1373,16 @@ return	array(
 'OPTIONALLY_ADD_A_CLASS_SUFFIX_TO_SURROUNDING_DIV_E_4a44ff'	=>	'Optionally add a class suffix to surrounding DIV encasing all of CB Forums.',
 'SELECT_FORUM_MODEL_USAGE_MODEL_DETERMINES_WHAT_FOR_c3c652'	=>	'Select forum model usage. Model determines what forum extension to use. Select a specific model to enable model specific parameters.',
 'PROFILE_cce99c'	=>	'Profile',
-'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_ORDERING_FROM_cf4701'	=>	'Select CB field to synchronize model ordering from (values: 0 = Oldest Post First, 1 = Newest Post First).',
+'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_ORDERING_FROM_314774'	=>	'Select CB field to synchronize model ordering from (values: 0 = Default, 1 = Oldest Post First, 2 = Newest Post First).',
 'ORDERING_12ad90'	=>	'Ordering',
 'SELECT_CB_FIELD_49536e'	=>	'- Select CB Field -',
-'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_VIEWTYPE_FROM_b20e5a'	=>	'Select CB field to synchronize model viewtype from (values: flat = Flat View, threaded = Threaded View).',
+'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_VIEWTYPE_FROM_88578f'	=>	'Select CB field to synchronize model viewtype from (values: flat = Flat View, threaded = Threaded View, indented = Indented View).',
 'VIEWTYPE_ac3d5e'	=>	'Viewtype',
 'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_SIGNATURE_FRO_06ce51'	=>	'Select CB field to synchronize model signature from.',
 'SIGNATURE_8c0900'	=>	'Signature',
 'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_PERSONAL_TEXT_a145cb'	=>	'Select CB field to synchronize model personal text from.',
 'PERSONAL_TEXT_70fd33'	=>	'Personal Text',
-'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_GENDER_FROM_V_ea4190'	=>	'Select CB field to synchronize model gender from (values: 1 = Male, 2 = Female).',
+'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_GENDER_FROM_V_3c47b5'	=>	'Select CB field to synchronize model gender from (values: 0 = Unknown, 1 = Male, 2 = Female).',
 'GENDER_019ec3'	=>	'Gender',
 'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_BIRTHDAY_FROM_246517'	=>	'Select CB field to synchronize model birthday from.',
 'BIRTHDATE_ccd41d'	=>	'Birthdate',
@@ -1418,12 +1426,16 @@ return	array(
 'HIDE_EMAIL_2057cb'	=>	'Hide Email',
 'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_SHOW_ONLINE_F_7e9e9b'	=>	'Select CB field to synchronize model show online from (values: 0 = Hide, 1 = Show).',
 'SHOW_ONLINE_ea20a0'	=>	'Show Online',
+'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_CAN_SUBSCRIBE_621cc8'	=>	'Select CB field to synchronize model can subscribe from (values: -1 = Default, 0 = No, 1 = Yes).',
+'SUBSCRIBE_b26917'	=>	'Subscribe',
+'SELECT_CB_FIELD_TO_SYNCHRONIZE_MODEL_USER_LIST_LIM_b21e89'	=>	'Select CB field to synchronize model user list limit from (values: -2 = Default, -1 = All, 0 = Since Last Visit, 4 = 4 Hours, 8 = 8 Hours, 12 = 12 Hours, 24 = 24 Hours, 48 = 48 Hours, 168 = Week, 720 = Month, 8760 = Year).',
+'LIST_LIMIT_9b69b9'	=>	'List Limit',
 'SIDEBAR_219ff7'	=>	'Sidebar',
-'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_R_6968df'	=>	'Input substitution supported sidebar display for registered users.',
+'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_R_23e60c'	=>	'Input substitution supported sidebar display for registered users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext].',
 'REGISTERED_6205cf'	=>	'Registered',
-'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_A_1afc31'	=>	'Input substitution supported sidebar display for anonymous users.',
+'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_A_3f9823'	=>	'Input substitution supported sidebar display for anonymous users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext].',
 'ANONYMOUS_7079c7'	=>	'Anonymous',
-'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_D_eeb823'	=>	'Input substitution supported sidebar display for deleted users.',
+'INPUT_SUBSTITUTION_SUPPORTED_SIDEBAR_DISPLAY_FOR_D_aedfc8'	=>	'Input substitution supported sidebar display for deleted users. Additional supported substitutions: [karmaplus], [karmaminus], [karmatitle], [karma], [rankimage], [ranktitle], [posts], [thankyou], [points], [medals], [personaltext].',
 'DELETED_5fe600'	=>	'Deleted',
 // 25 language strings from file components/com_comprofiler/plugin/user/plug_cbmenu/cb.menu.xml
 'MENU_CAN_BE_DISPLAYED_AS_A_MENUBAR_A_LIST_OF_MENU__3f1c16'	=>	'Menu can be displayed as a menubar, a list of menu links, or not displayed in this tab.',

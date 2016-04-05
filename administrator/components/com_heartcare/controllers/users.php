@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 class HeartCareControllerUsers extends JControllerAdmin
 {
-    public function getModel($name = 'user', $prefix = 'HeartCareModel', $config = array('ignore_request' => true))
+    public function getModel($name = 'User', $prefix = 'HeartCareModel', $config = array('ignore_request' => true))
     {
         $model = parent::getModel($name, $prefix, $config);
 

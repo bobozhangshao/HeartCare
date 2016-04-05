@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 11/12/13 4:59 PM $
 * @package CBLib\AhaWow\View
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -1474,7 +1474,9 @@ class RegistryEditView {
 
 		$html							=	array();
 
+		// Parse the view type for extendParamAttributes
 		$viewMode						=	$param->attributes( 'mode' );
+
 		switch ( $viewMode ) {
 			// case 'view':
 			case 'show':
@@ -1490,6 +1492,22 @@ class RegistryEditView {
 
 		// treat any <attributes> below the tag to add attributes to the tag as needed:
 		$this->extendParamAttributes( $param, $control_name, ( $viewType == 'view' ) );
+
+		// We need to reparse view type encase <attributes changed it:
+		$viewMode						=	$param->attributes( 'mode' );
+
+		switch ( $viewMode ) {
+			// case 'view':
+			case 'show':
+				$viewType				=	'view';
+				break;
+			// case 'param':
+			case 'edit':
+				$viewType				=	'param';
+				break;
+			default:
+				break;
+		}
 
 		switch ( $param->getName() ) {
 			case 'param':
@@ -1565,7 +1583,7 @@ class RegistryEditView {
 								$return		.=		'<div class="panel panel-default cbRepeatRow">'
 											.			'<div class="panel-body">';
 
-								if ( $repeatOrdering ) {
+								if ( $repeatOrdering && ( $viewType != 'view' ) ) {
 									$return	.=				'<div class="text-center cbRepeatRowSort">'
 											.					'<div class="cbRepeatRowMove fa fa-sort fa-block btn btn-default" title="' . htmlspecialchars( CBTxt::T( 'Click and drag to move this row.' ) ) . '"></div>'
 											.				'</div>';
@@ -1573,21 +1591,25 @@ class RegistryEditView {
 
 								$return		.=				'<div class="cbRepeatRowParams">'
 											.					$this->renderAllParams( $param, $child_cnam, $tabs, $viewType, $htmlFormatting )
-											.				'</div>'
-											.				'<div class="text-right cbRepeatRowIncrement">'
+											.				'</div>';
+
+								if ( $viewType != 'view' ) {
+									$return	.=				'<div class="text-right cbRepeatRowIncrement">'
 											.					'<div class="cbRepeatRowAddRemove">'
 											.						'<div class="cbRepeatRowRemove fa fa-minus btn btn-danger" title="' . htmlspecialchars( CBTxt::T( 'Click to remove this row.' ) ) . '"></div>'
 											.						'<div class="cbRepeatRowAdd fa fa-plus btn btn-success" title="' . htmlspecialchars( CBTxt::T( 'Click to add new row.' ) ) . '"></div>'
 											.					'</div>'
-											.				'</div>'
-											.			'</div>'
+											.				'</div>';
+								}
+
+								$return		.=			'</div>'
 											.		'</div>';
 							} elseif ( in_array( $htmlFormatting, array( 'table', 'td' ) ) ) {
 								$return		.=		'<table class="table table-bordered cbRepeatRow">'
 											.			'<tbody>'
 											.				'<tr>';
 
-								if ( $repeatOrdering ) {
+								if ( $repeatOrdering && ( $viewType != 'view' ) ) {
 									$return	.=					'<td class="text-center cbRepeatRowSort" style="width: 1%; vertical-align: middle;">'
 											.						'<div class="cbRepeatRowMove fa fa-sort btn btn-default" title="' . htmlspecialchars( CBTxt::T( 'Click and drag to move this row.' ) ) . '"></div>'
 											.					'</td>';
@@ -1599,12 +1621,16 @@ class RegistryEditView {
 											.							$this->renderAllParams( $param, $child_cnam, $tabs, $viewType, $htmlFormatting )
 											.							( $htmlFormatting == 'td' ? '<tr>' : null )
 											.						'</table>'
-											.					'</td>'
-											.					'<td class="text-center cbRepeatRowIncrement" style="width: 10%; vertical-align: middle;">'
+											.					'</td>';
+
+								if ( $viewType != 'view' ) {
+									$return	.=					'<td class="text-center cbRepeatRowIncrement" style="width: 10%; vertical-align: middle;">'
 											.						'<div class="cbRepeatRowRemove fa fa-minus btn btn-danger" title="' . htmlspecialchars( CBTxt::T( 'Click to remove this row.' ) ) . '"></div>'
 											.						'<div class="cbRepeatRowAdd fa fa-plus btn btn-success" title="' . htmlspecialchars( CBTxt::T( 'Click to add new row.' ) ) . '"></div>'
-											.					'</td>'
-											.				'</tr>'
+											.					'</td>';
+								}
+
+								$return		.=				'</tr>'
 											.			'</tbody>'
 											.		'</table>';
 							} else {
@@ -1647,9 +1673,13 @@ class RegistryEditView {
 								}
 							}
 
-							$result[1]		=	'<div class="cbRepeat"' . ( ! $repeatOrdering ? ' data-cbrepeat-sortable="false"' : null ) . ( $repeatIgnore ? ' data-cbrepeat-ignore="' . htmlspecialchars( $repeatIgnore ) . '"' : null ) . ( $repeatMax ? ' data-cbrepeat-max="' . (int) $repeatMax . '"' : null ) . '>'
+							if ( $viewType != 'view' ) {
+								$result[1]	=	'<div class="cbRepeat"' . ( ! $repeatOrdering ? ' data-cbrepeat-sortable="false"' : null ) . ( $repeatIgnore ? ' data-cbrepeat-ignore="' . htmlspecialchars( $repeatIgnore ) . '"' : null ) . ( $repeatMax ? ' data-cbrepeat-max="' . (int) $repeatMax . '"' : null ) . '>'
 											.		$return
 											.	'</div>';
+							} else {
+								$result[1]	=	$return;
+							}
 						}
 
 						$html[]				=	$this->_renderLine( $param, $result, $control_name, $htmlFormatting, true, ( $viewType == 'view' ) );
@@ -2334,6 +2364,11 @@ class RegistryEditView {
 						trigger_error( 'Extended renderAllParams:showview: View ' . $viewName . ' not defined in XML. ', E_USER_NOTICE );
 						return false;
 					}
+
+					if ( ! Access::authorised( $viewModel ) ) {
+						return null;
+					}
+
 					if ( $data ) {
 						$this->pushModelOfData( $data );
 					}
@@ -2390,6 +2425,10 @@ class RegistryEditView {
 								}
 
 								foreach ( $viewModels as $viewModel ) {
+									if ( ! Access::authorised( $viewModel ) ) {
+										continue;
+									}
+
 									if ( $tabbed ) {
 										$this->_i++;
 
@@ -2464,6 +2503,10 @@ class RegistryEditView {
 
 							if ( $viewModels && count( $viewModels ) ) {
 								foreach ( $viewModels as $viewModel ) {
+									if ( ! Access::authorised( $viewModel ) ) {
+										continue;
+									}
+
 									if ( $tabbed ) {
 										$this->_i++;
 
@@ -4086,7 +4129,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_text( $name, $value, &$node, $control_name ) {
+	function _form_text( $name, $value, $node, $control_name ) {
 		return  $this->textfield( $name, $value, $node, $control_name );
 	}
 
@@ -4099,7 +4142,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_string( $name, $value, &$node, $control_name ) {
+	function _form_string( $name, $value, $node, $control_name ) {
 		return  $this->textfield( $name, $value, $node, $control_name );
 	}
 
@@ -4112,7 +4155,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_int( $name, $value, &$node, $control_name ) {
+	function _form_int( $name, $value, $node, $control_name ) {
 		return  $this->textfield( $name, $value, $node, $control_name, array( 'digits' ) );		//TBD enforce int also on save...
 	}
 
@@ -4125,7 +4168,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_float( $name, $value, &$node, $control_name ) {
+	function _form_float( $name, $value, $node, $control_name ) {
 		return  $this->textfield( $name, $value, $node, $control_name, array( 'number' ) );		//TBD enforce float also on save...
 	}
 
@@ -4138,7 +4181,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_user( $name, $value, &$node, $control_name ) {
+	function _form_user( $name, $value, $node, $control_name ) {
 		return $this->_form_int( $name, $value, $node, $control_name );		//TBD show ajax powered select2 of users
 	}
 
@@ -4151,7 +4194,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_tag( $name, $value, &$node, $control_name ) {
+	function _form_tag( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			$size						=	0;
 			$cols						=	$node->attributes( 'cols' );
@@ -4200,6 +4243,9 @@ class RegistryEditView {
 		} else {
 			$this->_jsselect2			=	true;
 
+			// Force select2 usage for tags:
+			$node->addAttribute( 'filteringselect', 'true' );
+
 			$translate					=	$node->attributes( 'translate' );
 
 			if ( is_array( $value ) ) {
@@ -4238,7 +4284,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_custom( $name, $value, &$node, $control_name ) {
+	function _form_custom( $name, $value, $node, $control_name ) {
 		global $_CB_database, $_PLUGINS;
 
 		$pluginId	=	( $this->_pluginObject ? $this->_pluginObject->id : null );
@@ -4280,7 +4326,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_private( $name, $value, &$node, $control_name ) {
+	function _form_private( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$data								=	null;
@@ -4374,7 +4420,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_group( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_group( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$formatting			=	$node->attributes( 'formatting' );
@@ -4604,6 +4650,10 @@ class RegistryEditView {
 		$translate												=	$node->attributes( 'translate' );
 
 		if ( $children ) foreach ( $children as $option ) {
+			if ( ( ! Access::authorised( $option ) ) && ( ! ( ( $option->getName() == 'if' ) && ( $option->attributes( 'type' ) == 'permission' ) ) ) ) {
+				continue;
+			}
+
 			$optTranslate										=	( $option->attributes( 'translate' ) !== null ? $option->attributes( 'translate' ) : $translate );
 
 			if ( $option->getName() == 'option' ) {
@@ -4763,7 +4813,7 @@ class RegistryEditView {
 	 * @param  bool              $ignoreClass   Set if option class should be ignored (good for nested usage)
 	 * @return string                           The html for the element
 	 */
-	function _form_list( $name, $value, &$node, $control_name, $ignoreClass = false ) {
+	function _form_list( $name, $value, $node, $control_name, $ignoreClass = false ) {
 		$multi						=	( $node->attributes( 'multiple' ) == 'true' );
 
 		if ( $multi ) {
@@ -4799,7 +4849,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_multilist( $name, $value, &$node, $control_name ) {
+	function _form_multilist( $name, $value, $node, $control_name ) {
 		$size							=	0;
 		$cols							=	$node->attributes( 'cols' );
 		$rows							=	$node->attributes( 'rows' );
@@ -4860,7 +4910,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_field_show_only_if_selected( $name, $value, &$node, $control_name ) {
+	function _form_field_show_only_if_selected( $name, $value, $node, $control_name ) {
 		if ( ! $value ) {
 			return null;
 		}
@@ -4950,7 +5000,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_data( $name, $value, &$node, $control_name ) {
+	function _form_data( $name, $value, $node, $control_name ) {
 		$size						=	0;
 		$cols						=	$node->attributes( 'cols' );
 		$rows						=	$node->attributes( 'rows' );
@@ -5030,7 +5080,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_tablefield( $name, $value, &$node, $control_name ) {
+	function _form_tablefield( $name, $value, $node, $control_name ) {
 		return $this->_form_data( $name, $value, $node, $control_name );
 	}
 
@@ -5043,7 +5093,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_radio( $name, $value, &$node, $control_name ) {
+	function _form_radio( $name, $value, $node, $control_name ) {
 		$size					=	$node->attributes( 'size' );
 		$cols					=	$node->attributes( 'cols' );
 		$rows					=	$node->attributes( 'rows' );
@@ -5086,7 +5136,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_checkbox( $name, $value, &$node, $control_name ) {
+	function _form_checkbox( $name, $value, $node, $control_name ) {
 		$size							=	$node->attributes( 'size' );
 		$cols							=	$node->attributes( 'cols' );
 		$rows							=	$node->attributes( 'rows' );
@@ -5157,7 +5207,7 @@ class RegistryEditView {
 	 * @param  int               $limit           Maximum number of results
 	 * @return string The html for the element
 	 */
-	function _form_multilist_internal( $name, $value, &$node, $control_name, $query, $defaultDefault, $multiSelect, $limit = 0 ) {
+	function _form_multilist_internal( $name, $value, $node, $control_name, $query, $defaultDefault, $multiSelect, $limit = 0 ) {
 		global $_CB_database;
 
 		$size								=	0;
@@ -5259,7 +5309,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_list_sql( $name, $value, &$node, $control_name ) {
+	function _form_list_sql( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$multi						=	( $node->attributes( 'multiple' ) == 'true' );
@@ -5338,7 +5388,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_sql( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_sql( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		if ( $this->_view ) {
@@ -5362,7 +5412,7 @@ class RegistryEditView {
 	 * @return string                             The html for the element
 	 * @deprecated 2.0.0
 	 */
-	function _form_mos_section( $name, $value, &$node, $control_name ) {
+	function _form_mos_section( $name, $value, $node, $control_name ) {
 		return $this->_form_mos_category( $name, $value, $node, $control_name );
 	}
 
@@ -5375,7 +5425,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_category( $name, $value, &$node, $control_name ) {
+	function _form_mos_category( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5456,7 +5506,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_content( $name, $value, &$node, $control_name ) {
+	function _form_mos_content( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5548,7 +5598,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_field( $name, $value, &$node, $control_name ) {
+	function _form_field( $name, $value, $node, $control_name ) {
 		$multi	=	( $node->attributes( 'multiple' ) == 'true' );
 
 		return $this->_form_multifield( $name, $value, $node, $control_name, $multi );
@@ -5564,7 +5614,7 @@ class RegistryEditView {
 	 * @param  boolean             $multi         Is it a multi-valued field?
 	 * @return string                             The html for the element
 	 */
-	function _form_multifield( $name, $value, &$node, $control_name, $multi = true ) {
+	function _form_multifield( $name, $value, $node, $control_name, $multi = true ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5729,7 +5779,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_tab( $name, $value, &$node, $control_name ) {
+	function _form_tab( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5798,7 +5848,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_component( $name, $value, &$node, $control_name ) {
+	function _form_mos_component( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5871,7 +5921,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_module( $name, $value, &$node, $control_name ) {
+	function _form_mos_module( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -5950,7 +6000,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_menu( $name, $value, &$node, $control_name ) {
+	function _form_mos_menu( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			return htmlspecialchars( $value );
 		} else {
@@ -6022,7 +6072,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_mos_menu_item( $name, $value, &$node, $control_name ) {
+	function _form_mos_menu_item( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$key						=	$node->attributes( 'key' );
@@ -6101,7 +6151,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_imagelist( $name, $value, &$node, $control_name ) {
+	function _form_imagelist( $name, $value, $node, $control_name ) {
 		return $this->_form_filelist( $name, $value, $node, $control_name );
 	}
 
@@ -6114,7 +6164,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_filelist( $name, $value, &$node, $control_name ) {
+	function _form_filelist( $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$size							=	0;
@@ -6222,7 +6272,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_folderlist( $name, $value, &$node, $control_name ) {
+	function _form_folderlist( $name, $value, $node, $control_name ) {
 		return $this->_form_filelist( $name, $value, $node, $control_name );
 	}
 
@@ -6235,7 +6285,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_writable( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_writable( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$path			=	$_CB_framework->getCfg( 'absolute_path' ) . '/' . $node->attributes( 'directory' );
@@ -6263,7 +6313,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_textarea( $name, $value, &$node, $control_name ) {
+	function _form_textarea( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			return '<code>' . str_replace( array( "\n", "\r", '  ' ), array( "<br />", "<br />", '&nbsp;&nbsp;' ), htmlspecialchars( $value ) ) . '</code>';
 		} else {
@@ -6289,7 +6339,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_htmlarea( $name, $value, &$node, $control_name ) {
+	function _form_htmlarea( $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 		if ( $this->_view ) {
 			return htmlspecialchars( $value );
@@ -6340,7 +6390,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_uploadfile( $name, $value, &$node, $control_name ) {
+	function _form_uploadfile( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			return htmlspecialchars( $value );
 		} else {
@@ -6360,7 +6410,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_button( $name, $value, &$node, $control_name ) {
+	function _form_button( $name, $value, $node, $control_name ) {
 		$translate			=	$node->attributes( 'translate' );
 		$task				=	$node->attributes( 'task' );
 		$link				=	$node->attributes( 'link' );
@@ -6435,7 +6485,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_spacer( $name, $value, &$node, $control_name ) {
+	function _form_spacer( $name, $value, $node, $control_name ) {
 		if ( $value ) {
 			$cssclass	=	RegistryEditView::buildClasses( $node );
 			$translate	=	$node->attributes( 'translate' );
@@ -6465,7 +6515,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_usergroup( $name, $value, &$node, $control_name ) {
+	function _form_usergroup( $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		static $texts						=	array();
@@ -6606,7 +6656,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_viewaccesslevel( $name, $value, &$node, $control_name ) {
+	function _form_viewaccesslevel( $name, $value, $node, $control_name ) {
 		$size								=	0;
 		$cols								=	$node->attributes( 'cols' );
 		$rows								=	$node->attributes( 'rows' );
@@ -6732,7 +6782,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_rownumber( /** @noinspection PhpUnusedParameterInspection */	$name, $value, &$node, $control_name ) {
+	function _form_rownumber( /** @noinspection PhpUnusedParameterInspection */	$name, $value, $node, $control_name ) {
 		$content	=	$this->_controllerView->pageNav->getRowNumber( $this->_modelOfDataRowsNumber );
 		return $content;
 	}
@@ -6746,7 +6796,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_primarycheckbox( $name, $value, &$node, $control_name ) {
+	function _form_primarycheckbox( $name, $value, $node, $control_name ) {
 		$content	=	'<input type="checkbox" id="' . $this->_controllerView->fieldId( 'id', $this->_modelOfDataRowsNumber )			//TBD hardcoded column of index id
 			.	'" name="' . $this->_controllerView->fieldName( 'idcid[]' )
 			.	'" value="' . htmlspecialchars( $value ) . '" />';
@@ -6766,7 +6816,7 @@ class RegistryEditView {
 	 * @param  string              $defaultToggleTitle  The title displayed when item is toggleable
 	 * @return string                                   The html for the element
 	 */
-	function _form_checkmark( $name, $value, &$node, $control_name, $defaultTask = null, $defaultTitle = null, $defaultToggleTitle = null ) {
+	function _form_checkmark( $name, $value, $node, $control_name, $defaultTask = null, $defaultTitle = null, $defaultToggleTitle = null ) {
 		if ( $this->_view ) {
 			$isToggle								=	( $node->attributes( 'onclick' ) == 'toggle' );
 			$checkmarkTask							=	( $defaultTask ? $defaultTask : ( $value ? 'disable/' . $name : 'enable/' . $name ) );
@@ -6895,7 +6945,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_published( $name, $value, &$node, $control_name ) {
+	function _form_published( $name, $value, $node, $control_name ) {
 		$publishTask			=	( $value ? 'unpublish/' . $name : 'publish/' . $name );
 		$publishTitle			=	( $value ? CBTxt::T( 'Published' ) : CBTxt::T( 'Unpublished' ) );
 		$publishToggleTitle		=	( $value ? CBTxt::T( 'Unpublish Item' ) : CBTxt::T( 'Publish Item' ) );
@@ -6912,7 +6962,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_yesno( $name, $value, &$node, $control_name ) {
+	function _form_yesno( $name, $value, $node, $control_name ) {
 		$yes					=	CBTxt::T( $node->attributes( 'yes' ) );
 
 		if ( ! $yes ) {
@@ -6955,7 +7005,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_firstwords( $name, $value, &$node, $control_name ) {
+	function _form_firstwords( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			$size				=	$node->attributes( 'size' );
 
@@ -6986,7 +7036,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_datetime( $name, $value, &$node, $control_name ) {
+	function _form_datetime( $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$showTime				=	$node->attributes( 'showtime' );
@@ -7062,7 +7112,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_dayofweek( $name, $value, &$node, $control_name ) {
+	function _form_dayofweek( $name, $value, $node, $control_name ) {
 		static $days	=	array(	array( 'value' => 0, 'text' => '-' ),
 			array( 'value' => 1, 'text' => "Sunday" ),
 			array( 'value' => 2, 'text' => "Monday" ),
@@ -7109,7 +7159,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_password( $name, $value, &$node, $control_name ) {
+	function _form_password( $name, $value, $node, $control_name ) {
 		if ( $this->_view ) {
 			$sprintf	=	 $node->attributes( 'sprintf' );
 			if ( $sprintf ) {
@@ -7134,7 +7184,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_hidden( $name, $value, &$node, $control_name ) {
+	function _form_hidden( $name, $value, $node, $control_name ) {
 		if ( $node->attributes( 'value' ) ) {
 			$value		=	$node->attributes( 'value' );
 		}
@@ -7154,7 +7204,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_param( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_param( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		$content	=	$this->_pluginParams->get( $node->attributes( 'value' ) );
 		return $content;
 	}
@@ -7168,7 +7218,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_xpath( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_xpath( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		$fromNode				=	$node->attributes( 'path' );
 		$fromFile				=	$node->attributes( 'file' );
 		$translate				=	$node->attributes( 'translate' );
@@ -7215,7 +7265,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_httprequest( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_httprequest( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		$link					=	$node->attributes( 'link' );
 
 		if ( ! $link ) {
@@ -7275,7 +7325,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_json( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_json( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		if ( ( $value[0] === '{' ) || ( $value[0] === '[' ) ) {
 			$struct		=	json_decode( $value );
 
@@ -7328,7 +7378,7 @@ class RegistryEditView {
 	 * @param  string              $control_name  The control name
 	 * @return string                             The html for the element
 	 */
-	function _form_permissions( $name, /** @noinspection PhpUnusedParameterInspection */ $value, &$node, $control_name ) {
+	function _form_permissions( $name, /** @noinspection PhpUnusedParameterInspection */ $value, $node, $control_name ) {
 		if ( checkJversion() >= 2 ) {
 			return $this->getPermissionsForm( $name, $node, $control_name )->getInput( 'rules' );
 		} else {
@@ -7536,7 +7586,7 @@ class RegistryEditView {
 	 * @param  string            $control_name  The control name
 	 * @return string                           The html for the element
 	 */
-	function _form_ordering( $name, $value, &$node, $control_name ) {
+	function _form_ordering( $name, $value, $node, $control_name ) {
 		global $_CB_database;
 
 		$onclick								=	$node->attributes( 'onclick' );
@@ -7705,7 +7755,7 @@ class RegistryEditView {
 	 * @param  string  $control_name  The control name
 	 * @return string The html for the element
 	 */
-	function _form_bargraph( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_bargraph( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$content							=	'none';
@@ -7739,7 +7789,7 @@ class RegistryEditView {
 	 * @param  string  $control_name  The control name
 	 * @return string The html for the element
 	 */
-	function _form_plot( /** @noinspection PhpUnusedParameterInspection */ $name, $value, &$node, $control_name ) {
+	function _form_plot( /** @noinspection PhpUnusedParameterInspection */ $name, $value, $node, $control_name ) {
 		global $_CB_framework;
 
 		$rowspan		=	$node->attributes( 'rowspan' );

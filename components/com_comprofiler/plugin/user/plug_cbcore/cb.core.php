@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -142,11 +142,6 @@ class CBfield_text extends cbFieldHandler {
 			} elseif ( $fieldValidateExpression == 'customregex' ) {
 				$pregExp				=	$field->params->get( 'pregexp', '/^.*$/' );
 			} else {
-				$pregExp				=	null;
-			}
-
-			if ( ! preg_match( "#^/(?:\\\\/|[^/\\n\\r])+/[a-z]*\$#", $pregExp ) ) {
-				// it's not a valid regexp: do not use it!:
 				$pregExp				=	null;
 			}
 		} else {
@@ -1156,22 +1151,26 @@ class CBfield_integer extends CBfield_text {
 	 * @return null|string
 	 */
 	protected function getDataAttributes( $field, $user, $output, $reason, $attributeArray = array() ) {
-		$min					=	(int) $field->params->get( 'integer_minimum', 0 );
+		$min						=	(int) $field->params->get( 'integer_minimum', 0 );
 
 		if ( $min < 0 ) {
-			$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'integer' );
+			$attributeArray[]		=	cbValidator::getRuleHtmlAttributes( 'integer' );
 		} else {
-			$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'digits' );
+			$attributeArray[]		=	cbValidator::getRuleHtmlAttributes( 'digits' );
 		}
 
-		if ( $min ) {
-			$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'min', (int) $min );
-		}
+		$max						=	(int) $field->params->get( 'integer_maximum', 1000000 );
 
-		$max					=	(int) $field->params->get( 'integer_maximum', 1000000 );
+		if ( $min && $max ) {
+			$attributeArray[]		=	cbValidator::getRuleHtmlAttributes( 'range', array( (int) $min, (int) $max ) );
+		} else {
+			if ( $min ) {
+				$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'min', (int) $min );
+			}
 
-		if ( $max ) {
-			$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'max', (int) $max );
+			if ( $max ) {
+				$attributeArray[]	=	cbValidator::getRuleHtmlAttributes( 'max', (int) $max );
+			}
 		}
 
 		return parent::getDataAttributes( $field, $user, $output, $reason, $attributeArray );
@@ -1209,6 +1208,13 @@ class CBfield_integer extends CBfield_text {
 					$ret			=	$this->_fieldSearchRangeModeHtml( $field, $user, $output, $reason, $value, $minHtml, $maxHtml, $list_compare_types );
 
 				} else {
+					$min			=	(int) $field->params->get( 'integer_minimum', 0 );
+
+					if ( ( $min > 0 ) && ( (int) $value === 0 ) ) {
+						// If the minimum does not allow for 0 and the value is 0 then treat it as null to allow range validation for non-required usage:
+						$value		=	null;
+					}
+
 					$ret			=	$this->_fieldEditToHtml( $field, $user, $reason, 'input', 'text', $value, $this->getDataAttributes( $field, $user, $output, $reason ) );
 				}
 				break;
@@ -1286,7 +1292,7 @@ class CBfield_integer extends CBfield_text {
 					$validated		=	false;
 				}
 				if ( ( ( (int) $value ) < $min ) || ( ( (int) $value ) > $max ) ) {
-					$this->_setValidationError( $field, $user, $reason, sprintf( CBTxt::T( 'UE_YEAR_NOT_IN_RANGE', 'Year %s is not between %s and %s' ), (int) $value, (int) $min, (int) $max ) );		// using that year string, as we don't have a general one.
+					$this->_setValidationError( $field, $user, $reason, CBTxt::T( 'UE_INTEGER_NOT_IN_RANGE', 'Integer [value] is not between [min] and [max]', array( '[value]' => (int) $value, '[min]' => (int) $min, '[max]' => (int) $max ) ) );
 					$validated		=	false;
 				}
 				if ( $validated ) {
@@ -1414,7 +1420,7 @@ class CBfield_date extends cbFieldHandler {
 			case 'html':
 			case 'rss':
 				if ( ( $value != null ) && ( $value != '' ) && ( $value != '0000-00-00 00:00:00' ) && ( $value != '0000-00-00' ) ) {
-					$offset					=	(int) $field->params->get( 'date_offset', 1 );
+					$offset					=	(int) $field->params->get( 'date_offset', ( $field->get( 'type' ) == 'datetime' ? 1 : 0 ) );
 
 					switch ( (int) $field->params->get( 'field_display_by', 0 ) ) {
 						case 1: // Age
@@ -1438,7 +1444,15 @@ class CBfield_date extends cbFieldHandler {
 							$return			=	$this->formatFieldValueLayout( cbFormatDate( $value, $offset, 'exacttimeago' ), $reason, $field, $user, false );
 							break;
 						case 3: // Birthdate
-							$return			=	$this->formatFieldValueLayout( htmlspecialchars( cbFormatDate( $value, $offset, true, 'F d' ) ), $reason, $field, $user );
+							// Offset based off the profile owners timezone:
+							$timeZone		=	JFactory::getUser( (int) $user->get( 'id' ) )->getParam( 'timezone' );
+
+							if ( ! $timeZone ) {
+								// If no profile timezone specified then offset based off site:
+								$timeZone	=	JFactory::getConfig()->get( 'offset' );
+							}
+
+							$return			=	$this->formatFieldValueLayout( htmlspecialchars( cbFormatDate( $value, $offset, ( $field->get( 'type' ) == 'datetime' ? true : false ), 'F d', ' g:i A', $timeZone ) ), $reason, $field, $user );
 							break;
 						case 4: // Date
 							$return			=	$this->formatFieldValueLayout( htmlspecialchars( cbFormatDate( $value, $offset, false ) ), $reason, $field, $user );
@@ -1460,7 +1474,12 @@ class CBfield_date extends cbFieldHandler {
 			case 'htmledit':
 				global $_CB_framework;
 
-				$offset						=	(int) $field->params->get( 'date_offset', 1 );
+				$offset						=	(int) $field->params->get( 'date_offset', ( $field->get( 'type' ) == 'datetime' ? 1 : 0 ) );
+				$displayBy					=	(int) $field->params->get( 'field_display_by', 0 );
+
+				if ( $displayBy == 1 ) { // Age
+					$offset					=	0;
+				}
 
 				$calendars					=	new cbCalendars( $_CB_framework->getUi() );
 
@@ -1524,9 +1543,21 @@ class CBfield_date extends cbFieldHandler {
 
 					$return					=	$this->_fieldSearchRangeModeHtml( $field, $user, $output, $reason, $value, $minHtml, $maxHtml, $list_compare_types );
 				} elseif ( ( ! in_array( $field->get( 'name' ), array( 'registerDate', 'lastvisitDate', 'lastupdatedate' ) ) ) ) {
+					$timeZone				=	null;
+
+					if ( $displayBy == 3 ) { // Birthdate
+						// Offset based off the profile owners timezone:
+						$timeZone			=	JFactory::getUser( (int) $user->get( 'id' ) )->getParam( 'timezone' );
+
+						if ( ! $timeZone ) {
+							// If no profile timezone specified then offset based off site:
+							$timeZone		=	JFactory::getConfig()->get( 'offset' );
+						}
+					}
+
 					list( $yMin, $yMax )	=	$this->_yearsRange( $field, 0 );
 
-					$return					=	$this->formatFieldValueLayout( $calendars->cbAddCalendar( $field->get( 'name' ), $this->getFieldTitle( $field, $user, 'text', $reason ), $this->_isRequired( $field, $user, $reason ), $value, $this->_isReadOnly( $field, $user, $reason ), ( $field->get( 'type' ) == 'datetime' ? true : false ), $yMin, $yMax, $tooltip, $offset ), $reason, $field, $user )
+					$return					=	$this->formatFieldValueLayout( $calendars->cbAddCalendar( $field->get( 'name' ), $this->getFieldTitle( $field, $user, 'text', $reason ), $this->_isRequired( $field, $user, $reason ), $value, $this->_isReadOnly( $field, $user, $reason ), ( $field->get( 'type' ) == 'datetime' ? true : false ), $yMin, $yMax, $tooltip, $offset, $timeZone ), $reason, $field, $user )
 											.	$this->_fieldIconsHtml( $field, $user, $output, $reason, null, $field->get( 'type' ), $value, 'input', null, true, $this->_isRequired( $field, $user, $reason ) && ! $this->_isReadOnly( $field, $user, $reason ) );
 				}
 				break;
@@ -5518,17 +5549,18 @@ class CBfield_video extends CBfield_text {
 				$width				=	(int) $field->params->get( 'video_width', 400 );
 			}
 
-			$embed					=	'<div class="cbVideoField' . ( $reason == 'list' ? ' cbClicksInside' : null ) . '" style="' . ( $width ? 'max-width: ' . (int) $width . 'px;' : null ) . '">'
-									.		'<video width="' . ( $width ? (int) $width : '640' ) . '" height="' . round( ( $width ? (int) $width : 640 ) / 1.78 ) . '" style="width: 100%; height: 100%;" src="' . htmlspecialchars( $value ) . '" type="' . htmlspecialchars( $this->getMimeType( $value ) ) . '" class="cbVideoFieldEmbed"></video>'
-									.	'</div>';
+			$embed					=	'<div class="cbVideoField' . ( $reason == 'list' ? ' cbClicksInside' : null ) . '" style="max-width: 100%;">';
 
-			if ( $embed ) {
-				static $JS_loaded	=	0;
-
-				if ( ! $JS_loaded++ ) {
-					$_CB_framework->outputCbJQuery( "$( '.cbVideoFieldEmbed' ).mediaelementplayer();", 'media' );
+			if ( in_array( $domain, array( 'youtube', 'youtu' ) ) ) {
+				if ( preg_match( '%(?:(?:watch\?v=)|(?:embed/)|(?:be/))([A-Za-z0-9_-]+)%', $value, $matches ) ) {
+					// iframe can't have % height so always calculate it:
+					$embed	.=				'<iframe width="' . ( $width ? (int) $width : '640' ) . '" height="' . round( ( $width ? (int) $width : 640 ) / 1.78 ) . '" src="https://www.youtube.com/embed/' . htmlspecialchars( $matches[1] ) . '" frameborder="0" allowfullscreen class="cbVideoFieldEmbed"></iframe>';
 				}
+			} else {
+				$embed		.=				'<video' . ( $width ? ' width="' . (int) $width . '" height="' . round( (int) $width / 1.78 ) . '"' : ' width="100%"' ) . ' style="max-width: 100%;" src="' . htmlspecialchars( $value ) . '" type="' . htmlspecialchars( $this->getMimeType( $value ) ) . '" controls="controls" preload="auto" class="cbVideoFieldEmbed"></video>';
 			}
+
+			$embed					.=	'</div>';
 		}
 
 		return $embed;
@@ -6029,12 +6061,17 @@ class CBfield_video extends CBfield_text {
 					$domain					=	preg_replace( '/^(?:(?:\w+\.)*)?(\w+)\..+$/', '\1', parse_url( $value, PHP_URL_HOST ) );
 
 					if ( ! in_array( $domain, array( 'youtube', 'youtu' ) ) ) {
-						$linkHeaders		=	@get_headers( $value );
 						$linkExists			=	false;
 
-						if ( $linkHeaders ) {
-							$linkExists		=	( isset( $linkHeaders[0] ) && ( strpos( $linkHeaders[0], '200' ) !== false ) ? true : false );
-						}
+						try {
+							$request		=	new \GuzzleHttp\Client();
+
+							$header			=	$request->head( $value );
+
+							if ( ( $header !== false ) && ( $header->getStatusCode() == 200 ) ) {
+								$linkExists	=	true;
+							}
+						} catch( Exception $e ) {}
 
 						if ( ! $linkExists ) {
 							$this->_setValidationError( $field, $user, $reason, CBTxt::T( 'Please input a video file url before linking' ) );
@@ -6252,17 +6289,9 @@ class CBfield_audio extends CBfield_text {
 				$width				=	(int) $field->params->get( 'audio_width', 400 );
 			}
 
-			$embed					=	'<div class="cbAudioField' . ( $reason == 'list' ? ' cbClicksInside' : null ) . '" style="' . ( $width ? 'max-width: ' . (int) $width . 'px;' : null ) . '">'
-									.		'<audio width="' . ( $width ? (int) $width : '640' ) . '" style="width: 100%;" src="' . htmlspecialchars( $value ) . '" type="' . htmlspecialchars( $this->getMimeType( $value ) ) . '" class="cbAudioFieldEmbed"></audio>'
+			$embed					=	'<div class="cbAudioField' . ( $reason == 'list' ? ' cbClicksInside' : null ) . '">'
+									.		'<audio style="width: ' . ( $width ? (int) $width . 'px' : '100%' ) . '; max-width: 100%;" src="' . htmlspecialchars( $value ) . '" type="' . htmlspecialchars( $this->getMimeType( $value ) ) . '" controls="controls" preload="auto" class="cbAudioFieldEmbed"></audio>'
 									.	'</div>';
-
-			if ( $embed ) {
-				static $JS_loaded	=	0;
-
-				if ( ! $JS_loaded++ ) {
-					$_CB_framework->outputCbJQuery( "$( '.cbAudioFieldEmbed' ).mediaelementplayer({ isVideo: false });", 'media' );
-				}
-			}
 		}
 
 		return $embed;
@@ -6760,12 +6789,17 @@ class CBfield_audio extends CBfield_text {
 				$validated					=	parent::validate( $field, $user, $columnName, $value, $postdata, $reason );
 
 				if ( $validated && ( $value !== '' ) && ( $value !== null ) ) {
-					$linkHeaders			=	@get_headers( $value );
 					$linkExists				=	false;
 
-					if ( $linkHeaders ) {
-						$linkExists			=	( isset( $linkHeaders[0] ) && ( strpos( $linkHeaders[0], '200' ) !== false ) ? true : false );
-					}
+					try {
+						$request			=	new \GuzzleHttp\Client();
+
+						$header				=	$request->head( $value );
+
+						if ( ( $header !== false ) && ( $header->getStatusCode() == 200 ) ) {
+							$linkExists		=	true;
+						}
+					} catch( Exception $e ) {}
 
 					if ( ! $linkExists ) {
 						$this->_setValidationError( $field, $user, $reason, CBTxt::T( 'Please input a audio file url before linking' ) );

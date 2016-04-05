@@ -1,19 +1,17 @@
-.cb_template {
-  /*!
- *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
- */
-  /* FONT PATH
- * -------------------------- */
-  /* makes the font 33% larger relative to the icon container */
-  /* Deprecated as of 4.4.0 */
-  /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-   readers do not read off random characters that represent icons */
-}
+/*!
+*  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+*  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+*/
+/* FONT PATH
+* -------------------------- */
+/* makes the font 33% larger relative to the icon container */
+/* Deprecated as of 4.4.0 */
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+ readers do not read off random characters that represent icons */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('font/fontawesome-webfont.eot?v=4.4.0');
-  src: url('font/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('font/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('font/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('font/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('font/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+  src: url('font/fontawesome-webfont.eot?v=4.5.0');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('font/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('font/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('font/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('font/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -2024,6 +2022,66 @@
 }
 .cb_template .fa-fonticons:before {
   content: "\f280";
+}
+.cb_template .fa-reddit-alien:before {
+  content: "\f281";
+}
+.cb_template .fa-edge:before {
+  content: "\f282";
+}
+.cb_template .fa-credit-card-alt:before {
+  content: "\f283";
+}
+.cb_template .fa-codiepie:before {
+  content: "\f284";
+}
+.cb_template .fa-modx:before {
+  content: "\f285";
+}
+.cb_template .fa-fort-awesome:before {
+  content: "\f286";
+}
+.cb_template .fa-usb:before {
+  content: "\f287";
+}
+.cb_template .fa-product-hunt:before {
+  content: "\f288";
+}
+.cb_template .fa-mixcloud:before {
+  content: "\f289";
+}
+.cb_template .fa-scribd:before {
+  content: "\f28a";
+}
+.cb_template .fa-pause-circle:before {
+  content: "\f28b";
+}
+.cb_template .fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.cb_template .fa-stop-circle:before {
+  content: "\f28d";
+}
+.cb_template .fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.cb_template .fa-shopping-bag:before {
+  content: "\f290";
+}
+.cb_template .fa-shopping-basket:before {
+  content: "\f291";
+}
+.cb_template .fa-hashtag:before {
+  content: "\f292";
+}
+.cb_template .fa-bluetooth:before {
+  content: "\f293";
+}
+.cb_template .fa-bluetooth-b:before {
+  content: "\f294";
+}
+.cb_template .fa-percent:before {
+  content: "\f295";
 }
 .cb_template .fa-sm,
 .cb_template .fa-before-sm:before {

@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 5/2/14 6:18 PM $
 * @package CB\Database\Table
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -399,8 +399,7 @@ class FieldTable extends OrderedTable
 		// Grab index of field from fields with same name
 		$query					=	'SELECT ' . $this->_db->NameQuote( 'name' )
 			.	"\n FROM "	   . $this->_db->NameQuote( $this->_tbl )
-			.	"\n WHERE "    . $this->_db->NameQuote( 'name' ) . " REGEXP " . $this->_db->Quote( '^' . preg_quote( $object->name ) . '[0-9]*$' )
-			.	"\n ORDER BY " . $this->_db->NameQuote( 'name' );
+			.	"\n WHERE "    . $this->_db->NameQuote( 'name' ) . " REGEXP " . $this->_db->Quote( '^' . preg_quote( $object->name ) . '[0-9]*$' );
 		$this->_db->setQuery( $query );
 		$names						=	$this->_db->loadResultArray();
 		$count						=	count( $names );

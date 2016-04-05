@@ -2,12 +2,12 @@
 <cbinstall version="1.0" type="plugin" group="user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:../../../../../validation/ahawow.xsd">
 	<name>CB Core</name>
 	<author>JoomlaJoe and Beat</author>
-	<creationDate>2015-11-02</creationDate>
-	<copyright>(C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved</copyright>
+	<creationDate>2016-03-22</creationDate>
+	<copyright>(C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved</copyright>
 	<license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2</license>
 	<authorEmail>beat@joomlapolis.com</authorEmail>
 	<authorUrl>www.joomlapolis.com</authorUrl>
-	<version>2.0.12</version>
+	<version>2.0.14</version>
 	<description>Core CB Tabs and Events.</description>
 	<files>
 		<filename plugin="cb.core">cb.core.php</filename>
@@ -139,7 +139,7 @@
 							<option value="5">Custom</option>
 						</param>
 						<if name="field_display_by" type="showhide" operator="!=" value="1" valuetype="const:int">
-							<param name="date_offset" type="yesno" default="1" label="Timezone Offset" description="Enable or disable server timezone offset of the date." yes="Enable" no="Disable" />
+							<param name="date_offset" type="yesno" default="0" label="Timezone Offset" description="Enable or disable server timezone offset of the date. Note as date fields do not have a time they will offset from 00:00:00 time in the users timezone if available otherwise server timezone." yes="Enable" no="Disable" />
 						</if>
 						<if name="field_display_by" type="showhide" operator="=" value="5" valuetype="const:int">
 							<param name="custom_date_format" type="text" default="Y-m-d" translate-default="no" label="Custom Date Format" description="Input custom PHP date function format to format date values." />

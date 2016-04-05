@@ -3,7 +3,7 @@
 * Community Builder (TM)
 * @version $Id: $
 * @package CommunityBuilder
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -44,7 +44,7 @@ function comprofilerBuildRoute( &$query )
 							$username				=	$database->loadResult();
 
 							// Ensure the username doesn't contain reservered : or , character and is not numeric:
-							if ( $username && ( ! preg_match( '/[:,]/', $username ) ) && ( ! is_numeric( $username ) ) ) {
+							if ( $username && ( ! preg_match( '%[:,/]%', $username ) ) && ( ! is_numeric( $username ) ) ) {
 								// Joomla HTACCESS doesn't treat periods correctly so lets convert them to comma as chances of comma in username are slim:
 								$query['user']		=	rawurlencode( str_replace( '.', ',', $username ) );
 							}

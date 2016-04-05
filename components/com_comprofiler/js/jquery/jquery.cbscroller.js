@@ -84,6 +84,11 @@
 
 				updateScroller.call( $this, cbscroller );
 
+				// Destroy the cbscroller element:
+				cbscroller.element.on( 'remove destroy.cbscroller', function() {
+					cbscroller.element.cbscroller( 'destroy' );
+				});
+
 				// Rebind the cbscroller element to pick up any data attribute modifications:
 				cbscroller.element.on( 'rebind.cbscroller', function() {
 					cbscroller.element.cbscroller( 'rebind' );
@@ -98,6 +103,7 @@
 
 				// If the cbscroller is cloned we need to rebind it back:
 				cbscroller.element.on( 'cloned.cbscroller', function() {
+					$( this ).off( 'destroy.cbscroller' );
 					$( this ).off( 'rebind.cbscroller' );
 					$( this ).off( 'modified.cbscroller' );
 					$( this ).off( 'cloned.cbscroller' );
@@ -200,6 +206,7 @@
 				return this;
 			}
 
+			cbscroller.element.off( 'destroy.cbscroller' );
 			cbscroller.element.off( 'rebind.cbscroller' );
 			cbscroller.element.off( 'modified.cbscroller' );
 			cbscroller.element.off( 'cloned.cbscroller' );

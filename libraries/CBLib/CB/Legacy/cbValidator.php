@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/20/14 6:46 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -71,7 +71,7 @@ class cbValidator
 		} elseif ( is_array( $params ) || is_object( $params ) ) {
 			$params			=	json_encode( $params );
 		} elseif ( $rule == 'pattern' ) {
-			$params			=	urlencode( $params );
+			$params			=	rawurlencode( $params );
 		}
 
 		$attributes			=	' data-rule-' . htmlspecialchars( $rule ) . '="' . htmlspecialchars( $params ) . '"';

@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 11/28/13 5:43 PM $
 * @package CBLib\AhaWow\Model
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -46,7 +46,7 @@ class Context {
 
 		if ( ! isset( static::$registryCache[$id] ) ) {
 			if ( $id ) {
-				static::$registryCache[$id]	=	$_PLUGINS->getPluginParams( $this->getPluginObject( $id ) );
+				static::$registryCache[$id]	=	$_PLUGINS->getPluginParams( $id );
 			} else {
 				static::$registryCache[$id]	=	$this->getAppConfig();
 			}

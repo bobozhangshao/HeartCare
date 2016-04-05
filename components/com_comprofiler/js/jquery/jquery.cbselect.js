@@ -306,6 +306,11 @@
 					}
 				});
 
+				// Destroy the cbselect element:
+				cbselect.element.on( 'remove destroy.cbselect', function() {
+					cbselect.element.cbselect( 'destroy' );
+				});
+
 				// Rebind the cbselect element to pick up any data attribute modifications:
 				cbselect.element.on( 'rebind.cbselect', function() {
 					cbselect.element.cbselect( 'rebind' );
@@ -320,6 +325,7 @@
 
 				// If the cbselect is cloned we need to rebind it back:
 				cbselect.element.on( 'cloned.cbselect', function() {
+					$( this ).off( 'destroy.cbselect' );
 					$( this ).off( 'rebind.cbselect' );
 					$( this ).off( 'cloned.cbselect' );
 					$( this ).off( 'modified.cbselect' );
@@ -507,6 +513,7 @@
 				cbselect.element.select2( 'destroy' );
 			}
 
+			cbselect.element.off( 'destroy.cbselect' );
 			cbselect.element.off( 'rebind.cbselect' );
 			cbselect.element.off( 'cloned.cbselect' );
 			cbselect.element.off( 'modified.cbselect' );

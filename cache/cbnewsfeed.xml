@@ -5,9 +5,77 @@
 		<title>Joomlapolis News</title>
 		<description>Joomla social networking and Subscription Management software. Community Builder is the top rated, best supported, most complete and reliable community system there is for Joomla!</description>
 		<link>http://www.joomlapolis.com:80/news</link>
-		<lastBuildDate>Mon, 07 Mar 2016 02:08:52 +0000</lastBuildDate>
+		<lastBuildDate>Mon, 04 Apr 2016 16:24:10 +0000</lastBuildDate>
 		<generator>Joomla! 1.5 - Open Source Content Management</generator>
 		<language>en-gb</language>
+		<item>
+			<title>Joomla 3.5 and Community Builder 2.0.14 Released</title>
+			<link>http://www.joomlapolis.com:80/news/18543-joomla-35-and-community-builder-2014-released</link>
+			<guid>http://www.joomlapolis.com:80/news/18543-joomla-35-and-community-builder-2014-released</guid>
+			<description><![CDATA[<p style="text-align: center;"><img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201603/j35cb2014c.gif" alt="j35cb2014c" width="502" height="220" /></p>
+<p style="text-align: center;">Both <strong>PHP7 ready</strong> - <a href="https://www.joomla.org/announcements/release-news/5654-joomla-3-5-is-here.html" target="_blank">Joomla 3.5</a> and <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder 2.0.14</a> are here!</p>
+<p><strong>Joomla 3.5 is now available</strong> with <strong>34 new features</strong> and <strong>many bug fixes</strong>. But there are also some backwards incompatibilities that could influence upgrades and some third party extensions.</p>
+<p><strong>Community Builder 2.0.14</strong> has also been released with new features and bug fixes. CB 2.0.14 <strong>is highly recomended for Joomla 3.5</strong> as it addresses a "Failed to start session" error on logout introduced with Joomla 3.5.0.</p>
+<h3>About Joomla 3.5</h3>
+<p>The <strong>main new features</strong> of <a href="https://www.joomla.org/3/" target="_blank">Joomla 3.5</a> are:</p>
+<ul>
+<li><strong>Drag and Drop images</strong> in TinyMCE editor<br />No need to select and upload images in new editor. Just drag and drop an image from your computer to your editor window.</li>
+<li><strong>PHP 7 support</strong><br />Joomla will now work in PHP 7 environments which may lead to <a href="https://www.zend.com/en/resources/php-7">major performance improvements</a> (up to <strong>double speed</strong> and <strong>half memory usage</strong>), but a backwards compatibility break had to be <a href="https://github.com/joomla/joomla-cms/pull/6600" target="_blank">introduced</a> to support PHP7.&nbsp; We believe that this known B/C break will not affect the vast majority of extensions (CB is not affected).</li>
+<li><strong>Email notifications</strong> when new Joomla release is available<br />This new feature will send website admins an email notification/reminder when a new release is available.</li>
+<li><strong>Editor Buttons added to the Toolbar</strong><br />You no longer need to scroll down the page to find the “readmore” or “insert image” buttons.&nbsp;Editor extension buttons that used to be placed below the text area can now be found in the toolbar where they belong.</li>
+<li><strong>Easily Insert Modules in Articles</strong><br />This lets you easily add a module into an article with a button directly on the editor toolbar.</li>
+<li><strong>Item counts</strong> in relevant Joomla administrative pages<br />This new feature makes is easy to quickly see how many published/unpublished/trashed/archived articles each Joomla category. Similar functionality is also available in Contact, Banner and Newsfeed management pages.</li>
+<li><strong>User Status admininstrative module improvements</strong><br />The Joomla backend pages have a fixed footer strip with some useful info and links about your website. You now have more control on what is displayed.</li>
+<li><strong>Download system/environment info</strong> for support cases<br />Help support teams to help you by including your website system information using this new functionality.</li>
+<li><strong>User CSS file</strong> for Protostar template<br />No more hacking needed to add your extra css code in Joomla's Protostar template. You can now add your user.css file and it will be loaded.</li>
+<li><strong>Statistics gathering</strong> for Joomla usage<br />Joomla 3.5's new statistics collection plug-in gathers the system environment in use. The raw data collected is anonymised before transmission and access to the compiled data is <a href="https://developer.joomla.org/about/stats.html" target="_blank">publicly available</a>.</li>
+</ul>
+<p>In addition to these features Joomla 3.5 has also <strong>fixes over 650 bugs</strong>.</p>
+<p>So the $64K question ... what to do .. upgrade or wait?</p>
+<p>As there are no reported high or medium level security issues, there is no security related need to rush and upgrade.</p>
+<p>Some may choose to wait a few days (or maybe even for next Joomla 3.5.1) and others may choose to upgrade to Joomla 3.5.&nbsp; But<strong> before upgrading</strong> your live sites you should follow the following <strong>3-step guidelines</strong>:</p>
+<ol>
+<li>Check all thrid-party extensions you have installed on your website and check for Joomla 3.5 compatibility reassurance. If needed install new releases when available.</li>
+<li>Clone your website and perform that upgrade to Joomla 3.5 on the cloned environment and test everything before you updrage your live sites.</li>
+<li>Always backup your live site before you upgrade, just in case something goes wrong and you need to revert things.</li>
+</ol>
+<h3>About Community Builder 2.0.14</h3>
+<p><a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder 2.0.14</a> is here with <strong>3 new features</strong> and <strong>13 bug fixes</strong>. It also addresses a Joomla 3.5 backwards compatibility issue that caused an error during frontend logout.</p>
+<p>The full <strong>CB 2.0.14 changelog</strong> is available in the <a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233232-joomla-35-and-community-builder-2014-released">forum discussion</a>. CB 2.0.14 can be easily installed over any existing CB 2.0+ environment and will continue to work on Joomla 3.4.8 environments (in addition to the just released Joomla 3.5).</p>
+<p><strong>Please note that CB 2.0.14 continues to work just fine an older PHP versions (PHP 5.3.3 and greater)</strong>.</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233232-joomla-35-and-community-builder-2014-released">Discuss this article on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Tue, 22 Mar 2016 12:51:51 +0000</pubDate>
+		</item>
+		<item>
+			<title>CBSubs 4.0.2 released with 9 new feautues and 28 bug fixes</title>
+			<link>http://www.joomlapolis.com:80/news/18542-cbsubs-402-released-with-9-new-feautues-and-28-bug-fixes</link>
+			<guid>http://www.joomlapolis.com:80/news/18542-cbsubs-402-released-with-9-new-feautues-and-28-bug-fixes</guid>
+			<description><![CDATA[<p>&nbsp;<a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=40&amp;Itemid=4"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201603/cbsubs402_580.gif" alt="cbsubs402 580" width="550" height="197" /></a></p>
+<p style="text-align: center;"><a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=40&amp;Itemid=4">CBSubs GPL Paid Subscriptions Membership 4.0.2</a> has been released !</p>
+<p>CBSubs is the <strong>most powerful paid subscriptions membership</strong> solution for Joomla allowing you to <strong>make money from your Joomla content</strong> by requiring a subscription for content access. With <strong>fantastic built-in integrations</strong> for Joomla ACL, Community Builder (field updates and protection), GroupJive, AcyMailing, and <strong>powerful reminder mailer features</strong> and <strong>smart promotions</strong> (with coupons or automatic) -- <strong>CBSubs is a mind blower</strong>.</p>
+<p>You can <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=828">download</a> and study the <strong>FREE CBSubs Manual</strong> that has many use case examples to just begin to realize how powerful and versitile this solution is.</p>
+<p>This new CBSubs release has <strong>9 new features</strong> and <strong>28 bug fixes</strong> and is <strong>now PHP 7 ready</strong> - see forum discussion for detailed list.</p>
+<p>Existing CBSubs installations can upgrade to version 4.0.2 (CB 2.0.13 or better is required) by simply installing over.</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233191-cbsubs-402-released-with-9-new-feautues-and-28-bug-fixes">Discuss this article on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Thu, 17 Mar 2016 18:16:44 +0000</pubDate>
+		</item>
+		<item>
+			<title>20 social networks - 2.31 bilion users - waiting for you to install the new CB Connect 7.0 stable on your website !</title>
+			<link>http://www.joomlapolis.com:80/news/18540-20-social-networks-231-bilion-users-waiting-for-you-to-install-the-new-cb-connect-70-stable-on-your-website-</link>
+			<guid>http://www.joomlapolis.com:80/news/18540-20-social-networks-231-bilion-users-waiting-for-you-to-install-the-new-cb-connect-70-stable-on-your-website-</guid>
+			<description><![CDATA[<p><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=819"><img style="margin-right: 10px; margin-bottom: 5px; float: left;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201603/cbconnect_small_3.png" alt="cbconnect small 3" width="194" height="187" /></a>According to <a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233099-20-social-networks-231-bilion-users-waiting-for-you-to-install-the-new-cb-connect-70-stable-on-your-website">latest internet stats</a>, there are <strong>2.31 billion users</strong> with active social media accounts.</p>
+<p>And the just released<strong> CB Connect 7.0</strong> (stable) with its awesome list of <a href="http://www.joomlapolis.com:80/#">20 supported networks and features</a> helps you bring them over to your own website by making it super easy for them to join. <strong>No hassle sign-up</strong> and <strong>no new password setup</strong>, is a great combination to <strong>attract new users to your website</strong> and save user data (with social network's user permissions) to your local user profiles.</p>
+<p>The numbers speak for themselves - there is no other add-on for Joomla (or any other CMS as far as we know) that supports so many social networks.</p>
+<p><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=819">Download CB Connect 7.0</a> </p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233099-20-social-networks-231-bilion-users-waiting-for-you-to-install-the-new-cb-connect-70-stable-on-your-website">Discuss this on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Tue, 08 Mar 2016 19:39:10 +0000</pubDate>
+		</item>
 		<item>
 			<title>CB Connect 7.0 RC1 supports 20 social networks!</title>
 			<link>http://www.joomlapolis.com:80/news/18539-cb-connect-70-rc1-supports-20-social-networks</link>
@@ -171,58 +239,6 @@
 			<author>nant@joomlapolis.com (Nick A.)</author>
 			<category>News</category>
 			<pubDate>Mon, 18 Jan 2016 10:25:00 +0000</pubDate>
-		</item>
-		<item>
-			<title>Inline editing with new CB Core Ajax 3.0</title>
-			<link>http://www.joomlapolis.com:80/news/18528-inline-editing-with-new-cb-core-ajax-30</link>
-			<guid>http://www.joomlapolis.com:80/news/18528-inline-editing-with-new-cb-core-ajax-30</guid>
-			<description><![CDATA[<p style="text-align: center;"><img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201601/coreajax_580.gif" alt="coreajax 580" width="550" height="284" /></p>
-<p style="text-align: center;">Paid members can <a href="http://www.joomlapolis.com:80/cb-20-addon-status">download</a> <strong>CB Core Ajax Fields 3.0.0</strong></p>
-<p>Making CB Field editing <strong>easier</strong> and <strong>quicker</strong> is simple with the new <strong>CB Core Ajax Fields 3.0</strong> release that supports <strong>inline editing</strong> on <strong>profile pages</strong> and even on <strong>user lists</strong>!</p>
-<p>Just install, publish it and then configure each CB Field you want for inline editing.</p>
-<p>Once configured, a mouse over on a field will reveal the edit icon that will let you quickly update the specific field value.</p>
-<p>This is a <strong>huge</strong> usability improvement for your users and also a life saver for moderators that need to edit many users directly in user list views.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232363-inline-editing-with-new-cb-core-ajax-30">Discuss this on our forums</a>.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Mon, 04 Jan 2016 08:32:49 +0000</pubDate>
-		</item>
-		<item>
-			<title>Joomla 3.4.7 and patches protect against critical PHP bug</title>
-			<link>http://www.joomlapolis.com:80/news/18527-joomla-347-and-patches-protect-against-critical-php-bug</link>
-			<guid>http://www.joomlapolis.com:80/news/18527-joomla-347-and-patches-protect-against-critical-php-bug</guid>
-			<description><![CDATA[<p><img style="margin-right: 15px; margin-bottom: 5px; float: left;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201512/jsecurity.png" alt="jsecurity" width="144" height="160" />"<strong>Security is an ongoing journey: The best way to stay safe is to always stay up-to-date</strong>" says Beat (CB Team and JSST - Joomla Security Strike Team member).</p>
-<p>The previous Joomla 3.4.6 critical security release triggered an in depth security investigation by the JSST Team to better understand the true nature and cause of this vulnerability.</p>
-<p>This "follow the code" process has identified the root cause of this issue down to a specific <a href="https://bugs.php.net/bug.php?id=70219" target="_blank">PHP security bug</a>, already fixed on 4th September 2015 in PHP 5.4.45, 5.5.29 and 5.6.13 (and also in all PHP 7 releases) and also in all major Linux distributions back in September 2015</p>
-<p>In an effort to help secure Joomla against poorly maintained hosting environments, the Joomla project has released Joomla 3.4.7 along with Joomla 2.5 and 1.5 code fixes.</p>
-<p>This means that:</p>
-<ul>
-<li>All Joomla 3.4 websites should be upgraded to <a href="https://www.joomla.org/announcements/release-news/5643-joomla-3-4-7.html" target="_blank">Joomla 3.4.7</a></li>
-<li>All Joomla 2.5/1.5 websites that cannot upgrade to Joomla 3 should apply the <a href="https://docs.joomla.org/Security_hotfixes_for_Joomla_EOL_versions" target="_blank">EOL Security Hotfixes</a></li>
-</ul>
-<p>These actions will protect your Joomla core installation against this specific PHP bug.</p>
-<p>You should make sure that your hoster continuously security-maintains your PHP/LINUX environment to keep it up to date&nbsp;(<a href="http://www.joomlapolis.com:80/hosting">Joomlapolis Hosting</a> does).</p>
-<p>Please note that<strong> Community Builder 2.0.12 runs just fine with Joomla 3.4.7</strong> (no backwards compatibility issues) and Community Builder's sessions management is <strong>not affected</strong> by this PHP secutity bug.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232269-joomla-347-and-patches-protect-against-critical-php-bug">Discuss this on our forums</a>.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Wed, 23 Dec 2015 10:15:00 +0000</pubDate>
-		</item>
-		<item>
-			<title>GroupJive 3.0.1 and Primer Book Released!</title>
-			<link>http://www.joomlapolis.com:80/news/18524-groupjive-301-and-primer-book-released</link>
-			<guid>http://www.joomlapolis.com:80/news/18524-groupjive-301-and-primer-book-released</guid>
-			<description><![CDATA[<p><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=794"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201512/gj301.gif" alt="gj301" width="543" height="667" /></a></p>
-<p style="text-align: center;"><strong>GroupJive 3.0.1</strong> can be <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=794">downloaded</a> by all <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18216&amp;Itemid=135">paid members</a><br /><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=792">Download the free GroupJive Primer Book</a></p>
-<p><strong>GroupJive 3.0.1</strong> is here and <strong>super-stable</strong> ready to <strong>empower your community members</strong> to create their own <strong>mini-communities</strong> with <strong>media sharing</strong>, <strong>group events</strong> and <strong>private discussions</strong>.</p>
-<p>This is a <strong>maintenance release</strong> addressing six bugs (see discussion for changelog) and it should be used along with latest <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=777">CB Activity</a>, <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=669">CB Auto Actions</a> and <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=640">Community Builder</a> nightly releases.</p>
-<p>The <strong>free GroupJive Primer Book</strong> is also available for <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=792">download</a> and it will help you to quickly unleash this powerful, user empowering mini-community application.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232211-groupjive-301-and-primer-book-released">Discuss this on our forums</a>.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Thu, 17 Dec 2015 00:00:00 +0000</pubDate>
 		</item>
 	</channel>
 </rss>

@@ -43,6 +43,8 @@
 					<filter name="block" value="block" valuetype="sql:int" type="xml:user_block" label="" blanktext="- Select Enabled -" />
 					<filter name="confirmed" value="confirmed" valuetype="sql:int" type="xml:user_confirmed" label="" blanktext="- Select Confirmed -" />
 					<filter name="approved" value="approved" valuetype="sql:int" type="xml:user_approved" label="" blanktext="- Select Approved -" />
+					<filter name="avatarapproved" valuetype="sql:int" type="xml:user_image_approved" label="" blanktext="- Select Avatar Approved -" />
+					<filter name="canvasapproved" valuetype="sql:int" type="xml:user_image_approved" label="" blanktext="- Select Canvas Approved -" />
 					<filter name="id" type="field_show_only_if_selected" base="int" default="" label="" blanktext="- Select ID -" />
 					<filter name="advanced" type="field" multiple="true" view="advanced" />
 					<view name="advanced" type="params" viewformatting="none">

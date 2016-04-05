@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/21/14 12:47 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -139,7 +139,7 @@ class Archive_Tar extends PEAR
 	 */
 	function __construct($p_tarname, $p_compress = null)
 	{
-		$this->PEAR();
+		parent::__construct();
 		$this->_compress = false;
 		$this->_compress_type = 'none';
 		if (($p_compress === null) || ($p_compress == '')) {

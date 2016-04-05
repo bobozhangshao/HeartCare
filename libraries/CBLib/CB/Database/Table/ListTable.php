@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 5/2/14 8:37 AM $
 * @package CB\Database\Table
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -108,8 +108,7 @@ class ListTable extends OrderedTable
 		// Grab index of list from lists with same title
 		$query						=	'SELECT ' . $this->_db->NameQuote( 'title' )
 									.	"\n FROM " . $this->_db->NameQuote( $this->_tbl )
-									.	"\n WHERE " . $this->_db->NameQuote( 'title' ) . " REGEXP " . $this->_db->Quote( '^' . preg_quote( $object->title ) . '[0-9]*$' )
-									.	"\n ORDER BY " . $this->_db->NameQuote( 'title' );
+									.	"\n WHERE " . $this->_db->NameQuote( 'title' ) . " REGEXP " . $this->_db->Quote( '^' . preg_quote( $object->title ) . '( \([0-9]+\))?$' );
 		$this->_db->setQuery( $query );
 		$titles						=	$this->_db->loadResultArray();
 		$count						=	count( $titles );
@@ -124,7 +123,7 @@ class ListTable extends OrderedTable
 				$changed			=	false;
 
 				foreach ( $titles as $v ) {
-					if ( $v == ( $object->title . $index ) ) {
+					if ( $v == ( $object->title . ' (' . $index . ')' ) ) {
 						$index++;
 
 						$changed	=	true;

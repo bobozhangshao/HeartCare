@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/18/14 3:18 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -15,12 +15,20 @@ defined('CBLIB') or die();
 class cbPMSHandler extends cbTabHandler
 {
 	/**
+	 * Constructor (needed for PHP 7 so that we can keep the old PHP4-type constructor until CB 3.0)
+	 */
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
+	/**
 	 * Old-fashioned constructor (for UddeIM temporary compatibility:
 	 * @deprecated 2.0 Use parent::__construct();
 	 */
 	public function cbPMSHandler()
 	{
-		parent::__construct();
+		self::__construct();
 	}
 	/**
 	 * Sends a PMS message

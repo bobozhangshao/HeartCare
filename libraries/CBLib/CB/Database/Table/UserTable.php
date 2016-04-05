@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 5/4/14 1:08 AM $
 * @package CB\Database\Table
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -604,7 +604,7 @@ class UserTable extends ComprofilerTable
 			$result								=	$this->_db->loadObject( $aro_group );
 			/** @var \StdClass $aro_group */
 
-			if ( $result && ( ! $isNew ) && ( ( $oldUsername != $this->username ) || self::_ArraysEquivalent( $oldGids, $this->gids ) || ( ( $oldBlock == 0 ) && ( $this->block == 1 ) ) ) ) {
+			if ( $result && ( ! $isNew ) && ( ( $oldUsername != $this->username ) || ( ! self::_ArraysEquivalent( $oldGids, $this->gids ) ) || ( ( $oldBlock == 0 ) && ( $this->block == 1 ) ) ) ) {
 				// Update current sessions state if there is a change in gid or in username:
 				if ( $this->block == 0 ) {
 					$query	=	'UPDATE #__session '
@@ -613,12 +613,19 @@ class UserTable extends ComprofilerTable
 					$this->_db->setQuery( $query );
 					$result				=	$this->_db->query();
 
+					// Clear usergroup and access caches on gid change (fixing bug #5461):
+					if ( method_exists( 'clearAccessRights', $this->_cmsUser ) ) {
+						// This already calls clearStatics
+						$this->_cmsUser->clearAccessRights();
+					} else {
+						\JAccess::clearStatics();
+					}
+
 					// This is needed for instant adding of groups to logged-in user (fixing bug #3581):
 					$session					=	\JFactory::getSession();
 					$jUser						=	$session->get( 'user' );
 
 					if ( $jUser->id == $this->id ) {
-						\JAccess::clearStatics();
 						$session->set( 'user', new \JUser( (int) $this->id ) );
 					}
 				} else {
@@ -1138,6 +1145,41 @@ class UserTable extends ComprofilerTable
 	}
 
 	/**
+	 * Generic check for whether dependencies exist for this object in the db schema
+	 * Should be overridden if checks need to be done before delete()
+	 *
+	 * @param  int  $oid  key index (only int supported here)
+	 * @return boolean
+	 */
+	public function canDelete( $oid = null )
+	{
+		if ( $oid === null ) {
+			$k					=	$this->_tbl_key;
+			$oid				=	$this->$k;
+		}
+
+		if ( Application::MyUser()->isSuperAdmin() ) {
+			if ( $oid == Application::MyUser()->getUserId() ) {
+				$this->setError( CBTxt::T( 'You cannot delete yourself.' ) );
+
+				return false;
+			}
+
+			return true;
+		}
+
+		if ( Application::MyUser()->isAuthorizedToPerformActionOnAsset( 'core.manage', 'com_users' )
+			 && Application::MyUser()->isAuthorizedToPerformActionOnAsset( 'core.edit.state', 'com_users' )
+			 && ( ! Application::User( (int) $oid )->isSuperAdmin() ) ) {
+			return true;
+		}
+
+		$this->setError( CBTxt::T( 'Not Authorized' ) );
+
+		return false;
+	}
+
+	/**
 	 * Deletes this record (no checks)
 	 *
 	 * @param  int   $oid         Key id of row to delete (otherwise it's the one of $this)
@@ -1580,6 +1622,29 @@ class UserTable extends ComprofilerTable
 	}
 
 	/**
+	 * Checks edit state permissions for toggles
+	 * Used by Backend XML only
+	 *
+	 * @return bool
+	 */
+	private function canToggle()
+	{
+		if ( Application::MyUser()->isSuperAdmin() ) {
+			return true;
+		}
+
+		if ( Application::MyUser()->isAuthorizedToPerformActionOnAsset( 'core.manage', 'com_users' )
+			 && Application::MyUser()->isAuthorizedToPerformActionOnAsset( 'core.edit.state', 'com_users' )
+			 && ( ! Application::User( (int) $this->id )->isSuperAdmin() ) ) {
+			return true;
+		}
+
+		$this->setError( CBTxt::T( 'Not Authorized' ) );
+
+		return false;
+	}
+
+	/**
 	 * Toggles confirmation state of a user
 	 * Used by Backend XML only
 	 * @deprecated Do not use directly, only for XML users backend
@@ -1589,6 +1654,10 @@ class UserTable extends ComprofilerTable
 	 */
 	public function toggleUserConfirm( $value )
 	{
+		if ( ! $this->canToggle() ) {
+			return false;
+		}
+
 		return $this->confirmUser( $value );
 	}
 
@@ -1602,6 +1671,10 @@ class UserTable extends ComprofilerTable
 	 */
 	public function toggleUserApproval( $value )
 	{
+		if ( ! $this->canToggle() ) {
+			return false;
+		}
+
 		return $this->approveUser( $value );
 	}
 
@@ -1615,6 +1688,16 @@ class UserTable extends ComprofilerTable
 	 */
 	public function toggleUserBlock( $value )
 	{
+		if ( $value && ( $this->id == Application::MyUser()->getUserId() ) ) {
+			$this->setError( CBTxt::T( 'You cannot block yourself.' ) );
+
+			return false;
+		}
+
+		if ( ! $this->canToggle() ) {
+			return false;
+		}
+
 		return $this->blockUser( $value );
 	}
 
@@ -1628,6 +1711,10 @@ class UserTable extends ComprofilerTable
 	 */
 	public function toggleUserBan( $value )
 	{
+		if ( ! $this->canToggle() ) {
+			return false;
+		}
+
 		return $this->banUser( $value );
 	}
 }

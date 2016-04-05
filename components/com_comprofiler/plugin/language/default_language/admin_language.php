@@ -2,7 +2,7 @@
 /**
 * Community Builder (TM) Default (English) language file Administration
 * @version $Id:$
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -221,8 +221,7 @@ return	array(
 'ADMIN_HANDLER_CLASS_CLASS_DOES_NOT_EXIST'	=>	'Admin handler class [class] does not exist.',
 'NO_PLUGIN_SELECTED_5f1375'	=>	'No plugin selected',
 'THE_PLUGIN_NAME_HAS_NO_ADMINISTRATOR_FILE_FILE'	=>	'The plugin [name] has no administrator file [file]',
-// 3 language strings from file administrator/components/com_comprofiler/controller/controller.user.php
-'NOT_AUTHORIZED_11a4ac'	=>	'Not Authorized',
+// 2 language strings from file administrator/components/com_comprofiler/controller/controller.user.php
 'YOUR_PROFILE_COULD_NOT_BE_UPDATED_fd93eb'	=>	'Your profile could not be updated.',
 'SUCCESSFULLY_SAVED_USER_USERNAME'	=>	'Successfully Saved User: [username]',
 // 3 language strings from file administrator/components/com_comprofiler/controller/controller.users.php
@@ -578,13 +577,14 @@ return	array(
 'OVERLAY_MOVING_WITH_MOUSE_fba747'	=>	'Overlay moving with Mouse',
 'FIXED_OVERLAY_CLOSING_WITH_MOUSEOUT_ff83fa'	=>	'Fixed Overlay closing with Mouseout',
 'BUTTON_WITH_FIXED_OVERLAY_07a4f8'	=>	'Button with Fixed Overlay',
-// 16 language strings from file administrator/components/com_comprofiler/xmlcb/models/model.users.xml
+// 17 language strings from file administrator/components/com_comprofiler/xmlcb/models/model.users.xml
 'BAN_5c664f'	=>	'Ban',
 'MARK_PENDING_cfef06'	=>	'Mark Pending',
 'UNBAN_6d1fa5'	=>	'Unban',
 'ENABLE_USER_93cb03'	=>	'Enable User',
 'DISABLE_USER_36d524'	=>	'Disable User',
 'REJECT_USER_71be6c'	=>	'Reject User',
+'APPROVE_IMAGE_d78511'	=>	'Approve Image',
 'EQUAL_TO_495c04'	=>	'Equal to',
 'NOT_EQUAL_TO_9bc7de'	=>	'Not equal to',
 'LESS_THAN_ad647e'	=>	'Less than',
@@ -595,7 +595,7 @@ return	array(
 'DOES_NOT_CONTAIN_3bf90e'	=>	'Does not contain',
 'IS_ONE_OF_SEPARATED_VALUES_9f7ce4'	=>	'Is one of (,-separated values)',
 'IS_NOT_ONE_OF_SEPARATED_VALUES_1b23dd'	=>	'Is not one of (,-separated values)',
-// 189 language strings from file administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.editconfig.xml
+// 191 language strings from file administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.editconfig.xml
 'PERMISSIONS_d08ccf'	=>	'Permissions',
 'HELP_6a26f5'	=>	'Help',
 'THE_NAME_STYLE_DETAILS_HOW_YOU_WANT_TO_CAPTURE_THE_bb575d'	=>	'The name style details how you want to capture the name field in Joomla.',
@@ -647,7 +647,7 @@ return	array(
 'REGISTRATION_EMAIL_HTML_b8d6a3'	=>	'Registration Email HTML',
 'INPUT_THE_SUBJECT_TO_SEND_WITH_PENDING_EMAILS_LEAV_a942b6'	=>	'Input the subject to send with Pending emails. Leave Pending Subject and Body blank to suppress sending of Pending emails.',
 'PENDING_EMAIL_SUBJECT_12943f'	=>	'Pending Email Subject',
-'INPUT_THE_SUBSTITUTION_SUPPORTED_BODY_TO_SEND_WITH_e32116'	=>	'Input the substitution supported body to send with Pending emails. Leave Pending Subject and Body blank to suppress sending of Pending emails. Additional supported substitutions as follows: [NAME], [USERNAME], [DETAILS] (contains name, username, email address, and password), [PASSWORD], and [CONFIRM] (users email confirmation link).',
+'INPUT_THE_SUBSTITUTION_SUPPORTED_BODY_TO_SEND_WITH_8a4917'	=>	'Input the substitution supported body to send with Pending emails. Leave Pending Subject and Body blank to suppress sending of Pending emails. Additional supported substitutions as follows: [NAME], [USERNAME], [DETAILS] (contains name, username and email address), [PASSWORD], and [CONFIRM] (users email confirmation link).',
 'PENDING_EMAIL_BODY_7b923a'	=>	'Pending Email Body',
 'INPUT_THE_SUBJECT_TO_SEND_WITH_WELCOME_EMAILS_LEAV_77502a'	=>	'Input the subject to send with Welcome emails. Leave Welcome Subject and Body blank to suppress sending of Welcome emails.',
 'WELCOME_EMAIL_SUBJECT_cf58b6'	=>	'Welcome Email Subject',
@@ -767,6 +767,8 @@ return	array(
 'SPOOF_CHECKING_cd5b00'	=>	'Spoof Checking',
 'CHOOSE_IF_COMMUNITY_BUILDER_VERSION_CHECKING_SHOUL_6a2c93'	=>	'Choose if Community Builder version checking should be automated or manually triggered in Configuration. Only Community Builder version and standard HTTP information is disclosed during version checking.',
 'VERSION_CHECKING_50889c'	=>	'Version Checking',
+'CHOOSE_IF_COMMUNITY_BUILDER_SHOULD_SEND_EMAILS_OR__a8c599'	=>	'Choose if Community Builder should send emails or not. Note this only affects Community Builder emails through Community Builder API.',
+'SEND_EMAILS_5cacf8'	=>	'Send Emails',
 'CHOOSE_IF_TWITTER_BOOTSTRAP_CSS_SHOULD_BE_LOADED_F_57f4de'	=>	'Choose if Twitter Bootstrap CSS should be loaded from the Community Builder template automatically. Recommended to always leave this on unless another compatible means of Twitter Bootstrap CSS is loaded. Note this will affect frontend only.',
 'TWITTER_BOOTSTRAP_114fc0'	=>	'Twitter Bootstrap',
 'NOTE_COMMUNITY_BUILDER_TWITTER_BOOTSTRAP_CSS_HAS_B_672475'	=>	'Note Community Builder Twitter Bootstrap CSS has been shut off for frontend. Please ensure another means of Twitter Bootstrap is available. This could cause styling conflicts or missing styling.',
@@ -1034,7 +1036,7 @@ return	array(
 'THIS_WILL_CHECK_THE_DATABASE_OF_INSTALLED_CB_PLUGI_5b544e'	=>	'This will check the database of installed CB plugins and report back potential inconsistencies without changing or correcting the database.',
 'CHECK_USERS_DATABASE_3d5ac0'	=>	'Check Users Database',
 'THIS_WILL_PERFORM_A_SERIES_OF_TESTS_ON_THE_USERS_D_7a90a6'	=>	'This will perform a series of tests on the Users database of the CMS, the Community Builder users database and ACL and report back potential inconsistencies without changing or correcting the database.',
-// 15 language strings from file administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.showusers.xml
+// 17 language strings from file administrator/components/com_comprofiler/xmlcb/views/view.com_comprofiler.showusers.xml
 'MASS_MAILER_ed6d30'	=>	'Mass Mailer',
 'RESEND_CONFIRMATION_8af435'	=>	'Resend Confirmation',
 'SEARCH_USERS_cdd0de'	=>	'Search Users...',
@@ -1046,6 +1048,8 @@ return	array(
 'SELECT_ENABLED_beb4b8'	=>	'- Select Enabled -',
 'SELECT_CONFIRMED_286f4d'	=>	'- Select Confirmed -',
 'SELECT_APPROVED_2eb166'	=>	'- Select Approved -',
+'SELECT_AVATAR_APPROVED_550a41'	=>	'- Select Avatar Approved -',
+'SELECT_CANVAS_APPROVED_17d317'	=>	'- Select Canvas Approved -',
 'ID_ASCENDING_8420d8'	=>	'Id ascending',
 'LAST_VISIT_123cdf'	=>	'Last Visit',
 'USER_ID'	=>	'Id',

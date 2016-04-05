@@ -105,6 +105,10 @@
 
 				updateRepeat.call( $this, cbrepeat );
 
+				cbrepeat.element.on( 'remove destroy.cbrepeat', function() {
+					cbrepeat.element.cbrepeat( 'destroy' );
+				});
+
 				cbrepeat.element.on( 'rebind.cbrepeat', function() {
 					cbrepeat.element.cbrepeat( 'rebind' );
 				});
@@ -116,6 +120,7 @@
 				});
 
 				cbrepeat.element.bind( 'cloned.cbrepeat', function() {
+					$( this ).off( 'destroy.cbrepeat' );
 					$( this ).off( 'rebind.cbrepeat' );
 					$( this ).off( 'cloned.cbrepeat' );
 					$( this ).off( 'modified.cbrepeat' );
@@ -213,6 +218,7 @@
 				return $( this ).closest( '.cbRepeatRow' ).parent().is( cbrepeat.element );
 			}).off( 'click', cbrepeat.removeHandler );
 
+			cbrepeat.element.off( 'destroy.cbrepeat' );
 			cbrepeat.element.off( 'rebind.cbrepeat' );
 			cbrepeat.element.off( 'cloned.cbrepeat' );
 			cbrepeat.element.off( 'modified.cbrepeat' );

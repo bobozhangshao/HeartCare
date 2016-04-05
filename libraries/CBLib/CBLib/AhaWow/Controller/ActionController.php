@@ -3,7 +3,7 @@
 * CBLib, Community Builder Library(TM)
 * @version $Id: 11/28/13 6:07 PM $
 * @package CBLib\AhaWow\Controller
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -681,7 +681,7 @@ class ActionController {
 				$displayData				=	clone $data;
 
 				// Fix multi-selects and multi-checkboxes arrays to |*|-delimited strings:
-				$postArray				=	$this->recursiveMultiSelectFix( $input );
+				$postArray				=	self::recursiveMultiSelectFix( $input );
 
 				if ( ! $displayData->bind( $postArray, '', null, false ) ) {
 					echo "<script type=\"text/javascript\"> alert('".$displayData->getError()."'); window.history.go(-1); </script>\n";
@@ -704,10 +704,12 @@ class ActionController {
 	/**
 	 * Fix multi-selects and multi-checkboxes arrays to |*|-delimited strings recursively.
 	 *
+	 * @deprecated Do not use not part of CBLib API
+	 *
 	 * @param  ParamsInterface|array  $input  Input or array
 	 * @return array
 	 */
-	protected function recursiveMultiSelectFix( $input )
+	public static function recursiveMultiSelectFix( $input )
 	{
 		$postArray			=	array();
 
@@ -718,7 +720,7 @@ class ActionController {
 					$v		=	implode( '|*|', $v );
 				} else {
 					// Other arrays are recursed:
-					$v		=	$this->recursiveMultiSelectFix( $v );
+					$v		=	self::recursiveMultiSelectFix( $v );
 				}
 			}
 			$postArray[$k]	=	$v;
@@ -773,7 +775,7 @@ class ActionController {
 		}
 
 		// Fix multi-selects and multi-checkboxes arrays to |*|-delimited strings:
-		$postArray					=	$this->recursiveMultiSelectFix( $postArray );
+		$postArray					=	self::recursiveMultiSelectFix( $postArray );
 
 		foreach ( $postArray as $key => $value ) {
 			if ( property_exists( $data, $key ) ) {

@@ -62,12 +62,6 @@
 					cbmoreless.element.children( '.cbMoreLessOpen,.cbMoreLessClose' ).find( '.cbMoreLessButton' ).css( 'background-color', cbmoreless.bg );
 				}
 
-				cbmoreless.resizeHandler = function() {
-					updateToggle.call( $this, cbmoreless );
-				};
-
-				$( window ).on( 'resize', cbmoreless.resizeHandler );
-
 				cbmoreless.openHandler = function( e ) {
 					e.preventDefault();
 
@@ -83,7 +77,55 @@
 				cbmoreless.element.children( '.cbMoreLessOpen' ).on( 'click', cbmoreless.openHandler );
 				cbmoreless.element.children( '.cbMoreLessClose' ).on( 'click', cbmoreless.closeHandler );
 
-				updateToggle.call( $this, cbmoreless );
+				if ( ! cbmoreless.element.hasClass( 'cbMoreLessOpened' ) ) {
+					cbmoreless.element.removeClass( 'cbMoreLessClosed' );
+					cbmoreless.element.children( '.cbMoreLessOpen,.cbMoreLessClose' ).addClass( 'hidden' );
+
+					var content = cbmoreless.element.children( '.cbMoreLessContent' );
+
+					if ( cbmoreless.settings.height ) {
+						content.css( 'max-height', cbmoreless.settings.height );
+						content.css( 'height', cbmoreless.settings.height );
+					}
+
+					if ( typeof content.get( 0 ) != 'undefined' ) {
+						var height = content.height();
+						var scrollHeight = content.prop( 'scrollHeight' );
+
+						if ( content.is( ':hidden' ) && ( scrollHeight == 0 ) ) {
+							// The element is hidden and has no scroll height so we need to make its parents temporarily visible to grab the scroll height:
+							var parents = content.parents( ':hidden' );
+
+							parents.each( function() {
+								$( this ).addClass( 'cbForceDisplay' );
+							});
+
+							height = content.height();
+							scrollHeight = content.prop( 'scrollHeight' );
+
+							parents.each( function() {
+								$( this ).removeClass( 'cbForceDisplay' );
+							});
+						}
+
+						if ( height < scrollHeight ) {
+							closeToggle.call( this, cbmoreless );
+						} else {
+							openToggle.call( this, cbmoreless );
+						}
+					} else {
+						openToggle.call( this, cbmoreless );
+					}
+
+					if ( cbmoreless.settings.height ) {
+						content.css( 'height', '' );
+					}
+				}
+
+				// Destroy the cbmoreless element:
+				cbmoreless.element.on( 'remove destroy.cbmoreless', function() {
+					cbmoreless.element.cbmoreless( 'destroy' );
+				});
 
 				// Rebind the cbmoreless element to pick up any data attribute modifications:
 				cbmoreless.element.on( 'rebind.cbmoreless', function() {
@@ -99,13 +141,18 @@
 
 				// If the cbmoreless is cloned we need to rebind it back:
 				cbmoreless.element.on( 'cloned.cbmoreless', function() {
+					if ( cbmoreless.settings.height ) {
+						$( this ).children( '.cbMoreLessContent' ).css( 'max-height', 'none' );
+					}
+
+					$( this ).off( 'destroy.cbmoreless' );
 					$( this ).off( 'rebind.cbmoreless' );
 					$( this ).off( 'modified.cbmoreless' );
 					$( this ).off( 'cloned.cbmoreless' );
-					$( this ).removeData( 'cbmoreless' );
 					$( this ).children( '.cbMoreLessOpen' ).off( 'click', cbmoreless.openHandler ).addClass( 'hidden' );
 					$( this ).children( '.cbMoreLessClose' ).off( 'click', cbmoreless.closeHandler ).addClass( 'hidden' );
 					$( this ).removeClass( 'cbMoreLessOpened cbMoreLessClosed' );
+					$( this ).removeData( 'cbmoreless' );
 					$( this ).cbmoreless( cbmoreless.options );
 				});
 
@@ -170,12 +217,14 @@
 				return this;
 			}
 
+			if ( cbmoreless.settings.height ) {
+				cbmoreless.element.children( '.cbMoreLessContent' ).css( 'max-height', 'none' );
+			}
+
+			cbmoreless.element.off( 'destroy.cbmoreless' );
 			cbmoreless.element.off( 'rebind.cbmoreless' );
 			cbmoreless.element.off( 'modified.cbmoreless' );
 			cbmoreless.element.off( 'cloned.cbmoreless' );
-
-			$( window ).off( 'resize', cbmoreless.resizeHandler );
-
 			cbmoreless.element.children( '.cbMoreLessOpen' ).off( 'click', cbmoreless.openHandler ).addClass( 'hidden' );
 			cbmoreless.element.children( '.cbMoreLessClose' ).off( 'click', cbmoreless.closeHandler ).addClass( 'hidden' );
 			cbmoreless.element.removeClass( 'cbMoreLessOpened cbMoreLessClosed' );
@@ -188,25 +237,6 @@
 			return instances;
 		}
 	};
-
-	function updateToggle( cbmoreless ) {
-		if ( ! cbmoreless.element.hasClass( 'cbMoreLessOpened' ) ) {
-			cbmoreless.element.removeClass( 'cbMoreLessClosed' );
-			cbmoreless.element.children( '.cbMoreLessOpen,.cbMoreLessClose' ).addClass( 'hidden' );
-
-			var content = cbmoreless.element.children( '.cbMoreLessContent' );
-
-			content.css( 'max-height', cbmoreless.settings.height );
-			content.css( 'height', cbmoreless.settings.height );
-
-			if ( content.height() < content.get( 0 ).scrollHeight ) {
-				cbmoreless.element.addClass( 'cbMoreLessClosed' );
-				cbmoreless.element.children( '.cbMoreLessOpen' ).removeClass( 'hidden' );
-			}
-
-			content.css( 'height', '' );
-		}
-	}
 
 	function openToggle( cbmoreless ) {
 		if ( cbmoreless.settings.height ) {

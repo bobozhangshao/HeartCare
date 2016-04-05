@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/20/14 1:24 AM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -86,12 +86,58 @@ class cbInstallerPlugin extends cbInstaller
 		// check version
 		$v						=	$cbInstallXML->getElementByPath( 'version' );
 		$version				=	$v->data();
-		$THISCBVERSION			=	'2.0.12';
+		$THISCBVERSION			=	'2.0.14';
 		if ( ( $version == $ueConfig['version'] ) || ( $version == $THISCBVERSION ) || ( version_compare( $version, $ueConfig['version'], '<=' ) && version_compare( $version, '1.0', '>=' ) ) ) {
 			;
 		} else {
 			$this->setError( 1, 'Plugin version ('.$version.') different from Community Builder version ('.$ueConfig['version'].')' );
 			return false;
+		}
+
+		// Check Dependencies
+		$dependencies										=	$cbInstallXML->getElementByPath( 'dependencies' );
+
+		if ( $dependencies !== false ) {
+			foreach( $dependencies->children() as $dependency ) {
+				$dependencyElement							=	$dependency->attributes( 'name' );
+				$dependencyLabel							=	$dependency->attributes( 'label' );
+				$dependencyVersions							=	$dependency->attributes( 'version' );
+
+				if ( $dependencyElement ) {
+					$dependencyPlugin						=	new PluginTable();
+
+					$dependencyPlugin->load( array( 'element' => $dependencyElement ) );
+
+					if ( ! $dependencyPlugin->id ) {
+						$this->setError( 1, CBTxt::T( 'PLUGIN_DEPENDENCY_MISSING', 'Plugin dependency [dependency] is not installed.', array( '[dependency]' => ( $dependencyLabel ? $dependencyLabel : $dependencyElement ) ) ) );
+
+						return false;
+					}
+
+					if ( $dependencyVersions ) {
+						$dependencyVersions					=	explode( ' ', $dependencyVersions );
+						$dependencyRelease					=	$_PLUGINS->getPluginVersion( $dependencyPlugin->id, true );
+						$dependencyMatched					=	true;
+
+						foreach ( $dependencyVersions as $dependencyVersion ) {
+							if ( preg_match('/^(>=|<=|!=|<>|>|<|=|)(.+)/', $dependencyVersion, $versionMatches ) ) {
+								$dependencyOperator			=	( $versionMatches[1] ? $versionMatches[1] : '=' );
+
+								if ( ! version_compare( $dependencyRelease, $versionMatches[2], $dependencyOperator ) ) {
+									$dependencyMatched		=	false;
+									break;
+								}
+							}
+						}
+
+						if ( ! $dependencyMatched ) {
+							$this->setError( 1, CBTxt::T( 'PLUGIN_DEPENDENCY_MISSING_VERSION', 'Plugin dependency [dependency] [version] different from [dependency] [release].', array( '[dependency]' => ( $dependencyLabel ? $dependencyLabel : $dependencyElement ), '[version]' => implode( ' ', $dependencyVersions ), '[release]' => $dependencyRelease ) ) );
+
+							return false;
+						}
+					}
+				}
+			}
 		}
 
 		$backendMenu			=	"";

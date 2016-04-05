@@ -2,7 +2,7 @@
 /**
 * CBLib, Community Builder Library(TM)
 * @version $Id: 6/18/14 2:22 PM $
-* @copyright (C) 2004-2015 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
+* @copyright (C) 2004-2016 www.joomlapolis.com / Lightning MultiCom SA - and its licensors, all rights reserved
 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2
 */
 
@@ -616,14 +616,12 @@ class cbPluginHandler
 	/**
 	 * returns relative path to plugins folder
 	 *
-	 * @param  null|PluginTable  $plugin
+	 * @param  null|PluginTable|int  $plugin
 	 * @return null|string
 	 */
 	public function getPluginRelPath( $plugin = null )
 	{
-		if ( $plugin === null ) {
-			$plugin		=&	$this->getPluginObject();
-		}
+		$plugin		=	$this->getCachedPluginObject( $plugin );
 
 		if ( $plugin === null ) {
 			return null;
@@ -637,14 +635,12 @@ class cbPluginHandler
 	/**
 	 * returns params object for plugin
 	 *
-	 * @param  null|PluginTable  $plugin
+	 * @param  null|PluginTable|int  $plugin
 	 * @return Registry
 	 */
 	public function getPluginParams( $plugin = null )
 	{
-		if ( $plugin === null ) {
-			$plugin	=	$this->getPluginObject();
-		}
+		$plugin	=	$this->getCachedPluginObject( $plugin );
 
 		if ( $plugin === null ) {
 			return new Registry( null );
@@ -698,7 +694,7 @@ class cbPluginHandler
 			$pluginId				=	(int) $pluginId;
 		}
 
-		$plugin						=	$this->getPluginObject( $pluginId );
+		$plugin						=	$this->getCachedPluginObject( $pluginId );
 
 		if ( $plugin === null ) {
 			return;
@@ -1324,7 +1320,7 @@ class cbPluginHandler
 			$pluginId						=	(int) $pluginId;
 		}
 
-		$row								=&	$this->getPluginObject( $pluginId );
+		$row								=	$this->getCachedPluginObject( $pluginId );
 		$xmlString							=	null;
 
 		if ( $row ) {

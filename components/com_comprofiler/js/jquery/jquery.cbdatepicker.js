@@ -251,6 +251,11 @@
 
 				cbdatepicker.element.on( 'change', cbdatepicker.changeHandler );
 
+				// Destroy the cbdatepicker element:
+				cbdatepicker.element.on( 'remove destroy.cbdatepicker', function() {
+					cbdatepicker.element.cbdatepicker( 'destroy' );
+				});
+
 				// Rebind the cbdatepicker element to pick up any data attribute modifications:
 				cbdatepicker.element.on( 'rebind.cbdatepicker', function() {
 					cbdatepicker.element.cbdatepicker( 'rebind' );
@@ -265,6 +270,7 @@
 
 				// If the cbdatepicker is cloned we need to rebind it back:
 				cbdatepicker.element.on( 'cloned.cbdatepicker', function() {
+					$( this ).off( 'destroy.cbdatepicker' );
 					$( this ).off( 'rebind.cbdatepicker' );
 					$( this ).off( 'cloned.cbdatepicker' );
 					$( this ).off( 'modified.cbdatepicker' );
@@ -320,6 +326,7 @@
 
 			cbdatepicker.element.siblings( '.hasCalendar' ).off( 'click', cbdatepicker.calendarHandler );
 			cbdatepicker.element.off( 'change', cbdatepicker.changeHandler );
+			cbdatepicker.element.off( 'destroy.cbdatepicker' );
 			cbdatepicker.element.off( 'rebind.cbdatepicker' );
 			cbdatepicker.element.off( 'cloned.cbdatepicker' );
 			cbdatepicker.element.off( 'modified.cbdatepicker' );
