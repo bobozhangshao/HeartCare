@@ -27,6 +27,28 @@ class HeartCareControllerUpload extends JControllerForm
         $data['data']['devicetype']= $app->input->post->get('device_type','','string');
         $data['file']              = $app->input->files->get('file','','array');
 
+        if ($data['file']['error'] > 0)
+        {
+            echo 'Problem: ';
+            switch ($data['file']['error'])
+            {
+                case 1:	echo 'File exceeded upload_max_filesize';
+                    break;
+                case 2:	echo 'File exceeded max_file_size';
+                    break;
+                case 3:	echo 'File only partially uploaded';
+                    break;
+                case 4:	echo 'No file uploaded';
+                    break;
+                case 6:   echo 'Cannot upload file: No temp directory specified.';
+                    break;
+                case 7:   echo 'Upload failed: Cannot write to disk.';
+                    break;
+            }
+
+            return false;
+        }
+
         //判断文件类型是不是文本类型
         if ($data['file']['type'] != 'text/plain')
         {
@@ -40,19 +62,24 @@ class HeartCareControllerUpload extends JControllerForm
         if($model->check_user($data))
         {
             $response['have_user'] = "YES";
+
+            $user_id = $model->get_user_id($data);
+            if ($user_id)
+            {
+                $response['get_user_id'] = 'OK';
+                $data['user']['id'] =$user_id[0]->id;
+            }
+            else
+            {
+                $response['get_user_id'] = 'FALSE';
+                echo json_encode($response);
+                return false;
+            }
+
             if($model->to_folder($data)){
                 $response['to_folder'] = "OK";
-                if($model->insert_measure($data))
-                {
-                    $response['insert'] = "OK";
-                    echo json_encode($response);
-                    return true;
-                }
-                else{
-                    $response['insert'] = "FALSE";
-                    echo json_encode($response);
-                    return false;
-                }
+
+                $this->insert($data,$response);
             }
             else {
                 $response['to_folder'] = "FALSE";
@@ -84,26 +111,30 @@ class HeartCareControllerUpload extends JControllerForm
                 echo json_encode($response);
                 return false;
             }
-            else
-            {
+            else {
                 $response['create_user'] = 'TRUE';
+
+                $user_id = $model->get_user_id($data);
+                if ($user_id)
+                {
+                    $response['get_user_id'] = 'OK';
+                    $data['user']['id'] =$user_id[0]->id;
+                }
+                else
+                {
+                    $response['get_user_id'] = 'FALSE';
+                    echo json_encode($response);
+                    return false;
+                }
+
 
                 if($model->start_user($data))
                 {
                     $response['start_user'] = 'OK';
                     if($model->to_folder($data)){
                         $response['to_folder'] = "OK";
-                        if($model->insert_measure($data))
-                        {
-                            $response['insert'] = "OK";
-                            echo json_encode($response);
-                            return true;
-                        }
-                        else{
-                            $response['insert'] = "FALSE";
-                            echo json_encode($response);
-                            return false;
-                        }
+
+                        $this->insert($data,$response);
                     }
                     else {
                         $response['to_folder'] = "FALSE";
@@ -120,5 +151,53 @@ class HeartCareControllerUpload extends JControllerForm
                 }
             }
         }
+    }
+
+    public function insert(array &$data, array &$response)
+    {
+        $model  = $this->getModel('Upload', 'HeartCareModel');
+
+        if($model->have_data($data))
+        {
+            $response['have_data'] = "YES";
+            echo json_encode($response);
+            return false;
+        }
+        else
+        {
+            if($model->insert_measure($data))
+            {
+                $response['insert_measure'] = "OK";
+                if($model->have_device($data))
+                {
+                    $response['have_device'] = 'YES';
+                    echo json_encode($response);
+                    return true;
+                }
+                else
+                {
+                    if($model->insert_device($data))
+                    {
+                        $response['insert_device'] = 'OK';
+                        echo json_encode($response);
+                        return true;
+                    }
+                    else
+                    {
+                        $response['insert_device'] = 'FALSE';
+                        echo json_encode($response);
+                        return true;
+                    }
+                }
+            }
+            else{
+                $response['insert'] = "FALSE";
+                echo json_encode($response);
+                return false;
+            }
+        }
+
+
+
     }
 }

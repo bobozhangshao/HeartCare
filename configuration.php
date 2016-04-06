@@ -36,8 +36,8 @@ class JConfig {
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
 	public $smtpuser = 'iecas_heartcare@126.com';
-	public $smtppass = 'iecasheartcare';
-	public $smtphost = 'smpt.126.com';
+	public $smtppass = 'heartcare1234';
+	public $smtphost = 'smtp.126.com';
 	public $smtpsecure = 'none';
 	public $smtpport = '25';
 	public $caching = '0';

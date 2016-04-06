@@ -5,9 +5,39 @@
 		<title>Joomlapolis News</title>
 		<description>Joomla social networking and Subscription Management software. Community Builder is the top rated, best supported, most complete and reliable community system there is for Joomla!</description>
 		<link>http://www.joomlapolis.com:80/news</link>
-		<lastBuildDate>Tue, 05 Apr 2016 06:04:55 +0000</lastBuildDate>
+		<lastBuildDate>Wed, 06 Apr 2016 10:20:55 +0000</lastBuildDate>
 		<generator>Joomla! 1.5 - Open Source Content Management</generator>
 		<language>en-gb</language>
+		<item>
+			<title>A website story - part 1</title>
+			<link>http://www.joomlapolis.com:80/news/18545-a-website-story-part-1</link>
+			<guid>http://www.joomlapolis.com:80/news/18545-a-website-story-part-1</guid>
+			<description><![CDATA[<p><img style="margin-right: 15px; margin-bottom: 5px; float: left;" src="http://www.joomlapolis.com:80/images/stories/vertical-logo-dark-background-en.png" alt="vertical-logo-dark-background-en" width="331" height="275" />So you have an idea and you want to build a website.</p>
+<p>You discovered <a href="http://www.joomla.org" target="_blank">Joomla</a> and you are very happy that you can quickly create something nice with almost zero knowledge of HTML, Javascript, CSS, mySQL and other technical jargon.</p>
+<p>After playing around, reading <a href="https://docs.joomla.org/Main_Page" target="_blank">available documentation</a>, asking for help on the <a href="http://forum.joomla.org/" target="_blank">Joomla forums</a> and experimenting, you manage to create your site content and organize it in Joomla categories and articles. You have mastered the Joomla page concept with the creation of menus and have your site navigation just like you want it.</p>
+<p>You have also placed some cool modules on your pages to add more spice to your content layouts.</p>
+<p>So now you take two steps back and start thinking about the <strong>next steps</strong>.</p>
+<p>All the <strong>great content is in place</strong> and basically anyone can see it, but ... <strong>you have no idea who is actually looking at what</strong>.</p>
+<p>Well, you could use some analytics tools to get some information about your visitors, but <strong>you want more than some anonymous reports</strong> based on IP addresses.</p>
+<p>You want to <strong>engadge your audience</strong> and <strong>interact with your website readers</strong>. You want to find out who they are, what they like and dislike about your site, what they would want to see next. You want to address your content reader <strong>community</strong> at a more personal level.</p>
+<p style="text-align: center;"><a href="http://extensions.joomla.org/extensions/extension/clients-a-communities/communities/community-builder" target="_blank"><img src="http://www.joomlapolis.com:80/images/stories/cblogo-horz-color-1200x500p.png" alt="cblogo-horz-color-1200x500p" width="500" height="208" /></a></p>
+<p>After some research on the <strong>Joomla forums</strong> and the <strong>Joomla Extensions Directory</strong>, you discover the <a href="http://extensions.joomla.org/extensions/extension/clients-a-communities/communities/community-builder" target="_blank">Community Builder listing</a> page and check out the great reviews.</p>
+<p>You are getting really excited about the possibilities. You download the latest <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder release</a> and <a href="https://www.youtube.com/watch?v=iAAYGJjkFuU&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=1" target="_blank">install it</a> (video) on your Joomla site. You go through the <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=category&amp;id=129&amp;Itemid=197">Getting Started</a> articles and grab the <a href="http://www.joomlapolis.com:80/component/docman/doc_details/801-cb-20-primer-book-105">CB Primer Book</a> pdf and start reading. While reading the book, you discover more <a href="https://www.youtube.com/playlist?list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX" target="_blank">cool video tutorials</a> and spend some time watching and learning.</p>
+<p><strong>All of a sudden you realize that all of this is still free!</strong></p>
+<p>You create your new website <a href="http://www.joomlapolis.com:80/#">CB registration form</a> filled with extra fields that will help you learn more about your readers. First and last name fields, <a href="https://www.youtube.com/watch?v=1GvEsawIGKE&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=17" target="_blank">a birthday field</a> (video), <a href="https://www.youtube.com/watch?v=C6_Vl01uUFk&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=7" target="_blank">gender selector</a> (video), interest multiple choice field, country location text field are extremely easy to add. You can even mark individual fields as required. And of course you have email contact information for all your registered users. Your now <strong>named-users</strong> can <strong>login to your website</strong> and <strong>see all the information they gave</strong> during the registration process on their own <strong>CB user profile</strong> page. You can even ask for more information about your users on their profile pages and let them <a href="https://www.youtube.com/watch?v=6beb-6YUf_A&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=9" target="_blank">upload their photo</a> (video) or even a <a href="https://www.youtube.com/watch?v=VUOCwpDwv6c&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=18" target="_blank">CV file</a> (video).</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/stories/userprofile.gif" alt="userprofile" width="500" height="362" /></p>
+<p>You can easily configure things so your users are activated <strong>only if they confirm their email address</strong> by clicking on a <a href="https://www.youtube.com/watch?v=z8HabZ14Yng&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=3" target="_blank">confirmation link</a> (video) they get from your website.</p>
+<p><strong>Wow, you say - this is really cool!</strong></p>
+<p>You start thinking about your Joomla content and go back and update some of it so it is only available to logged in users. This gives people an <strong>incentive to register</strong>.</p>
+<p>What other incentives could you give?</p>
+<p>You go back to your CB Primer Book and discover the <strong>CB User list</strong> concept and start thinking. Why not make a nice <strong>list of already signed-up registered users</strong> and use it as a motivation incentive? So you create your first <a href="https://www.youtube.com/watch?v=y4adNTkNpGI&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=4" target="_blank">CB User list</a> and make a new Joomla menu to it and make it public so your anonymous readers can see the list. But you are still <strong>keeping the CB User Profile pages private</strong> and only viewable to logged in users.</p>
+<p><a href="https://www.youtube.com/watch?v=y4adNTkNpGI&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=4" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/stories/userlist.gif" alt="userlist" width="500" height="418" /></a>Your website is now starting to l<strong>ook and feel much more engadging and interesting to your users</strong> and your brain is already thinking of ways to make things even more appealing.</p>
+<p>(end of part 1 - to be continued)</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233361-a-website-story-part-1">Discuss this on our forums</a>.</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Sun, 03 Apr 2016 13:35:19 +0000</pubDate>
+		</item>
 		<item>
 			<title>Joomla 3.5 and Community Builder 2.0.14 Released</title>
 			<link>http://www.joomlapolis.com:80/news/18543-joomla-35-and-community-builder-2014-released</link>
@@ -226,19 +256,6 @@
 			<author>nant@joomlapolis.com (Nick A.)</author>
 			<category>News</category>
 			<pubDate>Mon, 18 Jan 2016 10:45:28 +0000</pubDate>
-		</item>
-		<item>
-			<title>New Free Primer Book Releases</title>
-			<link>http://www.joomlapolis.com:80/news/18529-new-free-primer-book-releases</link>
-			<guid>http://www.joomlapolis.com:80/news/18529-new-free-primer-book-releases</guid>
-			<description><![CDATA[<p style="text-align: center;">&nbsp;<img src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201601/primer-books-update.gif" alt="primer-books-update" width="450" height="319" /></p>
-<p style="text-align: center;">New Primer Book updates released!<br /><a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=801">Download CB Primer</a> - <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=792">Download GroupJive Primer</a></p>
-<p>The <strong>Community Builder&nbsp;</strong> and <strong>GroupJive</strong> <strong>Primer Books</strong> have been updated to be compatible with latest software releases. Both also now contain special sections describing how to upgrade from previous releases.</p>
-<p>These are <strong>highly recommended resources</strong> that you should download and study as - along with the <a href="https://www.youtube.com/user/Joomlapolis/playlists" target="_blank">great video tutorials</a> - they will help you take full advantage of <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder</a> and <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=135&amp;Itemid=99">GroupJive</a>.</p>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232548-new-free-primer-book-releases">Discuss this on our forums</a>.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Mon, 18 Jan 2016 10:25:00 +0000</pubDate>
 		</item>
 	</channel>
 </rss>

@@ -60,7 +60,7 @@ class HeartCareModelUpload extends JModelList
     {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
-        $query->select('id,name,username,email')->from($db->quoteName('#__users'));
+        $query->select('name,username,email')->from($db->quoteName('#__users'));
         $query->where('username = '.$db->quote($data['user']['username']).' AND email = '.$db->quote($data['user']['email']));
         $db->setQuery($query);
 
@@ -97,8 +97,6 @@ class HeartCareModelUpload extends JModelList
      * */
     public function insert_measure(array $data)
     {
-        //print_r($data);
-        //echo "This is Upload.insert_measure";
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
         $columns = array('device_id', 'user_id','data_type', 'measure_time', 'data_route');
@@ -114,56 +112,14 @@ class HeartCareModelUpload extends JModelList
         {
             if($db->execute())
             {
-                //查找设备表里是否有这个设备.有则返回true没有则新建设备
-                $query->clear()
-                    ->select($db->quoteName(array('device_id', 'user_id', 'device_type')))
-                    ->from($db->quoteName('#__health_device'))
-                    ->where($db->quoteName('device_id') . ' = ' . $db->quote($data['data']['deviceid']));
-
-                $db->setQuery($query);
-
-                try
-                {
-                    $device = $db->loadObjectList();
-                    if($device)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        $query->clear()
-                            ->insert($db->quoteName('#__health_device'))
-                            ->columns($db->quoteName(array('device_id','user_id','device_type','register_time')))
-                            ->values(implode(',',array($db->quote($data['data']['deviceid']),$db->quote($data['user']['id']),$db->quote($data['data']['devicetype']),$db->quote(date('Y-m-d H:i:s')))));
-                        $db->setQuery($query);
-
-                        try
-                        {
-                            if($db->execute())
-                            {
-                                return true;
-                            }
-                        }
-                        catch(RuntimeException $e)
-                        {
-                            $this->setError($e->getMessage());
-
-                            return false;
-                        }
-
-                    }
-                }
-                catch (RuntimeException $e)
-                {
-                    $this->setError(JText::sprintf('COM_USERS_DATABASE_ERROR', $e->getMessage()), 500);
-
-                    return false;
-                }
+                return true;
             }
             else
             {
                 return false;
             }
+
+
         }
         catch (RuntimeException $e)
         {
@@ -203,6 +159,128 @@ class HeartCareModelUpload extends JModelList
             }
         }
         catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+
+    /**
+     * 根据用户名查找user_id
+     * */
+    public function get_user_id(array $data)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('id')->from($db->quoteName('#__users'))->where($db->quoteName('username').' = '.$db->quote($data['user']['username']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            return $result;
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
+     * 查找是否存在设备
+     * @return bool
+     * */
+    public function have_device(array $data)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('*')->from($db->quoteName('#__health_device'))->where($db->quoteName('device_id').' = '.$db->quote($data['data']['deviceid']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            if($result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
+     * 查找是否已经存在测量数据
+     *
+     * @return bool
+     * */
+    public function have_data(array $data)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('*')->from($db->quoteName('#__health_data'))->where($db->quoteName('data_route').' = '.$db->quote($data['file']['name']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            if($result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+
+    public function insert_device(array $data)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->clear()
+            ->insert($db->quoteName('#__health_device'))
+            ->columns($db->quoteName(array('device_id','user_id','device_type','register_time')))
+            ->values(implode(',',array($db->quote($data['data']['deviceid']),$db->quote($data['user']['id']),$db->quote($data['data']['devicetype']),$db->quote(date('Y-m-d H:i:s')))));
+        $db->setQuery($query);
+
+        try
+        {
+            if($db->execute())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch(RuntimeException $e)
         {
             $this->setError($e->getMessage());
 
