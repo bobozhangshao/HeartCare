@@ -116,10 +116,8 @@ jQuery(document).ready(function() {
                             type : \'value\',
                             name : yname,
                             boundaryGap: [0, 0],
-                            max : 1300,
-                            min : 800,
+
                             scale : true,
-                            splitNumber : 10
                         }
                     ],
                     series : [

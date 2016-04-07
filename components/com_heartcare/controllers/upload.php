@@ -27,32 +27,38 @@ class HeartCareControllerUpload extends JControllerForm
         $data['data']['devicetype']= $app->input->post->get('device_type','','string');
         $data['file']              = $app->input->files->get('file','','array');
 
+        $response = array();
+
         if ($data['file']['error'] > 0)
         {
-            echo 'Problem: ';
+            $response['file_problem'] = 'Problem:';
             switch ($data['file']['error'])
             {
-                case 1:	echo 'File exceeded upload_max_filesize';
+                case 1:  $response['file_problem'] .='File exceeded upload_max_filesize';
                     break;
-                case 2:	echo 'File exceeded max_file_size';
+                case 2:	$response['file_problem'] .='File exceeded max_file_size';
                     break;
-                case 3:	echo 'File only partially uploaded';
+                case 3:	$response['file_problem'] .='File only partially uploaded';
                     break;
-                case 4:	echo 'No file uploaded';
+                case 4:	$response['file_problem'] .='No file uploaded';
                     break;
-                case 6:   echo 'Cannot upload file: No temp directory specified.';
+                case 6:   $response['file_problem'] .='Cannot upload file: No temp directory specified.';
                     break;
-                case 7:   echo 'Upload failed: Cannot write to disk.';
+                case 7:   $response['file_problem'] .='Upload failed: Cannot write to disk.';
                     break;
             }
 
-            return false;
+            echo json_encode($response);
+            JFactory::getApplication()->close();
         }
 
         //判断文件类型是不是文本类型
         if ($data['file']['type'] != 'text/plain')
         {
-            return false;
+            $response['file_problem'] = 'File type is not text/plain';
+
+            echo json_encode($response);
+            JFactory::getApplication()->close();
         }
 
         //获取model : upload
@@ -73,7 +79,7 @@ class HeartCareControllerUpload extends JControllerForm
             {
                 $response['get_user_id'] = 'FALSE';
                 echo json_encode($response);
-                return false;
+                JFactory::getApplication()->close();
             }
 
             if($model->to_folder($data)){
@@ -85,7 +91,7 @@ class HeartCareControllerUpload extends JControllerForm
                 $response['to_folder'] = "FALSE";
                 $response['insert'] = "NO";
                 echo json_encode($response);
-                return false;
+                JFactory::getApplication()->close();
             }
         }
         elseif(!$model->check_user($data))
@@ -109,7 +115,7 @@ class HeartCareControllerUpload extends JControllerForm
             {
                 $response['create_user'] = 'FALSE';
                 echo json_encode($response);
-                return false;
+                JFactory::getApplication()->close();
             }
             else {
                 $response['create_user'] = 'TRUE';
@@ -124,7 +130,7 @@ class HeartCareControllerUpload extends JControllerForm
                 {
                     $response['get_user_id'] = 'FALSE';
                     echo json_encode($response);
-                    return false;
+                    JFactory::getApplication()->close();
                 }
 
 
@@ -140,14 +146,14 @@ class HeartCareControllerUpload extends JControllerForm
                         $response['to_folder'] = "FALSE";
                         $response['insert'] = "NO";
                         echo json_encode($response);
-                        return false;
+                        JFactory::getApplication()->close();
                     }
                 }
                 else
                 {
                     $response['start_user'] = 'FALSE';
                     echo json_encode($response);
-                    return false;
+                    JFactory::getApplication()->close();
                 }
             }
         }
@@ -161,7 +167,7 @@ class HeartCareControllerUpload extends JControllerForm
         {
             $response['have_data'] = "YES";
             echo json_encode($response);
-            return false;
+            JFactory::getApplication()->close();
         }
         else
         {
@@ -172,7 +178,7 @@ class HeartCareControllerUpload extends JControllerForm
                 {
                     $response['have_device'] = 'YES';
                     echo json_encode($response);
-                    return true;
+                    JFactory::getApplication()->close();
                 }
                 else
                 {
@@ -180,24 +186,22 @@ class HeartCareControllerUpload extends JControllerForm
                     {
                         $response['insert_device'] = 'OK';
                         echo json_encode($response);
-                        return true;
+                        JFactory::getApplication()->close();
                     }
                     else
                     {
                         $response['insert_device'] = 'FALSE';
                         echo json_encode($response);
-                        return true;
+                        JFactory::getApplication()->close();
                     }
                 }
             }
             else{
                 $response['insert'] = "FALSE";
                 echo json_encode($response);
-                return false;
+                JFactory::getApplication()->close();
             }
         }
-
-
 
     }
 }
