@@ -96,13 +96,16 @@ class HeartCareModelHeartCare extends JModelList
         $yname = $this->getState('wave.type');
         $arr = explode("\r\n", $content);
         $len = sizeof($arr);
+        //缩放的倍数288000是频率360*时间(秒)
         $zoom = floatval(288000/$len);
 
         $xarr = array();
 
+        //xarr 是x轴坐标
         for ($i=0 ; $i<$len ; $i++ ){
             //$xarr[$i] = number_format($i*(1/360),1).'s';
 
+            //除以72是指0.2秒的数据量
             if ($i%72 == 0){
                 $k = $i/72;
                 $xarr[$i] = $k*(0.2);

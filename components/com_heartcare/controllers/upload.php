@@ -55,7 +55,7 @@ class HeartCareControllerUpload extends JControllerForm
         //判断文件类型是不是文本类型
         if ($data['file']['type'] != 'text/plain')
         {
-            $response['file_problem'] = 'File type is not text/plain';
+            $response['file_problem'] = 'This filetype is '.$data['file']['type'].'....File type is not text/plain';
 
             echo json_encode($response);
             JFactory::getApplication()->close();
