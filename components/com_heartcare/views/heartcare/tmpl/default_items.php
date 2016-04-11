@@ -6,9 +6,12 @@
  * Time: 15:02
  */
 defined('_JEXEC') or die('Restricted Access');
+JHtml::_('behavior.core');
 ?>
 
-<form action="<?php echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php
+echo JRoute::_('index?option=com_heartcare&task=heartcare.remove_measure');
+//echo htmlspecialchars(JUri::getInstance()->toString()); ?>" method="post" name="adminForm" id="adminForm">
     <div id="front-data">
         <div class="row-fluid">
             <table class="table table-striped table-bordered">
@@ -16,9 +19,10 @@ defined('_JEXEC') or die('Restricted Access');
                 <tr>
                     <th width="10%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_ID'); ?></th>
                     <th width="20%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_MEASURETIME'); ?></th>
-                    <th width="20%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_DATATYPE'); ?></th>
+                    <th width="10%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_DATATYPE'); ?></th>
                     <th width="20%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_ID'); ?></th>
                     <th width="30%"><?php echo JText::_('COM_HEARTCARE_HEALTHDATA_DATAROUTE'); ?></th>
+                    <th width="10%"><?php echo ""; ?></th>
                 </tr>
                 </thead>
 
@@ -49,6 +53,11 @@ defined('_JEXEC') or die('Restricted Access');
                                     ?>
                                 </a>
                             </td>
+                            <td>
+                                <input type="button" onclick="document.getElementById('data_id').value = document.getElementById('measureData<?php echo $row->id; ?>id').value;document.getElementById('data_route').value = document.getElementById('measureData<?php echo $row->id; ?>route').value;document.adminForm.submit()" class="btn btn-mini btn-danger" value="delete"/>
+                                <input type="hidden" id="measureData<?php echo $row->id; ?>id" value="<?php echo $row->id; ?>" />
+                                <input type="hidden" id="measureData<?php echo $row->id; ?>route" value="<?php echo $row->data_route; ?>" />
+                            </td>
 
                             <?php
                             $link = JRoute::_('index.php?option=com_heartcare&amp;tmpl=component&amp;view=heartcare&amp;layout=modal&amp;wave_id='.$row->id.'&amp;wave_route='.$row->data_route.'&amp;wave_type='.$row->data_type);
@@ -70,8 +79,11 @@ defined('_JEXEC') or die('Restricted Access');
                 <?php endif; ?>
                 </tbody>
             </table>
+
             <?php echo JHtml::_('form.token'); ?>
 
         </div>
     </div>
+    <input type="hidden" id="data_id" name="data_id" value=""/>
+    <input type="hidden" id="data_route" name="data_route" value=""/>
 </form>

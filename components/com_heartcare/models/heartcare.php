@@ -126,6 +126,94 @@ class HeartCareModelHeartCare extends JModelList
 
         return $json_result;
     }
+
+    /**
+     * 内部删除测量数据
+     * 按照id删除
+     * */
+    public function remove_measure(array $measure)
+    {
+        //删除数据库中记录
+        $db=JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $conditions = array(
+            $db->quoteName('id') . ' = ' . $measure['id']
+        );
+        $query->delete($db->quoteName('#__health_data'));
+        $query->where($conditions);
+
+        $db->setQuery($query);
+        try
+        {
+            $result = $db->execute();
+
+            //从文件夹中移除
+            if($result)
+            {
+                $measure_file = JPATH_BASE.'/media/com_heartcare/data/'.$measure['data_route'];
+                if($measure['data_route'] != '')
+                {
+                    if(unlink($measure_file))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+
+    }
+
+    /**
+     * 删除测量数据的接口
+     * 按照文件名删除measure_data在数据库中的记录
+     * */
+    public function remove_interface($filename,array &$response)
+    {
+        $db=JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->delete($db->quoteName('#__health_data'));
+        $query->where($db->quoteName('data_route') . ' = \'' . $filename.'\'');
+
+        $db->setQuery($query);
+        try {
+            $result = $db->execute();
+            if($result)
+            {
+                $response['SQLexe'] = 'OK';
+                return true;
+            }
+            else
+            {
+                $response['SQLexe'] = 'FALSE';
+                return false;
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+            $response['SQL_ERROR'] = 'FALSE';
+            return false;
+        }
+
+
+    }
+
+
+
 }
 
 
