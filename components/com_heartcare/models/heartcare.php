@@ -213,6 +213,64 @@ class HeartCareModelHeartCare extends JModelList
     }
 
 
+    /**
+     * 根据用户名查找user_id
+     * */
+    public function get_user_id(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('id')->from($db->quoteName('#__users'))->where($db->quoteName('username').' = '.$db->quote($user['username']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            return $result;
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
+     * 根据用户id查出他所有的测量记录
+     * */
+    public function get_user_files(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('data_route')->from($db->quoteName('#__health_data'))->where($db->quoteName('user_id').' = '.$db->quote($user['id']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+
+
+            foreach($result as $key=>$value)
+            {
+                $tmp = get_object_vars($value);
+                $result[$key] = $tmp['data_route'];
+            }
+//            echo "<pre>";
+//            print_r($result);
+//            echo "</pre>";
+            return $result;
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
 
 }
 

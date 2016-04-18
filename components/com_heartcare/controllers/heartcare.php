@@ -31,7 +31,6 @@ class HeartCareControllerHeartCare extends JControllerForm
         }
     }
 
-
     /**
      * Android 删除接口
      * 按文件名查找
@@ -103,6 +102,50 @@ class HeartCareControllerHeartCare extends JControllerForm
         {
             $this->setError($e->getMessage());
         }
+    }
+
+
+    /**
+     * 返回一个用户已经上传过的文件
+     * */
+    public function user_files()
+    {
+        $app = JFactory::getApplication();
+        $user['username']         = $app->input->post->get('username','','string');
+        //$user['useremail']         = $app->input->get('user_email','','string');
+        $filelist = array();
+
+        $model = $this->getModel('HeartCare','HeartCareModel');
+        if($user['username'] != '')
+        {
+            $user['id'] = $model->get_user_id($user);
+            if($user['id'] != '')
+            {
+                $user['id'] = $user['id'][0]->id;
+                $filelist = $model->get_user_files($user);
+                if($filelist)
+                {
+                    echo json_encode($filelist);
+                    JFactory::getApplication()->close();
+                }
+                else
+                {
+                    echo json_encode($filelist);
+                    JFactory::getApplication()->close();
+                }
+            }
+            else
+            {
+                echo json_encode($filelist);
+                JFactory::getApplication()->close();
+            }
+        }
+        else
+        {
+            echo json_encode($filelist);
+            JFactory::getApplication()->close();
+        }
+
     }
 
 }
