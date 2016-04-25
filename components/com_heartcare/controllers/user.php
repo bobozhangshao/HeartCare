@@ -245,7 +245,7 @@ class HeartCareControllerUser extends  JControllerForm
         $response = array();
 
         $user = array();
-        $user['username']  = $app->input->get('username','','string');
+        $user['username']  = $app->input->post->get('username','','string');
         $model = $this->getModel('User','HeartCareModel');
 
         if($model->check_username($user))

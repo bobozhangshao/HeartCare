@@ -350,6 +350,38 @@ class HeartCareModelHeartCare extends JModelList
         }
     }
 
+    /**
+     * 检查用户名是否存在
+     * return bool
+     * */
+    public function check_username(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('*')->from($db->quoteName('#__users'));
+        $query->where(' username = '.$db->quote($user['username']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            if($result){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
 
 }
 

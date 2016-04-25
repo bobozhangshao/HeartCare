@@ -114,16 +114,25 @@ class HeartCareControllerHeartCare extends JControllerForm
         $user['username']         = $app->input->post->get('username','','string');
         //$user['useremail']         = $app->input->get('user_email','','string');
         $filelist = array();
+        $filelist['have_user'] = 'EXIST';
 
         $model = $this->getModel('HeartCare','HeartCareModel');
+
+        if(!$model->check_username($user))
+        {
+            $filelist['have_user'] = 'NOT EXIST';
+            echo json_encode($filelist);
+            JFactory::getApplication()->close();
+        }
+
         if($user['username'] != '')
         {
             $user['id'] = $model->get_user_id($user);
             if($user['id'] != '')
             {
                 $user['id'] = $user['id'][0]->id;
-                $filelist = $model->get_user_files($user);
-                if($filelist)
+                $filelist['data'] = $model->get_user_files($user);
+                if($filelist['data'])
                 {
                     echo json_encode($filelist);
                     JFactory::getApplication()->close();
