@@ -32,18 +32,14 @@ class HeartCareControllerUser extends  JControllerForm
         $credentials['password']  = $user['password'];
         $credentials['secretkey'] = $user['secretkey'];
 
+
         $response = array();
         if (true === $app->login($credentials, $options))
         {
             // Success
             $response['login'] = 'OK';
-//            if ($options['remember'] == true)
-//            {
-//                $app->setUserState('rememberLogin', true);
-//            }
 
             echo json_encode($response);
-            //$app->setUserState('users.login.form.data', array());
             JFactory::getApplication()->close();
         }
         else
@@ -51,9 +47,7 @@ class HeartCareControllerUser extends  JControllerForm
             // Login failed !
             $response['login'] = 'FAIL';
 
-            //$data['remember'] = (int) $options['remember'];
             echo json_encode($response);
-            //$app->setUserState('users.login.form.data', $data);
             JFactory::getApplication()->close();
 
         }
