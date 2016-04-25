@@ -10,6 +10,129 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.core');
 //引入百度echarts库
 JHtml::script('http://echarts.baidu.com/build/dist/echarts.js',true);
+$data = json_decode($this->txtData);
+
+//echo "<pre>";
+//print_r(sizeof($result['data_z']));
+//print_r($this->txtData);
+//echo "</pre>";
+$tooltip = '';
+$axisData = 'axisData = obj.data;';
+$zoomLock = 'zoomLock:true,';
+$legend = "legend: {
+                    show:true,
+                    data:[yname]
+                    },";
+$series = "series : [
+                        {
+                            name:yname,
+                            type:'line',
+                            smooth:true,
+                            symbol:'none',
+                            itemStyle:{
+                                normal:{
+                                    lineStyle:{
+                                        color:'rgba(255,60,50,1)',
+                                        width: 0.8
+                                    }
+                                }
+                            },
+
+                            data : axisData
+                        }
+                    ]";
+
+if($data->yname == 'HR')
+{
+    $zoomLock = 'zoomLock:false,';
+    $tooltip = "tooltip:{show:true,
+                         trigger: 'axis'
+                         },";
+    $series = "series : [
+                        {
+                            name:yname,
+                            type:'line',
+                            smooth:true,
+                            symbol:'heart',
+                            symbolSize : 3,
+                            itemStyle:{
+                                normal:{
+                                    lineStyle:{
+                                        color:'rgba(255,60,50,1)',
+                                        width: 1
+                                    }
+                                }
+                            },
+
+                            data : axisData
+
+                        }
+                    ]";
+}
+elseif(($data->yname == 'ACC')||($data->yname == 'GRRO'))
+{
+    $data_type = 'ACC';
+    if ($data->yname == 'GRRO')
+    {
+        $data_type = 'GRRO';
+    }
+
+    $axisData = "axisData_x = obj.data_x;
+                 axisData_y = obj.data_y;
+                 axisData_z = obj.data_z;";
+    $legend = "legend:{
+                       show:true,
+                       data:['".$data_type."_X','".$data_type."_Y','".$data_type."_Z']
+    },";
+    $series = "series:[
+                        {
+                            name:'".$data_type."_X',
+                            type:'line',
+                            smooth:true,
+                            symbol:'none',
+                            itemStyle:{
+                                normal:{
+                                    lineStyle:{
+                                        width: 0.8
+                                    }
+                                }
+                            },
+                            data : axisData_x
+                        },
+                        {
+                            name:'".$data_type."_Y',
+                            type:'line',
+                            smooth:true,
+                            symbol:'none',
+                            itemStyle:{
+                                normal:{
+                                    lineStyle:{
+                                        width: 0.8
+                                    }
+                                }
+                            },
+
+                            data : axisData_y
+                        },
+                        {
+                            name:'".$data_type."_Z',
+                            type:'line',
+                            smooth:true,
+                            symbol:'none',
+                            itemStyle:{
+                                normal:{
+                                    lineStyle:{
+                                        width: 0.8
+                                    }
+                                }
+                            },
+
+                            data : axisData_z
+                        }
+
+                    ]";
+
+}
 
 JFactory::getDocument()->addScriptDeclaration('
 
@@ -23,13 +146,10 @@ JFactory::getDocument()->addScriptDeclaration('
     dataLen = obj.len;
     dataZom =  obj.zom;
     xarrr = obj.xa;
-    axisData = obj.data;
+    '.$axisData.'
     var woption = {
                     backgroundColor:\'rgba(200,250,200,0.7)\',
-                    legend: {
-                        show:false,
-                        data:[yname]
-                    },
+                    '.$legend.$tooltip.'
                     toolbox: {
                         show : true,
                         feature : {
@@ -43,7 +163,7 @@ JFactory::getDocument()->addScriptDeclaration('
                     dataZoom:{
                         show:true,
                         realtime:true,
-                        zoomLock:true,
+                        '.$zoomLock.'
                         handleSize:20,
                         showDetail:true,
                         y:320,
@@ -89,33 +209,14 @@ JFactory::getDocument()->addScriptDeclaration('
                         }
                     ],
                     yAxis : [
-
                         {
                             type : \'value\',
                             name : yname,
                             boundaryGap: [0, 0],
-
                             scale : true,
                         }
                     ],
-                    series : [
-                        {
-                            name:\'PAC\',
-                            type:\'line\',
-                            smooth:true,
-                            symbol:\'none\',
-                            itemStyle:{
-                                normal:{
-                                    lineStyle:{
-                                        color:\'rgba(255,60,50,1)\',
-                                        width: 0.8
-                                    }
-                                }
-                            },
-
-                            data : axisData
-                        }
-                    ]
+                    '.$series.'
                 };
     require.config({
                     paths: {

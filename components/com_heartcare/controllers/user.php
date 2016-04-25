@@ -6,9 +6,11 @@
  * Time: 10:16
  */
 defined('_JEXEC') or die('Restricted Access');
-require_once JPATH_BASE.'/components/com_users/controller.php';
+//require_once JPATH_BASE.'/components/com_users/controller.php';
+require_once JPATH_BASE.'/components/com_users/models/registration.php';
+//require_once JPATH_BASE.'/components/com_users/models/remind.php';
 
-class HeartCareControllerUser extends  UsersController
+class HeartCareControllerUser extends  JControllerForm
 {
     /**
      * app登录接口
@@ -35,13 +37,13 @@ class HeartCareControllerUser extends  UsersController
         {
             // Success
             $response['login'] = 'OK';
-            if ($options['remember'] == true)
-            {
-                $app->setUserState('rememberLogin', true);
-            }
+//            if ($options['remember'] == true)
+//            {
+//                $app->setUserState('rememberLogin', true);
+//            }
 
             echo json_encode($response);
-            $app->setUserState('users.login.form.data', array());
+            //$app->setUserState('users.login.form.data', array());
             JFactory::getApplication()->close();
         }
         else
@@ -49,9 +51,9 @@ class HeartCareControllerUser extends  UsersController
             // Login failed !
             $response['login'] = 'FAIL';
 
-            $data['remember'] = (int) $options['remember'];
+            //$data['remember'] = (int) $options['remember'];
             echo json_encode($response);
-            $app->setUserState('users.login.form.data', $data);
+            //$app->setUserState('users.login.form.data', $data);
             JFactory::getApplication()->close();
 
         }
@@ -98,8 +100,184 @@ class HeartCareControllerUser extends  UsersController
     public function register()
     {
         $app = JFactory::getApplication();
+        $user['username']  = $app->input->post->get('username','','string');
+        $user['password']  = $app->input->post->get('password','','string');
+        $user['email']     = $app->input->post->get('user_email','','string');
+
+        $model_regist = $this->getModel('Registration', 'UsersModel');
+        $model = $this->getModel('User', 'HeartCareModel');
+
+        $response = array();
+        if(!$model->check_username($user))
+        {
+            $response['username'] = 'OK';
+            if(!$model->check_email($user))
+            {
+                $response['email'] = 'OK';
+
+                $requestData['name']      = $user['username'];
+                $requestData['username']  = $user['username'];
+                $requestData['password1'] = $user['password'];
+                $requestData['password2'] = $user['password'];
+                $requestData['email1']    = $user['email'];
+                $requestData['email2']    = $user['email'];
+
+                $return = $model_regist->register($requestData);
+
+                if($return === false)
+                {
+                    $response['create_user'] = 'FALSE';
+                    echo json_encode($response);
+                    JFactory::getApplication()->close();
+                }
+                else
+                {
+                    $response['create_user'] = 'TRUE';
+                    echo json_encode($response);
+                    JFactory::getApplication()->close();
+                }
+            }
+            else
+            {
+                $response['email'] = 'EXIST';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+
+        }
+        else
+        {
+            $response['username'] = 'EXIST';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+    }
+
+    /**
+     * app用户名找回
+     * */
+    public function username_remind()
+    {
+        $app    = JFactory::getApplication();
+        $response = array();
+
+        $user = array();
+        $user['email']  = $app->input->post->get('user_email','','string');
+
+        $model = $this->getModel('User', 'HeartCareModel');
+
+        $have_email = $model->check_email($user);
+        if($have_email)
+        {
+            $response['have_email'] = 'EXIST';
+            $return = $model->processRemindRequest($user);
+        }
+        else
+        {
+            $response['have_email'] = 'NOT EXIST';
+            $return = false;
+        }
+
+        // Check for a hard error.
+        if ($return == false)
+        {
+            $response['sendmail'] = 'FALSE';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+
+        }
+        else
+        {
+            $response['sendmail'] = 'OK';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+    }
 
 
+    /**
+     * app用户密码重置接口
+     * */
+    public function password_reset()
+    {
+        $app   = JFactory::getApplication();
+        $response = array();
+
+        $model = $this->getModel('User', 'HeartCareModel');
+
+        $user['email']  = $app->input->post->get('user_email', '', 'string');
+
+        $have_email = $model->check_email($user);
+        if($have_email)
+        {
+            $response['have_email'] = 'EXIST';
+            $return = $model->processResetRequest($user); // Submit the password reset request.
+        }
+        else
+        {
+            $response['have_email'] = 'NOT EXIST';
+            $return = false;
+        }
+
+        // Check for a hard error.
+        if ($return instanceof Exception)
+        {
+            $response['sendmail'] = 'FALSE';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+        elseif ($return === false)
+        {
+            $response['sendmail'] = 'FALSE';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+        else
+        {
+            $response['sendmail'] = 'OK';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
 
     }
+
+    /**
+     * app用户状态查询
+     * */
+    public function user_state()
+    {
+        $app    = JFactory::getApplication();
+
+        $response = array();
+
+        $user = array();
+        $user['username']  = $app->input->get('username','','string');
+        $model = $this->getModel('User','HeartCareModel');
+
+        if($model->check_username($user))
+        {
+            $response['have_user'] = 'EXIST';
+        }
+        else
+        {
+            $response['have_user'] = 'NOT EXIST';
+            $response['online'] = 'NO';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+
+        if($model->user_state($user))
+        {
+            $response['online'] = 'YES';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+        else
+        {
+            $response['online'] = 'NO';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+    }
+
 }
