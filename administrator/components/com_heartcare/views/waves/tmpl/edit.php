@@ -12,7 +12,6 @@ JHtml::_('behavior.core');
 //引入百度echarts库
 JHtml::script('http://echarts.baidu.com/build/dist/echarts.js',true);
 $data = json_decode($this->txtData);
-
 $tooltip = '';
 $axisData = 'axisData = obj.data;';
 $zoomLock = 'zoomLock:true,';

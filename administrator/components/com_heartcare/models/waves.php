@@ -60,13 +60,6 @@ class HeartCareModelWaves extends JModelAdmin
         $content = file_get_contents($file);
         $yname = $this->getItem()->data_type;
 
-        //echo "<pre>";
-        //print_r(sizeof($result['data_z']));
-        //print_r($file);
-        //echo "</pre>";
-        //JFactory::getApplication()->close();
-
-
         $arr = explode("\n", $content);
         $len = sizeof($arr);
         //缩放的倍数150000是频率2500*时间(6秒)*100,得到百分比
@@ -114,6 +107,11 @@ class HeartCareModelWaves extends JModelAdmin
                 $arr_x[$key] = (float)$arr_xyz[0];
                 $arr_y[$key] = (float)$arr_xyz[1];
                 $arr_z[$key] = (float)$arr_xyz[2];
+
+                $arr_x[$key] = round($arr_x[$key],3);
+                $arr_y[$key] = round($arr_y[$key],3);
+                $arr_z[$key] = round($arr_z[$key],3);
+
             }
 
             for ($i=0 ; $i<$len ; $i++ ){
@@ -159,12 +157,6 @@ class HeartCareModelWaves extends JModelAdmin
             );
 
         }
-
-        //echo "<pre>";
-        //print_r(sizeof($result['data_z']));
-        //print_r($result);
-        //echo "</pre>";
-        //JFactory::getApplication()->close();
 
         $json_result = json_encode($result);
 
