@@ -361,4 +361,35 @@ class HeartCareModelUser extends JModelList
         }
     }
 
+    /**
+     * 根据用户名查询email
+     * */
+    public function find_email(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('email')->from($db->quoteName('#__users'));
+        $query->where(' username = '.$db->quote($user['username']));
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            if($result){
+                return $result;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
 }

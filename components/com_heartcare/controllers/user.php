@@ -282,4 +282,46 @@ class HeartCareControllerUser extends  JControllerForm
         }
     }
 
+    /**
+     * app根据用户名查询用户email
+     * */
+    public function find_email()
+    {
+        $app    = JFactory::getApplication();
+
+        $response = array();
+
+        $user = array();
+        $user['username']  = $app->input->post->get('username','','string');
+        $model = $this->getModel('User','HeartCareModel');
+
+        if($model->check_username($user))
+        {
+            $response['have_user'] = 'EXIST';
+        }
+        else
+        {
+            $response['have_user'] = 'NOT EXIST';
+            $response['email'] = 'NOT EXIST';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+
+        $email = $model->find_email($user);
+        if($email)
+        {
+
+
+            $response['email'] = $email[0]->email;
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+        else
+        {
+            $response['email'] = 'NOT EXIST';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+    }
+
 }
