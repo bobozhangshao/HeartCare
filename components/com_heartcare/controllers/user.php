@@ -34,23 +34,31 @@ class HeartCareControllerUser extends  JControllerForm
 
 
         $response = array();
-        if (true === $app->login($credentials, $options))
+        try
         {
-            // Success
-            $response['login'] = 'OK';
+            if (true === $app->login($credentials, $options))
+            {
+                // Success
+                $response['login'] = 'OK';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+            else
+            {
+                // Login failed !
+                $response['login'] = 'FAIL';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
 
+        }
+        catch(Exception $e)
+        {
+            $response['login'] = 'ERROR';
             echo json_encode($response);
             JFactory::getApplication()->close();
         }
-        else
-        {
-            // Login failed !
-            $response['login'] = 'FAIL';
 
-            echo json_encode($response);
-            JFactory::getApplication()->close();
-
-        }
     }
 
     /**
