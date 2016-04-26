@@ -39,7 +39,7 @@ $series = "series : [
                         }
                     ]";
 
-if($data->yname == 'HR')
+if(($data->yname == 'HR') || ($data->yname == 'RR')||($data->yname == 'BP'))
 {
     $zoomLock = 'zoomLock:false,';
     $tooltip = "tooltip:{show:true,
@@ -49,7 +49,7 @@ if($data->yname == 'HR')
                         {
                             name:yname,
                             type:'line',
-                            smooth:true,
+                            smooth:false,
                             symbol:'heart',
                             symbolSize : 3,
                             itemStyle:{

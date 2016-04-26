@@ -87,24 +87,26 @@ class HeartCareModelHeartCare extends JModelList
         return $result;
     }
 
-    //获取txt数据
+    /**
+     * 获取txt数据
+     * return array
+     */
     public function getTxtData()
     {
         $result = array();
-        $file = './media/com_heartcare/data/'.$this->getState('wave.route');
+        $data_route = $this->get_file((int) $this->getState('wave.id'));
+        $file = './media/com_heartcare/data/'.$data_route;
         $content = file_get_contents($file);
-
+        $content = preg_replace('/(\r*)\n/',"\n",$content);//将content字符串中的\n\r替换成\n
         $yname = $this->getState('wave.type');
 
-
-        //echo "<pre>";
-        //print_r(sizeof($result['data_z']));
-        //print_r($file);
-        //echo "</pre>";
-        //JFactory::getApplication()->close();
-
-
         $arr = explode("\n", $content);
+
+        if(end($arr) == '')
+        {
+            array_pop($arr);
+        }
+
         $len = sizeof($arr);
         //缩放的倍数150000是频率2500*时间(6秒)*100,得到百分比
         $zoom = floatval(150000/$len);
@@ -151,6 +153,10 @@ class HeartCareModelHeartCare extends JModelList
                 $arr_x[$key] = (float)$arr_xyz[0];
                 $arr_y[$key] = (float)$arr_xyz[1];
                 $arr_z[$key] = (float)$arr_xyz[2];
+
+                $arr_x[$key] = round($arr_x[$key],3);
+                $arr_y[$key] = round($arr_y[$key],3);
+                $arr_z[$key] = round($arr_z[$key],3);
             }
 
             for ($i=0 ; $i<$len ; $i++ ){
@@ -177,13 +183,11 @@ class HeartCareModelHeartCare extends JModelList
             );
 
         }
-        //HR数据
-        elseif($yname == 'HR')
+        //HR,RR数据
+        elseif(($yname == 'HR')||($yname == 'RR')||($yname='BP'))
         {
             $zoom = 2000/$len;
-            //unset($xarr);
             for ($i=0 ; $i<$len ; $i++ ){
-                //$xarr[$i] = number_format($i*(1/360),1).'s';
                 $xarr[$i] = $i;
             }
 
@@ -196,12 +200,6 @@ class HeartCareModelHeartCare extends JModelList
             );
 
         }
-
-        //echo "<pre>";
-        //print_r(sizeof($result['data_z']));
-        //print_r($result);
-        //echo "</pre>";
-        //JFactory::getApplication()->close();
 
         $json_result = json_encode($result);
 
@@ -373,6 +371,32 @@ class HeartCareModelHeartCare extends JModelList
             {
                 return false;
             }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
+     * 根据测量数据id查询文件名
+     * return string data_route
+     * */
+    public function get_file($id)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('data_route')->from($db->quoteName('#__health_data'))->where('id = '.$id);
+        $db->setQuery($query);
+
+        try
+        {
+            $result = $db->loadObjectList();
+
+            $result = $result[0]->data_route;
+            return $result;
         }
         catch (RuntimeException $e)
         {

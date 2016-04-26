@@ -11,11 +11,7 @@ JHtml::_('behavior.core');
 //引入百度echarts库
 JHtml::script('http://echarts.baidu.com/build/dist/echarts.js',true);
 $data = json_decode($this->txtData);
-
-//echo "<pre>";
-//print_r(sizeof($result['data_z']));
-//print_r($this->txtData);
-//echo "</pre>";
+$xAxisname = 'name : "时\n间\n(s)" ,';
 $tooltip = '';
 $axisData = 'axisData = obj.data;';
 $zoomLock = 'zoomLock:true,';
@@ -42,8 +38,12 @@ $series = "series : [
                         }
                     ]";
 
-if($data->yname == 'HR')
+if(($data->yname == 'HR') || ($data->yname == 'RR')||($data->yname == 'BP'))
 {
+    if ($data->yname == 'BP')
+    {
+        $xAxisname = 'name : "时\n间" ,';
+    }
     $zoomLock = 'zoomLock:false,';
     $tooltip = "tooltip:{show:true,
                          trigger: 'axis'
@@ -52,7 +52,7 @@ if($data->yname == 'HR')
                         {
                             name:yname,
                             type:'line',
-                            smooth:true,
+                            smooth:false,
                             symbol:'heart',
                             symbolSize : 3,
                             itemStyle:{
@@ -182,7 +182,7 @@ JFactory::getDocument()->addScriptDeclaration('
                     xAxis : [
 
                         {
-                            name : "时\n间\n(s)" ,
+                            '.$xAxisname.'
                             type : \'category\',
                             boundaryGap : false,
                             axisTick:{

@@ -58,9 +58,16 @@ class HeartCareModelWaves extends JModelAdmin
 
         $file = '../media/com_heartcare/data/'.$this->getItem()->data_route;
         $content = file_get_contents($file);
+        $content = preg_replace('/(\r*)\n/',"\n",$content);//将content字符串中的\n\r替换成\n
         $yname = $this->getItem()->data_type;
 
         $arr = explode("\n", $content);
+
+        if(end($arr) == '')
+        {
+            array_pop($arr);
+        }
+
         $len = sizeof($arr);
         //缩放的倍数150000是频率2500*时间(6秒)*100,得到百分比
         $zoom = floatval(150000/$len);
@@ -138,8 +145,8 @@ class HeartCareModelWaves extends JModelAdmin
             );
 
         }
-        //HR数据
-        elseif($yname == 'HR')
+        //HR,RR,BP数据
+        elseif(($yname == 'HR')||($yname == 'RR')||($yname='BP'))
         {
             $zoom = 2000/$len;
             //unset($xarr);
