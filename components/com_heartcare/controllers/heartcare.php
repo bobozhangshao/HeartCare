@@ -111,7 +111,7 @@ class HeartCareControllerHeartCare extends JControllerForm
     public function user_files()
     {
         $app = JFactory::getApplication();
-        $user['username']         = $app->input->post->get('username','','string');
+        $user['username'] = $app->input->post->get('username','','string');
         //$user['useremail']         = $app->input->get('user_email','','string');
         $filelist = array();
         $filelist['have_user'] = 'EXIST';
@@ -155,6 +155,98 @@ class HeartCareControllerHeartCare extends JControllerForm
             JFactory::getApplication()->close();
         }
 
+    }
+
+    /**
+     * 下载测量数据文件的接口
+     * return file
+     * */
+    public function download_file()
+    {
+        $app = JFactory::getApplication();
+        $user['username'] = $app->input->post->get('username','','string');
+        $user['filename'] = $app->input->post->get('filename','','string');
+
+        $file_route = JPATH_BASE.'/media/com_heartcare/data/';
+        $model = $this->getModel('HeartCare','HeartCareModel');
+        $response = array();
+        $files    = array();
+
+        if($model->check_username($user))
+        {
+            $response['have_user'] = 'EXIST';
+            $user['id'] = $model->get_user_id($user);
+            $user['id'] = $user['id'][0]->id;
+
+            if($model->user_state($user))
+            {
+                $response['online'] = 'OK';
+                $files = $model->get_user_files($user);
+            }
+            else
+            {
+                $response['online'] = 'NO';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+        }
+        else
+        {
+            $response['have_user'] = 'NOT EXIST';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+
+        if(empty($files))
+        {
+            $response['files'] = 'NOT EXIST';
+        }
+        else
+        {
+            if(in_array($user['filename'],$files))
+            {
+                $response['this_record'] = 'EXIST';
+                $file = $file_route.$user['filename'];
+
+                if(file_exists($file))
+                {
+                    $response['this_file'] = 'EXIST';
+
+                    $fp = fopen($file,"r");
+                    $file_size = filesize($file);
+
+                    //下载文件需要用到的头
+                    header("Content-type: application/octet-stream");
+                    Header("Accept-Ranges: bytes");
+                    Header("Accept-Length:".$file_size);
+                    Header("Content-Disposition: attachment; filename=".$user['filename']);
+                    $buffer = 4096;
+                    $file_count=0;
+                    //向浏览器返回数据
+                    while(!feof($fp) && $file_count<$file_size){
+                        $file_con=fread($fp,$buffer);
+                        $file_count+=$buffer;
+                        echo $file_con;
+                    }
+                    fclose($fp);
+                }
+                else
+                {
+                    $response['this_file'] = 'NOT EXIST';
+                    echo json_encode($response);
+                    JFactory::getApplication()->close();
+                }
+            }
+            else
+            {
+                $response['this_record'] = 'NOT EXIST';
+                $response['this_file'] = 'NOT EXIST';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+        }
+
+        JFactory::getApplication()->close();
     }
 
 }

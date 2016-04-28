@@ -318,6 +318,7 @@ class HeartCareModelHeartCare extends JModelList
 
     /**
      * 根据用户id查出他所有的测量记录
+     * return array
      * */
     public function get_user_files(array $user)
     {
@@ -406,7 +407,36 @@ class HeartCareModelHeartCare extends JModelList
         }
     }
 
+    /**
+     * 查询用户登录状态
+     * */
+    public function user_state(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('*')->from($db->quoteName('#__session'));
+        $query->where(' username = '.$db->quote($user['username']));
+        $db->setQuery($query);
 
+        try
+        {
+            $result = $db->loadObjectList();
+
+            if($result){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
 }
 
 
