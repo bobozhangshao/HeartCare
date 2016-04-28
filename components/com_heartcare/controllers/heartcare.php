@@ -158,6 +158,48 @@ class HeartCareControllerHeartCare extends JControllerForm
     }
 
     /**
+     * 获取用户上传总数,最早和最晚时间
+     * return count last first
+     * */
+    public function get_measure_info()
+    {
+        $app = JFactory::getApplication();
+        $user['username'] = $app->input->post->get('username','','string');
+        $model = $this->getModel('HeartCare','HeartCareModel');
+
+        $response = array();
+        if($model->check_username($user))
+        {
+            $response['have_user'] = 'EXIST';
+            $user['id'] = $model->get_user_id($user);
+            $user['id'] = $user['id'][0]->id;
+
+            if($model->user_state($user))
+            {
+                $response['online'] = 'OK';
+                $response['info'] = $model->get_measure_info($user);
+
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+            else
+            {
+                $response['online'] = 'NO';
+                echo json_encode($response);
+                JFactory::getApplication()->close();
+            }
+        }
+        else
+        {
+            $response['have_user'] = 'NOT EXIST';
+            echo json_encode($response);
+            JFactory::getApplication()->close();
+        }
+
+        JFactory::getApplication()->close();
+    }
+
+    /**
      * 下载测量数据文件的接口
      * return file
      * */

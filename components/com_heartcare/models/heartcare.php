@@ -350,6 +350,40 @@ class HeartCareModelHeartCare extends JModelList
     }
 
     /**
+     * 根据用户id查出他最早测量记录,和总记录数量
+     * return array
+     * */
+    public function get_measure_info(array $user)
+    {
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select('count(*),max(measure_time),min(measure_time)')->from($db->quoteName('#__health_data'))->where($db->quoteName('user_id').' = '.$db->quote($user['id']));
+        $db->setQuery($query);
+        $result = array();
+
+        try
+        {
+            $data = $db->loadObjectList();
+
+            foreach($data as $key=>$value)
+            {
+                $tmp = get_object_vars($value);
+                $result['count'] = $tmp['count(*)'];
+                $result['last'] = $tmp['max(measure_time)'];
+                $result['first'] = $tmp['min(measure_time)'];
+            }
+
+            return $result;
+        }
+        catch (RuntimeException $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
      * 检查用户名是否存在
      * return bool
      * */
