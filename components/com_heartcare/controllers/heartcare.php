@@ -174,20 +174,10 @@ class HeartCareControllerHeartCare extends JControllerForm
             $user['id'] = $model->get_user_id($user);
             $user['id'] = $user['id'][0]->id;
 
-            if($model->user_state($user))
-            {
-                $response['online'] = 'OK';
-                $response['info'] = $model->get_measure_info($user);
+            $response['info'] = $model->get_measure_info($user);
 
-                echo json_encode($response);
-                JFactory::getApplication()->close();
-            }
-            else
-            {
-                $response['online'] = 'NO';
-                echo json_encode($response);
-                JFactory::getApplication()->close();
-            }
+            echo json_encode($response);
+            JFactory::getApplication()->close();
         }
         else
         {
