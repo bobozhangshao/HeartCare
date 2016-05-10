@@ -1,3 +1,8 @@
+//////////////////////////////////////////////////
+//重要说明:本系统基于joomla3.x开发而成             //
+//     com_heartcare  开发者BOB                  //
+//////////////////////////////////////////////////
+
 1- What is this?
 	* This is a Joomla! installation/upgrade package to version 3.x
 	* Joomla! Official site: https://www.joomla.org
