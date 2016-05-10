@@ -32,7 +32,7 @@ class JConfig {
 	public $mailonline = '1';
 	public $mailer = 'smtp';
 	public $mailfrom = 'iecas_heartcare@126.com';
-	public $fromname = 'HeartCare';
+	public $fromname = 'HeartCare_local';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
 	public $smtpuser = 'iecas_heartcare@126.com';

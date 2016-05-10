@@ -5,14 +5,31 @@
 		<title>Joomlapolis News</title>
 		<description>Joomla social networking and Subscription Management software. Community Builder is the top rated, best supported, most complete and reliable community system there is for Joomla!</description>
 		<link>http://www.joomlapolis.com:80/news</link>
-		<lastBuildDate>Thu, 28 Apr 2016 13:11:00 +0000</lastBuildDate>
+		<lastBuildDate>Tue, 10 May 2016 06:48:52 +0000</lastBuildDate>
 		<generator>Joomla! 1.5 - Open Source Content Management</generator>
 		<language>en-gb</language>
+		<item>
+			<title>A website story - part 3</title>
+			<link>http://www.joomlapolis.com:80/news/18549-a-website-story-part-3</link>
+			<guid>http://www.joomlapolis.com:80/news/18549-a-website-story-part-3</guid>
+			<description><![CDATA[<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201605/wap3.gif" alt="wap3" width="550" height="379" /></p>
+<p>(continued from <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18548:a-website-story-part-2&amp;catid=6:news&amp;Itemid=19">part 2</a>)</p>
+<p>You are really happy with the results so far.</p>
+<p>Your site is up, users are <strong>joining</strong> and searching your <strong>user list pages</strong> and <strong>making friends with each other</strong>. You are able to <strong>send off personalized email messages</strong> using the <strong>CB Mass Mailing</strong> functionality located in the CB User management page.</p>
+<p>But you realize that you need to help people express themselves and make noise on your website.</p>
+<p>Back to the <a href="http://www.joomlapolis.com:80/component/docman/doc_details/801-cb-20-primer-book-105">CB Primer Book</a> you go and find <strong>Chapter 8 Working with Plugins</strong> and start reading. Aha, <strong>CB Blogs</strong> looks very promising. What if you setup and allow your users to blog straight from their user profile page? And how about storing the blogs as Joomla articles so your can use the Joomla content management functionality to show off the blogs outside the profile pages also. Wow, there is even another great video tutorial that illustrates this - <a href="https://www.youtube.com/watch?v=iq8G4m3Yvek&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=16" target="_blank">CB Blogs Plugin Joomla Mode</a>.</p>
+<p>You quickly get this new functionality working on your website and once again you create a new Joomla tutorial article explaing how your users can create their own blogs. Of course you once again use the CB Mass Mailing functionality to let your existing users know about this new functionality you added.</p>
+<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/233604-a-website-story-part-3">Discuss this on our forums</a> and <strong>stay tuned for next part!</strong></p>
+<p>&nbsp;</p>]]></description>
+			<author>nant@joomlapolis.com (Nick A.)</author>
+			<category>News</category>
+			<pubDate>Mon, 02 May 2016 00:00:00 +0000</pubDate>
+		</item>
 		<item>
 			<title>A website story - part 2</title>
 			<link>http://www.joomlapolis.com:80/news/18548-a-website-story-part-2</link>
 			<guid>http://www.joomlapolis.com:80/news/18548-a-website-story-part-2</guid>
-			<description><![CDATA[<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201604/story2.gif" alt="story2" width="580" height="400" /></p>
+			<description><![CDATA[<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.joomlapolis.com:80/images/jpnewsletter/jpn201604/story2.gif" alt="story2" width="550" height="379" /></p>
 <p>Continuing <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18545:a-website-story-part-1&amp;catid=6:news&amp;Itemid=19">where we left off</a>, you have your Joomla website in place - with great content -&nbsp; and <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=2">Community Builder</a> configured to handle the registration process and the profile pages of your community. All your members get their own profile page where they can update their data when needed. You have also created a number of <strong>user lists</strong> with <strong>searching</strong> enabled to let your users find others with similar interests.</p>
 <p>From experience with other social netwrking sites (aka Facebook) you know that people should be able to hook-up with each other (social friends).</p>
 <p>Back to the <a href="http://www.joomlapolis.com:80/component/docman/doc_details/801-cb-20-primer-book-105">CB Primer Book</a> you go and find <strong>Chapter 9 Working with Connections</strong> and start reading. Aha, <strong>Connections</strong> is the term used to describe this user hook-up. You read the chapter and <a href="https://www.youtube.com/watch?v=PJt42TXq_GM&amp;list=PLp0puRITgC7PuyzPsMUECDI46VE7IFSAX&amp;index=24" target="_blank">watch the great #24 tutorial</a> - and you quickly get this functionality configured on your site. You notice that connections can be bidirectional or unidirectional - but for know you decide to keep things simple. Bidirectional it is - if I am connected to someone, that someone is also connected with me. You have a test user configured and you establish a connection to test out the process. Email notification is sent, user receiving the connection request approves it and the connection is set and recorded in the new Connections tab.</p>
@@ -245,29 +262,6 @@
 			<author>nant@joomlapolis.com (Nick A.)</author>
 			<category>News</category>
 			<pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
-		</item>
-		<item>
-			<title>CB Code Field 1.0 Released!</title>
-			<link>http://www.joomlapolis.com:80/news/18536-cb-code-field-10-released</link>
-			<guid>http://www.joomlapolis.com:80/news/18536-cb-code-field-10-released</guid>
-			<description><![CDATA[<p style="text-align: center;">&nbsp;<img src="http://www.joomlapolis.com:80/images/stories/tutorials/code/codedaysold2.png" alt="codedaysold2" width="550" height="248" /></p>
-<p style="text-align: center;"><strong>CB Code Field 1.0.2</strong> has been released for CB 2.0.13+<br />Professional+ members can <a href="http://www.joomlapolis.com:80/index.php?option=com_docman&amp;task=doc_details&amp;gid=810">download</a></p>
-<p>By popular community demand, the CB Team has just released the new CB Code Field add-on that lets you execute PHP code as a CB field!</p>
-<p>With this new release you can also create code fields that <strong>dynamically auto-refresh</strong> when other CB fields change.</p>
-<p>Here is a brand new <a href="http://www.joomlapolis.com:80/index.php?option=com_content&amp;view=article&amp;id=18534:calculating-years-months-days-from-birthday-field-using-cb-code-field&amp;catid=107:use-cases&amp;Itemid=129">Age Calculation Tutorial</a> that will help you understand this new functionality.</p>
-<p>The CB Code Field add-on lets you create as many CB fields as you want that provide output based on PHP code you provide.</p>
-<p>Once installed and published you will see 5 new field types available when you create new CB fields:</p>
-<ul>
-<li>Code</li>
-<li>Code&nbsp;Check Box (Multiple)</li>
-<li>Code&nbsp;Drop Down (Multi-select)</li>
-<li>Code&nbsp;Drop Down (Single Select)</li>
-<li>Code&nbsp;Radio Buttons</li>
-</ul>
-<p><a href="http://www.joomlapolis.com:80/forum/6-news-and-publicity/232789-cb-code-field-10-released">Discuss this on our forums</a>.</p>]]></description>
-			<author>nant@joomlapolis.com (Nick A.)</author>
-			<category>News</category>
-			<pubDate>Tue, 09 Feb 2016 22:29:42 +0000</pubDate>
 		</item>
 	</channel>
 </rss>
