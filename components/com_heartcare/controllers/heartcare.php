@@ -281,4 +281,55 @@ class HeartCareControllerHeartCare extends JControllerForm
         JFactory::getApplication()->close();
     }
 
+    /**
+     * 测试
+     * */
+    public function test()
+    {
+        $app = JFactory::getApplication();
+        $user['username'] = $app->input->get('username','','string');
+
+        echo $this->encryption($user);
+
+        JFactory::getApplication()->close();
+    }
+
+    /**
+     * 加密: TODO
+     * 用户名转成assci码并取kolkata时间,最后的数字乘以每一个数字
+     * return 密文
+     * */
+    public function encryption(array &$user)
+    {
+        $username = $user['username'];
+        $ordname = '';
+        for ($i = 0;$i<strlen($username);$i++)
+        {
+            $ordname = $ordname.ord($username[$i]);
+        }
+
+        $JDate = JFactory::getDate('now', new DateTimeZone('Asia/kolkata'));
+        $JDate = $JDate->format('Ymd',true);
+
+        $value = $ordname.$JDate;
+        $endValue = end($value);
+        $result = '';
+
+        for($i = 0;$i<strlen($value);$i++)
+        {
+            if($endValue != 0)
+            {
+                $temp = $value[$i]*$endValue;
+                $result = $result.$temp;
+            }
+            else
+            {
+                $temp = $value[$i]*9;
+                $result = $result.$temp;
+            }
+        }
+
+        return $result;
+    }
+
 }
