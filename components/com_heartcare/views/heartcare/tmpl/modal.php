@@ -13,6 +13,13 @@ JHtml::script('http://echarts.baidu.com/build/dist/echarts.js',true);
 $data = json_decode($this->txtData);
 $xAxisname = 'name : "时\n间\n(s)" ,';
 $tooltip = '';
+$xAxisLabel = 'axisLabel: {
+                           interval:0,
+                           rotate:-40,
+                           textStyle:{
+                                fontSize:10
+                               }
+                            },';
 $axisData = 'axisData = obj.data;';
 $zoomLock = 'zoomLock:true,';
 $legend = "legend: {
@@ -44,6 +51,14 @@ if(($data->yname == 'HR') || ($data->yname == 'RR')||($data->yname == 'BP'))
     {
         $xAxisname = 'name : "时\n间" ,';
     }
+
+    $xAxisLabel = "axisLabel: {
+                           interval:'auto',
+                           rotate:-40,
+                           textStyle:{
+                                fontSize:10
+                               }
+                            },";
     $zoomLock = 'zoomLock:false,';
     $tooltip = "tooltip:{show:true,
                          trigger: 'axis'
@@ -190,13 +205,7 @@ JFactory::getDocument()->addScriptDeclaration('
                                 interval:71
                             },
 
-                            axisLabel: {
-                                interval:0,
-                                rotate:-30,
-                                textStyle:{
-                                    fontSize:10
-                                }
-                            },
+                            '.$xAxisLabel.'
 
                             splitLine:{
                               show:true,

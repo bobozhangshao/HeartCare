@@ -19,7 +19,13 @@ $legend = "legend: {
                     show:true,
                     data:[yname]
                     },";
-
+$xAxisLabel = 'axisLabel: {
+                           interval:0,
+                           rotate:-40,
+                           textStyle:{
+                                fontSize:10
+                               }
+                            },';
 $series = "series : [
                         {
                             name:yname,
@@ -45,6 +51,13 @@ if(($data->yname == 'HR') || ($data->yname == 'RR')||($data->yname == 'BP'))
     $tooltip = "tooltip:{show:true,
                          trigger: 'axis'
                          },";
+    $xAxisLabel = "axisLabel: {
+                           interval:'auto',
+                           rotate:-40,
+                           textStyle:{
+                                fontSize:10
+                               }
+                            },";
     $series = "series : [
                         {
                             name:yname,
@@ -209,13 +222,7 @@ jQuery(document).ready(function() {
                                 interval:71
                             },
 
-                            axisLabel: {
-                                interval:0,
-                                rotate:-30,
-                                textStyle:{
-                                    fontSize:10
-                                }
-                            },
+                            '.$xAxisLabel.'
 
                             splitLine:{
                               show:true,
