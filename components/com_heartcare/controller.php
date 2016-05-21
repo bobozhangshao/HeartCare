@@ -35,7 +35,7 @@ class HeartCareController extends JControllerLegacy
 //        echo "hh";
 //        echo "</pre>";
 
-        $vName = $this->input->get('view', 'heartcare');
+        $vName = $this->input->get('view', 'weixin');
         $this->input->set('view', $vName);
 
         if ($user->get('id'))

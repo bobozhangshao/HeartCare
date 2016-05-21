@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 这是一个添加menu项的文件 -->
+<metadata>
+    <layout title="weixin">
+        <message>weixin</message>
+    </layout>
+</metadata>
