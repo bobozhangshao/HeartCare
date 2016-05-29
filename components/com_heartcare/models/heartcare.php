@@ -122,14 +122,15 @@ class HeartCareModelHeartCare extends JModelList
             //xarr 是x轴坐标
             for ($i=0 ; $i<$len ; $i++ ){
                 //$xarr[$i] = number_format($i*(1/360),1).'s';
-
+                //每个坐标都对应
+                $xarr[$i] = 0.004*$i;
                 //除以50是指0.2秒的数据量,频率为250
-                if ($i%50 == 0){
+                /*if ($i%50 == 0){
                     $k = $i/50;
                     $xarr[$i] = $k*(0.2);
                 }else{
                     $xarr[$i] = '';
-                }
+                }*/
             }
 
             $result = array(
@@ -160,15 +161,14 @@ class HeartCareModelHeartCare extends JModelList
             }
 
             for ($i=0 ; $i<$len ; $i++ ){
-                //$xarr[$i] = number_format($i*(1/360),1).'s';
-
+                $xarr[$i] = $i*0.05;
                 //除以20是指1秒的数据量,频率为20hz
-                if ($i%20 == 0){
-                    $k = $i/20;
-                    $xarr[$i] = $k;
-                }else{
-                    $xarr[$i] = '';
-                }
+//                if ($i%20 == 0){
+//                    $k = $i/20;
+//                    $xarr[$i] = $k;
+//                }else{
+//                    $xarr[$i] = '';
+//                }
             }
 
 

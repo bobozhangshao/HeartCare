@@ -158,6 +158,8 @@ jQuery(document).ready(function() {
         jQuery("div.subhead-collapse").css({ "margin-bottom" : "0px","height":"0px"});
 	    jQuery("div.subhead").css({"background" : "none", "border-bottom" : "none","margin-bottom":"0px","min-height":"0px"});
         jQuery("div.control-group").css({"padding-left" : "40px", "padding-right" : "40px"});
+        jQuery("div.btn-toolbar").css({"margin-bottom" : "0px", "margin-top" : "0px"});
+
 
 	    if ("'.$this->item->data_route.'"==""){
             jQuery(".span12").hide();

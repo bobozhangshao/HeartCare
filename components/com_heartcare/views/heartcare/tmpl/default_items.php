@@ -60,7 +60,7 @@ echo JRoute::_('index?option=com_heartcare&task=heartcare.remove_measure');
                             </td>
 
                             <?php
-                            $link = JRoute::_('index.php?option=com_heartcare&amp;tmpl=component&amp;view=heartcare&amp;layout=modal&amp;wave_id='.$row->id.'&amp;wave_type='.$row->data_type);
+                            $link = JRoute::_('index.php?option=com_heartcare&amp;tmpl=component&amp;view=heartcare&amp;layout=modal_weixin&amp;wave_id='.$row->id.'&amp;wave_type='.$row->data_type);
                             echo JHtml::_(
                                 'bootstrap.renderModal',
                                 'measureData'.$row->id.'Modal',
