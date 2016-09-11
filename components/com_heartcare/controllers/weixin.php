@@ -555,7 +555,7 @@ class HeartCareControllerWeixin extends JControllerAdmin
 
 
     /**
-     * 组装最近5次的测量结果
+     * 组装最近7次的测量结果
      *
      * return array
      * */
@@ -616,6 +616,8 @@ class HeartCareControllerWeixin extends JControllerAdmin
             {
                 //取消又关注的将subscribe字段设置为1
                 $userFromDB['subscribe'] = 1;
+                $userFromDB['subscribe_time'] = time();
+
                 $model->updateWxUserInfo($userFromDB);
             }
 
@@ -637,7 +639,6 @@ class HeartCareControllerWeixin extends JControllerAdmin
             }
 
             $user['user_id'] = 0;
-
             //插入到数据库中,这里不带user_id
             $model->setWxUserInfo($user);
             //返回取回的user information
@@ -756,7 +757,7 @@ class HeartCareControllerWeixin extends JControllerAdmin
         $flag  = $app->input->getInt('flag','2');
 
         $APPID=$this->appId;
-        $redirect_uri = "http://www.heartcare.site/index.php?option=com_heartcare&flag=".$flag;
+        $redirect_uri = "http://www.heartcare.site/index.php?option=com_heartcare&view=weixin&flag=".$flag;
 
         //应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid)
         //snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在未关注的情况下，只要用户授权，也能获取其信息）
